@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python3 -c ':*)",
-      "Bash(python -c ':*)",
-      "Bash(python a1_extract_requirements_llm.py --doc_id 4be445ca-2145-4757-87b8-8ec3d9fc9ace --limit 5)"
-    ]
-  }
-}
