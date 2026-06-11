@@ -1,0 +1,10 @@
+python-dotenv
+psycopg[binary]
+pymupdf
+pydantic
+google-genai
+groq
+openai
+fastapi
+uvicorn
+python-multipart

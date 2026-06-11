@@ -1,0 +1,12 @@
+site_code,process_code,process_name,code,name,description
+S1,PROC-PROD,Production,ACT-PEINT,Peinture epoxy,Application de peinture epoxy sur pieces metalliques
+S1,PROC-PROD,Production,ACT-TS,Preparation de surface,Degraissage phosphatation et preparation avant peinture
+S1,PROC-PROD,Production,ACT-ASMB,Assemblage final,Assemblage et controle final des sous-ensembles
+S1,PROC-MAINT,Maintenance,ACT-CHAUD,Maintenance chaudiere,Entretien et controle de la chaudiere industrielle
+S1,PROC-MAINT,Maintenance,ACT-COMP,Maintenance compresseurs,Maintenance des compresseurs et reseaux air
+S1,PROC-QHSE,QHSE,ACT-DECH,Gestion des dechets,Tri stockage temporaire et evacuation des dechets dangereux
+S2,PROC-LOG,Logistique,ACT-STOCKSOLV,Stockage solvants,Stockage de produits inflammables et solvants
+S2,PROC-LOG,Logistique,ACT-EXP,Expedition,Preparation commandes chargement et expedition client
+S2,PROC-HSE-DEPOT,HSE Depot,ACT-INSP,Inspection securite depot,Inspection periodique et verification des moyens incendie
+S3,PROC-RH,Ressources Humaines,ACT-FORM,Formation HSE,Planification et suivi des formations securite
+S3,PROC-DIR,Direction et Conformite,ACT-VEILLE,Veille reglementaire,Suivi des obligations et revues de conformite

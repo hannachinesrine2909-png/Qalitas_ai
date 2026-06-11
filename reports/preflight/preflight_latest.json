@@ -1,0 +1,474 @@
+{
+  "preflight_version": "B0.3-1.1.0",
+  "generated_at_utc": "2026-04-22T15:25:05+00:00",
+  "dataset_checks": {
+    "errors": [],
+    "warnings": []
+  },
+  "resolution_summary": {
+    "cases_total": 28,
+    "source_text_bypassed": 0,
+    "resolution_candidates": 28,
+    "documents_resolved": 0,
+    "documents_unresolved": 28,
+    "articles_resolved": 0,
+    "articles_unresolved": 28,
+    "article_resolution_success_rate": 0.0,
+    "ambiguous_label_cases": 7,
+    "label_ambiguity_rate": 0.25,
+    "ready_cases": 0,
+    "blocked_cases": 28,
+    "readiness_rate": 0.0
+  },
+  "status": "FAIL",
+  "cases": [
+    {
+      "case_id": "cdt_art_10",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "10",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "cdt_art_11",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "11",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "cdt_art_21",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "21",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "cdt_art_25",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "25",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_128_2022_art1_concours",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "premier",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_128_2022_art3_concours",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "3",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_121_2025_art1_contributions",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "premier",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_121_2025_art2_contributions",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "2",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_121_2025_annexe_tarifs",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "NON_STANDARD",
+      "article_label_ambiguous": true,
+      "article_code_hint": null,
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_121_2025_nomination_member",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "NON_STANDARD",
+      "article_label_ambiguous": true,
+      "article_code_hint": null,
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_030_2026_art3_secheresse",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "3",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_030_2026_art4_secheresse",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "4",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_030_2026_sommaire",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "NON_STANDARD",
+      "article_label_ambiguous": true,
+      "article_code_hint": null,
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_030_2026_nomination",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "NON_STANDARD",
+      "article_label_ambiguous": true,
+      "article_code_hint": null,
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_028_2026_art2_bct",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "2",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_028_2026_art1_regularisation",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "premier",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_028_2026_expropriation_table",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "premier",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_029_2026_art3_redploiement",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "3",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_029_2026_art7_redploiement",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "7",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_029_2026_art8_redploiement",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "8",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_029_2026_art11_redploiement",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "11",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_029_2026_art12_redploiement",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "12",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_029_2026_nomination_member",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "NON_STANDARD",
+      "article_label_ambiguous": true,
+      "article_code_hint": null,
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_029_2026_demission_huissier",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "NON_STANDARD",
+      "article_label_ambiguous": true,
+      "article_code_hint": null,
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_029_2026_art1_services_fiscaux",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "premier",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_093_2020_delegation_legalisation",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "premier",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_093_2020_discipline",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "ARTICLE_CODED",
+      "article_label_ambiguous": false,
+      "article_code_hint": "premier",
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    },
+    {
+      "case_id": "jort_093_2020_nomination_generaux",
+      "source_text_present": false,
+      "document_resolved": false,
+      "article_resolved": false,
+      "article_label_kind": "NON_STANDARD",
+      "article_label_ambiguous": true,
+      "article_code_hint": null,
+      "resolved_doc_id": null,
+      "resolved_doc_title": null,
+      "resolved_article_count": 0,
+      "ready_for_evaluation": false,
+      "blockers": [
+        "UNRESOLVED_DOCUMENT"
+      ]
+    }
+  ]
+}

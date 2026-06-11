@@ -1,0 +1,37 @@
+{
+  "generated_at_utc": "2026-04-22T23:56:20.086651+00:00",
+  "tenant_id": "gds_korba",
+  "requested_doc_id": "93070b6a-fdca-4c3b-babe-3632e3cddb66",
+  "limit_docs": 5,
+  "families": [],
+  "backfill_events": true,
+  "run_replay": false,
+  "timeout_sec": 900,
+  "backfill": {
+    "payload_column": "payload",
+    "event_id_column": "event_id",
+    "created_at_column": "created_at",
+    "events_scanned": 43,
+    "signals_valid": 43,
+    "signals_filtered_out": 0,
+    "signals_persist_attempted": 43,
+    "invalid_payloads": 0,
+    "doc_ids_touched": [
+      "93070b6a-fdca-4c3b-babe-3632e3cddb66"
+    ],
+    "families_seen": [
+      "MISSING_COMPONENT",
+      "NON_NORMATIVE_FALSE_POSITIVE",
+      "STRUCTURAL_FUSION",
+      "WEAK_GROUNDING"
+    ]
+  },
+  "targets": [
+    {
+      "doc_id": "93070b6a-fdca-4c3b-babe-3632e3cddb66",
+      "families_count": 0,
+      "last_seen_at": null
+    }
+  ],
+  "results": []
+}

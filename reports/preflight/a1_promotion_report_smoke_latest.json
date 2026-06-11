@@ -1,0 +1,71 @@
+{
+  "source_benchmark_json": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\reports\\preflight\\a1_real_extraction_benchmark_latest.json",
+  "docs_executed": 1,
+  "thresholds": {
+    "safe_conf": 0.89,
+    "safe_overlap": 0.16,
+    "safe_min_snippet_chars": 60,
+    "limit_conf": 0.8,
+    "limit_overlap": 0.12
+  },
+  "totals": {
+    "requirements_total": 6,
+    "draft_total": 2,
+    "to_validate_total": 4,
+    "policy_forced_to_validate_total": 0,
+    "safe_promotable_total": 0,
+    "limit_promotable_total": 2,
+    "risky_to_validate_total": 2,
+    "current_draft_share": 0.3333,
+    "current_to_validate_share": 0.6667,
+    "potential_draft_share_after_safe": 0.3333,
+    "potential_draft_share_after_safe_limit": 0.6667,
+    "potential_to_validate_share_after_safe": 0.6667,
+    "potential_to_validate_share_after_safe_limit": 0.3333,
+    "safe_promotable_share_of_tv": 0.0,
+    "safe_plus_limit_share_of_tv": 0.5
+  },
+  "band_counts": {
+    "SAFE_PROMOTION_POOL": 0,
+    "LIMITED_PROMOTION_POOL": 0,
+    "RISKY_PROMOTION_POOL": 1,
+    "NO_VALIDATE": 0
+  },
+  "docs": [
+    {
+      "doc_id": "34112fed-bafd-4519-adb3-7368ccf0815e",
+      "title": "JORT 30 2026 - Arrêté sécheresse",
+      "doc_gate_policy": "EXTRACT_LIMITED",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 8,
+      "requirements_final_per_document": 6,
+      "requirements_total_db": 6,
+      "draft_count": 2,
+      "to_validate_count": 4,
+      "reject_count": 0,
+      "draft_share": 0.3333,
+      "to_validate_share": 0.6667,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 2,
+      "risky_to_validate_count": 2,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.5,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.81,
+          "overlap": 1.0,
+          "text": "Les dossiers sont évalués par le jury."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le jury du concours interne susvisé, ainsi que la période au cours de laquelle la procède à l'évaluation des dossiers présentés calamité est survenue. conformément aux dispositions"
+        }
+      ]
+    }
+  ]
+}

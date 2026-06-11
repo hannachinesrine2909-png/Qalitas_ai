@@ -1,0 +1,2 @@
+tenant_id,company_name,sector,sub_sector,country,certifications,headcount,main_activities,admin_username,admin_password,admin_display_name,admin_role
+atlas_revetement_demo,Atlas Revetement Industriel,Metallurgie,Traitement de surface et peinture industrielle,TN,ISO9001|ISO14001|ISO45001,185,traitement_surface|peinture_epoxy|stockage_solvants|gestion_dechets,qhse@atlas.local,AtlasQhse@123,Responsable QHSE Atlas,ADMIN_QHSE

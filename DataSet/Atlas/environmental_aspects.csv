@@ -1,0 +1,6 @@
+site_code,aspect_code,designation,domain,sub_domain,description
+AT1,ASP-001,Emission de COV,Air,Rejets atmospheriques,Emissions de solvants pendant l'application epoxy
+AT1,ASP-002,Effluents de phosphatation,Eau,Effluents industriels,Rinages chimiques provenant des bains de phosphatation
+AT2,ASP-003,Dechets dangereux souilles,Dechets,Stockage temporaire,"Futs vides, chiffons souilles et boues de peinture"
+AT1,ASP-004,Bruit compresseur,Bruit,Utilites,Niveau sonore eleve dans le local compresseur
+AT2,ASP-005,Risque de fuite solvants,Sol,Pollution accidentelle,Fuite de solvants lors du stockage ou du transvasement

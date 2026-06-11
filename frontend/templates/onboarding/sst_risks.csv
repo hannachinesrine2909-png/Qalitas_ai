@@ -1,0 +1,2 @@
+site_code,risk_code,risk_type,designation,domain,dangers,activities,dangerous_situations,damages,description
+S1,RISK-0001,Ambiance thermique,Ambiance thermique,Ambiance,travail en zone chaude,Laboratoire,exposition a la chaleur,maux de tete|hypertension,Evaluation initiale du risque

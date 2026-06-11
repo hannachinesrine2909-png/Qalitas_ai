@@ -1,0 +1,171 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>QALITAS AI - Conformite</title>
+  <link rel="stylesheet" href="/ui/base.css?v=20260416-1" />
+  <link rel="stylesheet" href="/ui/layout.css?v=20260602_02" />
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_07" />
+</head>
+<body data-page="compliance">
+  <div class="app-shell">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:20px">
+        <a class="brand" href="/ui/dashboard.html"><span class="brand-qali">QALI</span><span class="brand-tas">TAS</span><span class="brand-ai">AI</span></a>
+        <nav class="topbar-nav">
+          <a class="topbar-link" data-top="dashboard" href="/ui/dashboard.html">Pilotage</a>
+          <a class="topbar-link" data-top="requirements" href="/ui/requirements.html">Exigences</a>
+          <a class="topbar-link" data-top="assistant" href="/ui/assistant.html">Assistant expert</a>
+          <a class="topbar-link" data-top="analytics" href="/ui/analytics.html">Analyses</a>
+        </nav>
+      </div>
+      <div class="topbar-right">
+        <span class="tenant-pill" data-auth-tenant>tenant</span>
+        <span class="user-chip"><span class="user-avatar" data-auth-avatar>Q</span><span data-auth-user>Utilisateur</span></span>
+        <button class="logout-link" data-action="logout">Déconnexion</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <section class="sidebar-group">
+        <div class="sidebar-title">Principal</div>
+        <a class="sidebar-link" data-nav="dashboard" href="/ui/dashboard.html">Vue globale</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Pipeline IA</div>
+        <a class="sidebar-link" data-nav="upload" href="/ui/upload.html">Upload & runs</a>
+        <a class="sidebar-link" data-nav="requirements" href="/ui/requirements.html">A1 Exigences</a>
+        <a class="sidebar-link" data-nav="applicability" href="/ui/applicability.html">A2 Applicabilité</a>
+        <a class="sidebar-link" data-nav="compliance" href="/ui/compliance.html">A3 Conformité</a>
+        <a class="sidebar-link" data-nav="assistant" href="/ui/assistant.html">Assistant expert</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Gestion</div>
+        <a class="sidebar-link" data-nav="company" href="/ui/company.html">Entreprise</a>
+        <a class="sidebar-link" data-nav="reports" href="/ui/reports.html">Rapports</a>
+        <a class="sidebar-link" data-nav="settings" href="/ui/settings.html">Paramètres</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Analyse</div>
+        <a class="sidebar-link" data-nav="analytics" href="/ui/analytics.html">Analyses</a>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Conformité opérationnelle</h1>
+        </div>
+        <div class="page-actions">
+          <button id="btn-run-a3" class="btn btn-secondary" data-role="WRITE">Relancer l'analyse</button>
+          <button id="btn-export-pdf" class="btn btn-primary">Exporter PDF</button>
+        </div>
+      </div>
+
+      <section id="compliance-context-banner" class="banner" style="margin-bottom:12px">
+        Vérification du contexte A1/A2/A3...
+      </section>
+
+      <section class="grid grid-4" id="compliance-kpis">
+        <article class="kpi-card" data-kpi-card="ALL" role="button" tabindex="0"><p class="kpi-label">Exigences evaluees</p><p class="kpi-value" data-kpi="total">0</p></article>
+        <article class="kpi-card" data-kpi-card="CONFORME" role="button" tabindex="0"><p class="kpi-label">Conformité</p><p class="kpi-value" data-kpi="rate">0%</p></article>
+        <article class="kpi-card" data-kpi-card="NC_REGLEMENTAIRE" role="button" tabindex="0">
+          <p class="kpi-label">NC réglementaires</p>
+          <p class="kpi-value" data-kpi="nc">0</p>
+          <p class="kpi-meta" data-kpi="nc-breakdown">Majeures 0 - Mineures 0</p>
+        </article>
+        <article class="kpi-card" data-kpi-card="ACTIONS" role="button" tabindex="0"><p class="kpi-label">Actions ouvertes</p><p class="kpi-value" data-kpi="actions">0</p></article>
+      </section>
+
+      <section class="card" id="compliance-filters" style="margin-top:12px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <div class="chips" id="compliance-status-chips">
+          <button class="chip badge-applicable" data-filter="ALL">Toutes</button>
+          <button class="chip" data-filter="ABSENCE_DE_PREUVE">Absence preuve</button>
+          <button class="chip" data-filter="NON_CONFORME">NC</button>
+          <button class="chip" data-filter="PARTIELLEMENT_CONFORME">Partiel</button>
+          <button class="chip" data-filter="CONFORME">Conforme</button>
+        </div>
+        <input id="compliance-search" class="input" style="max-width:340px" placeholder="Rechercher une exigence, domaine, citation..." />
+      </section>
+
+      <section class="grid" style="grid-template-columns:2fr 1fr;margin-top:12px;align-items:start">
+        <article id="compliance-table-section" class="card">
+          <div class="card-head">
+            <h2 class="card-title">Table de conformité</h2>
+            <span class="page-subtitle" id="proof-ratio-hint">Preuves trouvées / attendues</span>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Domaine</th>
+                  <th>Exigence</th>
+                  <th>Statut</th>
+                  <th>Preuves</th>
+                  <th>Sévérité</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="compliance-body">
+                <tr><td colspan="6">Chargement...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="grid" style="gap:12px">
+          <article class="card">
+            <div class="card-head"><h2 class="card-title">Écarts NC (majeur/mineur)</h2></div>
+            <div id="gaps-list" style="display:grid;gap:8px"></div>
+          </article>
+          <article class="card">
+            <div class="card-head"><h2 class="card-title">Corrective actions</h2></div>
+            <div id="actions-list" style="display:grid;gap:8px"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <aside id="compliance-drawer" class="drawer">
+    <div class="card-head">
+      <h3 class="card-title">Détail conformité</h3>
+      <button id="close-compliance-drawer" class="btn btn-ghost">Fermer</button>
+    </div>
+    <div id="compliance-drawer-content" class="page-subtitle">Aucune exigence sélectionnée.</div>
+  </aside>
+
+  <div id="proof-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal-head">
+        <h3 class="card-title">Uploader une preuve</h3>
+        <button class="btn btn-ghost" id="close-proof-modal">Fermer</button>
+      </div>
+      <p class="page-subtitle" id="proof-target">Exigence: -</p>
+      <div class="banner" id="proof-guidance">Preuve attendue: -</div>
+      <div class="field" style="margin-top:10px">
+        <label class="field-label">PDF de preuve</label>
+        <input id="proof-file" type="file" accept="application/pdf" class="input" />
+      </div>
+      <div class="field" style="margin-top:8px">
+        <label class="field-label">Référence</label>
+        <input id="proof-reference" class="input" placeholder="Audit interne 2026" />
+      </div>
+      <div class="grid grid-2" style="margin-top:8px">
+        <div class="field"><label class="field-label">Categorie</label><input id="proof-type" class="input" value="preuve_generale" /></div>
+        <div class="field"><label class="field-label">Domaine</label><input id="proof-domain" class="input" /></div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" id="proof-cancel">Annuler</button>
+        <button class="btn btn-primary" id="proof-submit">Uploader</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/ui/js/compliance.js?v=20260602_02"></script>
+</body>
+</html>

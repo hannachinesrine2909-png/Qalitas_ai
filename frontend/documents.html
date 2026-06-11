@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>QALITAS AI - Documents ingérés</title>
+  <link rel="stylesheet" href="/ui/base.css"/>
+  <link rel="stylesheet" href="/ui/layout.css?v=20260602_02"/>
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_06"/>
+</head>
+<body class="app">
+  <header class="topbar" id="topbar"></header>
+  <div class="layout">
+    <nav class="sidebar" id="sidebar"></nav>
+    <main class="main-content">
+
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1>Documents ingérés</h1>
+          <p id="docsSubtitle">Corpus réglementaire — liste des documents traités par Agent 1</p>
+        </div>
+        <div class="page-header-right">
+          <select id="tenantSelect" class="form-select" style="width:180px" onchange="onTenantChange()"></select>
+          <a href="/ui/upload.html" class="btn btn-primary btn-sm" data-write>+ Importer PDF</a>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Répartition par famille</span></div>
+          <div id="familyRows"><div class="skeleton skeleton-block"></div></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Gate documentaire</span></div>
+          <div id="gateRows"><div class="skeleton skeleton-block"></div></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:16px;padding:14px 16px">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <input id="search" class="form-input" style="width:220px" placeholder="Titre, source…"/>
+          <input id="family" class="form-input" style="width:160px" placeholder="Famille : REGLEMENTAIRE"/>
+          <input id="limit" class="form-input" type="number" min="1" value="50" style="width:90px"/>
+          <button id="btnLoad" class="btn btn-primary btn-sm">Charger</button>
+          <span id="docsCount" style="font-size:11px;color:var(--text-muted);margin-left:auto">—</span>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:16px">
+        <div id="docsTableWrap">
+          <div class="skeleton skeleton-block" style="margin-bottom:8px"></div>
+          <div class="skeleton skeleton-block" style="margin-bottom:8px"></div>
+          <div class="skeleton skeleton-block"></div>
+        </div>
+      </div>
+
+      <div class="card" id="docDetailCard" style="display:none">
+        <div class="card-header">
+          <span class="card-title">Détail document</span>
+          <button class="btn btn-ghost btn-sm" onclick="document.getElementById('docDetailCard').style.display='none'">Fermer</button>
+        </div>
+        <div id="docDetail" style="font-size:13px"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="/ui/assets/app.js"></script>
+  <script>
+    const me = App.renderShell('documents');
+    let tenant = App.getTenant();
+
+    App.populateTenantSelect('tenantSelect').then(() => {
+      document.getElementById('tenantSelect').value = tenant;
+    }).catch(() => {
+      document.getElementById('tenantSelect').value = tenant;
+    });
+
+    function onTenantChange() {
+      const sel = document.getElementById('tenantSelect');
+      if (sel.value === tenant) return;
+      tenant = sel.value;
+      App.setTenant(tenant);
+      window.location.reload();
+    }
+
+    function renderBars(targetId, items) {
+      if (!items.length) {
+        document.getElementById(targetId).innerHTML =
+          '<div class="empty-state-msg" style="font-size:11px;padding:8px 0">Aucune donnée</div>';
+        return;
+      }
+      const max = Math.max(...items.map(x => Number(x.documents_count || x.count || 0)));
+      const barClasses = ['progress-blue','progress-cyan','progress-green','progress-amber','progress-purple'];
+      document.getElementById(targetId).innerHTML = items.map((x, i) => {
+        const v = Number(x.documents_count || x.count || 0);
+        const pct = Math.max(4, Math.round((v/max)*100));
+        const label = x.family || x.policy || x.key || 'N/A';
+        return `<div style="margin-bottom:8px">
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+            <span>${App.escHtml(label)}</span><span style="color:var(--text-muted)">${v}</span>
+          </div>
+          <div class="progress-wrap"><div class="progress-fill ${barClasses[i%barClasses.length]}" style="width:${pct}%"></div></div>
+        </div>`;
+      }).join('');
+    }
+
+    function loadDocuments() {
+      const search = encodeURIComponent(document.getElementById('search').value.trim());
+      const family = encodeURIComponent(document.getElementById('family').value.trim());
+      const limit = Number(document.getElementById('limit').value || 50);
+
+      document.getElementById('docsTableWrap').innerHTML =
+        '<div class="skeleton skeleton-block" style="margin-bottom:8px"></div><div class="skeleton skeleton-block"></div>';
+
+      App.api(`/api/v1/documents?limit=${limit}&search=${search}&family=${family}&tenant_id=${encodeURIComponent(tenant)}`)
+        .then(payload => {
+          const rows = payload.items || [];
+          document.getElementById('docsCount').textContent = `${rows.length} document(s)`;
+          document.getElementById('docsSubtitle').textContent =
+            `${rows.length} document(s) - Tenant : ${tenant}`;
+
+          if (!rows.length) {
+            document.getElementById('docsTableWrap').innerHTML =
+              '<div class="empty-state" style="padding:32px"><div class="empty-state-title">Aucun document</div><div class="empty-state-msg"><a href="/ui/upload.html" style="color:var(--blue-primary)">Importer un PDF</a></div></div>';
+            return;
+          }
+
+          let html = `<table class="data-table"><thead><tr>
+            <th>Nom document</th>
+            <th style="width:120px">Famille</th>
+            <th style="width:100px">Source</th>
+            <th style="width:140px">Date</th>
+            <th style="width:70px">Exig.</th>
+            <th style="width:60px">Draft</th>
+            <th style="width:80px">À valider</th>
+            <th style="width:70px"></th>
+          </tr></thead><tbody>`;
+
+          html += rows.map(r => `<tr>
+            <td style="font-size:12px;font-weight:500">${App.escHtml(r.title||'—')}</td>
+            <td>${App.domainBadge(r.document_family||r.family||'')}</td>
+            <td style="font-size:11px;color:var(--text-muted)">${App.escHtml(r.source||'—')}</td>
+            <td style="font-size:11px;color:var(--text-muted)">${(r.created_at||'').slice(0,19).replace('T',' ')}</td>
+            <td><strong>${r.requirements_total||0}</strong></td>
+            <td style="color:var(--text-muted)">${r.draft_count||0}</td>
+            <td>${r.to_validate_count>0 ? `<span class="badge badge-running">${r.to_validate_count}</span>` : `<span style="color:var(--text-muted)">0</span>`}</td>
+            <td><button class="btn btn-ghost btn-sm" onclick="openDetail('${r.doc_id}')">Ouvrir</button></td>
+          </tr>`).join('');
+
+          html += '</tbody></table>';
+          document.getElementById('docsTableWrap').innerHTML = html;
+        })
+        .catch(() => {
+          document.getElementById('docsTableWrap').innerHTML =
+            '<div class="alert alert-error">Erreur chargement documents.</div>';
+        });
+    }
+
+    function openDetail(docId) {
+      document.getElementById('docDetailCard').style.display = 'block';
+      document.getElementById('docDetail').innerHTML =
+        '<div class="skeleton skeleton-block" style="margin-bottom:8px"></div><div class="skeleton skeleton-block"></div>';
+
+      App.api(`/api/v1/documents/${docId}/detail`)
+        .then(d => {
+          const timeline = (d.timeline || []).map(x =>
+            `<div style="display:flex;gap:8px;padding:5px 0;border-bottom:.5px solid var(--border);font-size:11px">
+              <span style="font-weight:500;color:var(--text-primary)">${App.escHtml(x.step||'')}</span>
+              <span class="badge badge-gray" style="font-size:9px">${App.escHtml(x.status||'')}</span>
+              ${x.policy ? `<span style="color:var(--text-muted)">${App.escHtml(x.policy)}</span>` : ''}
+            </div>`).join('');
+
+          document.getElementById('docDetail').innerHTML = `
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;font-size:12px">
+              <div><span style="color:var(--text-muted)">doc_id</span><br/><code style="font-size:10px">${d.doc_id||'—'}</code></div>
+              <div><span style="color:var(--text-muted)">Source</span><br/><span style="font-weight:500">${App.escHtml(d.source||'—')}</span></div>
+              <div><span style="color:var(--text-muted)">Famille</span><br/>${App.domainBadge(d.document_family||'')}</div>
+              <div><span style="color:var(--text-muted)">Gate policy</span><br/><span style="font-weight:500">${App.escHtml(d.doc_gate?.policy||'—')}</span></div>
+              <div><span style="color:var(--text-muted)">Pages</span><br/><strong>${d.pages_count||0}</strong></div>
+              <div><span style="color:var(--text-muted)">Articles</span><br/><strong>${d.articles_count||0}</strong></div>
+              <div><span style="color:var(--text-muted)">Exigences</span><br/><strong>${d.requirements_total||0}</strong></div>
+              <div><span style="color:var(--text-muted)">Confiance moy.</span><br/>${App.confidenceBadge(d.avg_confidence||0)}</div>
+            </div>
+            ${timeline ? `<div style="margin-bottom:12px"><div style="font-size:11px;font-weight:600;margin-bottom:6px;color:var(--text-muted)">Timeline</div>${timeline}</div>` : ''}
+            <div style="display:flex;gap:8px;margin-top:12px">
+              <a class="btn btn-outline btn-sm" href="/ui/requirements.html">Voir exigences</a>
+            </div>
+          `;
+          document.getElementById('docDetailCard').scrollIntoView({ behavior: 'smooth' });
+          localStorage.setItem('a1_last_doc_id', d.doc_id);
+        })
+        .catch(() => {
+          document.getElementById('docDetail').innerHTML =
+            '<div class="alert alert-error">Erreur chargement détail document.</div>';
+        });
+    }
+    window.openDetail = openDetail;
+
+    document.getElementById('btnLoad').addEventListener('click', loadDocuments);
+    document.getElementById('search').addEventListener('keydown', e => {
+      if (e.key === 'Enter') loadDocuments();
+    });
+
+    App.api('/api/v1/analytics/families').then(d => {
+      renderBars('familyRows', d.items || []);
+    }).catch(() => {
+      document.getElementById('familyRows').innerHTML =
+        '<div class="empty-state-msg" style="font-size:11px">Données analytiques indisponibles</div>';
+    });
+
+    App.api('/api/v1/analytics/gate').then(d => {
+      const entries = Object.entries(d.doc_gate_policy_counts || {});
+      renderBars('gateRows', entries.map(([policy, count]) => ({ policy, count })));
+    }).catch(() => {
+      document.getElementById('gateRows').innerHTML =
+        '<div class="empty-state-msg" style="font-size:11px">Données gate indisponibles</div>';
+    });
+
+    loadDocuments();
+  </script>
+</body>
+</html>

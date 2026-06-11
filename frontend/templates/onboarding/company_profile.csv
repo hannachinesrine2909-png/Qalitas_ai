@@ -1,0 +1,2 @@
+tenant_id,company_name,sector,sub_sector,country,certifications,headcount,main_activities,admin_username,admin_password,admin_display_name,admin_role
+nova_industrie,Nova Industrie,Industrie textile,Teinture et serigraphie,TN,ISO9001|ISO14001|ISO45001,120,teinture|delavage|serigraphie,qhse_admin,ChangeMe123!,Responsable QHSE,ADMIN_QHSE

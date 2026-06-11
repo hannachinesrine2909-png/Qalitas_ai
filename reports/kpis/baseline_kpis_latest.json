@@ -1,0 +1,25 @@
+{
+  "kpis_version": "B0.4-1.1.0",
+  "generated_at_utc": "2026-04-18T18:08:29+00:00",
+  "relaxed_type_f1": 0.7609,
+  "fn_long_article_rate": null,
+  "provider_error_pct": 0.0,
+  "cost_per_case_usd": 0.0,
+  "total_estimated_cost_usd": 0.0,
+  "run_status": "VALID",
+  "infra_valid": true,
+  "gates": {
+    "cases_scored_gte_95pct": true,
+    "provider_error_pct_lte_5": true
+  },
+  "support": {
+    "cases_total": 28,
+    "cases_scored": 28,
+    "cases_scored_rate_pct": 100.0,
+    "provider_error_cases": 0,
+    "long_positive_cases": 0,
+    "long_false_negative_cases": 0,
+    "total_llm_calls": 39,
+    "total_tokens": 205048
+  }
+}

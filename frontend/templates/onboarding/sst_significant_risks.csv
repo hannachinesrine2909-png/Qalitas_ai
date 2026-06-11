@@ -1,0 +1,2 @@
+site_code,risk_code,year,activities,domain,risk_type,dangers,appreciation,score,date_start,date_end,obligations,exposure,prevention_efficiency,rpn_efficiency
+S1,RISK-0001,2026,Laboratoire,Ambiance,Ambiance thermique,travail en zone chaude,3(G)/4(F)/3(N),12,2026-01-01,2026-12-31,Port des EPI,Poste fixe,75,3.5

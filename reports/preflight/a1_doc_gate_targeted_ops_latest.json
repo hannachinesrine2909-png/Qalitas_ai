@@ -1,0 +1,172 @@
+{
+  "target_noise_lot": "on",
+  "target_focus": "noise_mixed",
+  "force_full_rebuild": "on",
+  "docs_executed": 3,
+  "elapsed_total_sec": 221.552,
+  "off_raw_llm_candidates_total": 87,
+  "on_raw_llm_candidates_total": 78,
+  "off_postcall_rejected_total": 15,
+  "on_postcall_rejected_total": 10,
+  "off_final_kept_total": 70,
+  "on_final_kept_total": 66,
+  "raw_to_final_conversion_rate_off": 0.8046,
+  "raw_to_final_conversion_rate_on": 0.8462,
+  "part_individual_acts_stopped_pre_llm": 0.1,
+  "part_summary_avis_stopped_pre_llm": 0.0,
+  "postcall_noise_avoided_by_gate_total": 5,
+  "rows": [
+    {
+      "doc_id": "8c745c81-0a5b-44e8-b24b-d930bb80ff8d",
+      "title": "Jo0722020",
+      "target_hits": 0,
+      "off": {
+        "return_code": 0,
+        "timed_out": false,
+        "elapsed_sec": 74.542,
+        "raw_llm_candidates_total": 21,
+        "candidates_dropped_pre_llm_total": 0,
+        "postcall_rejected_total": 6,
+        "final_kept_total": 14,
+        "raw_to_final_conversion_rate": 0.6667,
+        "article_drop_reason_counts": {},
+        "units_dropped_limited_policy_total": 0,
+        "doc_gate_policy": "EXTRACT_FULL",
+        "doc_gate_reason_codes": [
+          "DOC_GATE_DISABLED"
+        ],
+        "stdout_tail": "Chunks empty      : 22\nChunks error      : 0\nDoc gate policy   : EXTRACT_FULL\nDoc gate type     : DISABLED\nDoc gate reasons  : ['DOC_GATE_DISABLED']\nLLM raw outputs   : 21\nInserted          : 14\nRejected low value: 4\nRejected scope    : 0\nRejected except.  : 0\nRejected invented : 2\nRejected oos      : 0\nDeduplicated      : 1\nDedup article-ex  : 0\nDedup doc-exact   : 1\nDedup article-pre : 0\nLong safety chunks: 16\nLong safety forced: 0\nEmpty LLM fallback: 0\nLong safety backup: 0\nSoftened rejects  : 4\nArticle policy cnt: {'EXTRACT_FULL': 30}\nArticle reason cnt: {'ARTICLE_GATE_DISABLED': 30}\nArticle drop rsn  : {}\nArticle dropped   : 0\nUnits drop limited: 0\nLimited forced    : 0\nLimited data arts : 0\nLimited data objs : 0\nLimited data types: {}\nPolicy forced TV  : 0\nProviders used    : ['openai']\nModels used       : ['gpt-5.4-mini-2026-03-17']\nFallback used     : False\nEvent inserted    : True"
+      },
+      "on": {
+        "return_code": 0,
+        "timed_out": false,
+        "elapsed_sec": 27.281,
+        "raw_llm_candidates_total": 14,
+        "candidates_dropped_pre_llm_total": 28,
+        "postcall_rejected_total": 1,
+        "final_kept_total": 12,
+        "raw_to_final_conversion_rate": 0.8571,
+        "article_drop_reason_counts": {
+          "ARTICLE_INDIVIDUAL_ACT": 1,
+          "ARTICLE_ANNEX_TABLE_DATA": 6
+        },
+        "units_dropped_limited_policy_total": 21,
+        "doc_gate_policy": "EXTRACT_FULL",
+        "doc_gate_reason_codes": [
+          "DOC_REGULATORY_TITLE"
+        ],
+        "stdout_tail": "Chunks empty      : 22\nChunks error      : 0\nDoc gate policy   : EXTRACT_FULL\nDoc gate type     : REGULATORY_ACT\nDoc gate reasons  : ['DOC_REGULATORY_TITLE']\nLLM raw outputs   : 14\nInserted          : 12\nRejected low value: 1\nRejected scope    : 0\nRejected except.  : 0\nRejected invented : 0\nRejected oos      : 0\nDeduplicated      : 1\nDedup article-ex  : 0\nDedup doc-exact   : 1\nDedup article-pre : 0\nLong safety chunks: 12\nLong safety forced: 0\nEmpty LLM fallback: 0\nLong safety backup: 0\nSoftened rejects  : 3\nArticle policy cnt: {'EXTRACT_FULL': 15, 'DROP': 1, 'EXTRACT_LIMITED_DATA': 6, 'EXTRACT_LIMITED': 8}\nArticle reason cnt: {'ARTICLE_DEFAULT_FULL': 15, 'ARTICLE_INDIVIDUAL_ACT': 1, 'ARTICLE_ANNEX_TABLE_DATA': 6, 'ARTICLE_ANNEX_MIXED_NORMATIVE': 3, 'ARTICLE_CONCOURS_PROCEDURAL': 5}\nArticle drop rsn  : {'ARTICLE_INDIVIDUAL_ACT': 1, 'ARTICLE_ANNEX_TABLE_DATA': 6}\nArticle dropped   : 7\nUnits drop limited: 21\nLimited forced    : 3\nLimited data arts : 6\nLimited data objs : 5\nLimited data types: {'tariff': 5}\nPolicy forced TV  : 4\nProviders used    : ['openai']\nModels used       : ['gpt-5.4-mini-2026-03-17']\nFallback used     : False\nEvent inserted    : True"
+      },
+      "delta_raw_llm_candidates_total": -7,
+      "delta_candidates_dropped_pre_llm_total": 28,
+      "delta_postcall_rejected_total": -5,
+      "delta_final_kept_total": -2,
+      "delta_raw_to_final_conversion_rate": 0.1904,
+      "individual_acts_stopped_pre_llm": 1,
+      "summary_avis_stopped_pre_llm": 0,
+      "share_individual_acts_stopped": 0.0357,
+      "share_summary_avis_stopped": 0.0,
+      "postcall_noise_avoided_by_gate": 5
+    },
+    {
+      "doc_id": "408f28bb-d1d6-4754-bcde-499cf15c4853",
+      "title": "Jo0932020",
+      "target_hits": 0,
+      "off": {
+        "return_code": 0,
+        "timed_out": false,
+        "elapsed_sec": 33.105,
+        "raw_llm_candidates_total": 1,
+        "candidates_dropped_pre_llm_total": 0,
+        "postcall_rejected_total": 0,
+        "final_kept_total": 1,
+        "raw_to_final_conversion_rate": 1.0,
+        "article_drop_reason_counts": {},
+        "units_dropped_limited_policy_total": 0,
+        "doc_gate_policy": "EXTRACT_FULL",
+        "doc_gate_reason_codes": [
+          "DOC_GATE_DISABLED"
+        ],
+        "stdout_tail": "Chunks empty      : 39\nChunks error      : 0\nDoc gate policy   : EXTRACT_FULL\nDoc gate type     : DISABLED\nDoc gate reasons  : ['DOC_GATE_DISABLED']\nLLM raw outputs   : 1\nInserted          : 1\nRejected low value: 0\nRejected scope    : 0\nRejected except.  : 0\nRejected invented : 0\nRejected oos      : 0\nDeduplicated      : 0\nDedup article-ex  : 0\nDedup doc-exact   : 0\nDedup article-pre : 0\nLong safety chunks: 0\nLong safety forced: 0\nEmpty LLM fallback: 0\nLong safety backup: 0\nSoftened rejects  : 0\nArticle policy cnt: {'EXTRACT_FULL': 40}\nArticle reason cnt: {'ARTICLE_GATE_DISABLED': 40}\nArticle drop rsn  : {}\nArticle dropped   : 0\nUnits drop limited: 0\nLimited forced    : 0\nLimited data arts : 0\nLimited data objs : 0\nLimited data types: {}\nPolicy forced TV  : 0\nProviders used    : ['openai']\nModels used       : ['gpt-5.4-mini-2026-03-17']\nFallback used     : False\nEvent inserted    : True"
+      },
+      "on": {
+        "return_code": 0,
+        "timed_out": false,
+        "elapsed_sec": 33.101,
+        "raw_llm_candidates_total": 1,
+        "candidates_dropped_pre_llm_total": 0,
+        "postcall_rejected_total": 0,
+        "final_kept_total": 1,
+        "raw_to_final_conversion_rate": 1.0,
+        "article_drop_reason_counts": {},
+        "units_dropped_limited_policy_total": 0,
+        "doc_gate_policy": "EXTRACT_FULL",
+        "doc_gate_reason_codes": [
+          "DOC_DEFAULT_CONSERVATIVE"
+        ],
+        "stdout_tail": "Chunks empty      : 39\nChunks error      : 0\nDoc gate policy   : EXTRACT_FULL\nDoc gate type     : UNKNOWN\nDoc gate reasons  : ['DOC_DEFAULT_CONSERVATIVE']\nLLM raw outputs   : 1\nInserted          : 1\nRejected low value: 0\nRejected scope    : 0\nRejected except.  : 0\nRejected invented : 0\nRejected oos      : 0\nDeduplicated      : 0\nDedup article-ex  : 0\nDedup doc-exact   : 0\nDedup article-pre : 0\nLong safety chunks: 0\nLong safety forced: 0\nEmpty LLM fallback: 0\nLong safety backup: 0\nSoftened rejects  : 0\nArticle policy cnt: {'EXTRACT_FULL': 40}\nArticle reason cnt: {'ARTICLE_DEFAULT_FULL': 40}\nArticle drop rsn  : {}\nArticle dropped   : 0\nUnits drop limited: 0\nLimited forced    : 0\nLimited data arts : 0\nLimited data objs : 0\nLimited data types: {}\nPolicy forced TV  : 0\nProviders used    : ['openai']\nModels used       : ['gpt-5.4-mini-2026-03-17']\nFallback used     : False\nEvent inserted    : True"
+      },
+      "delta_raw_llm_candidates_total": 0,
+      "delta_candidates_dropped_pre_llm_total": 0,
+      "delta_postcall_rejected_total": 0,
+      "delta_final_kept_total": 0,
+      "delta_raw_to_final_conversion_rate": 0.0,
+      "individual_acts_stopped_pre_llm": 0,
+      "summary_avis_stopped_pre_llm": 0,
+      "share_individual_acts_stopped": 0.0,
+      "share_summary_avis_stopped": 0.0,
+      "postcall_noise_avoided_by_gate": 0
+    },
+    {
+      "doc_id": "38385ff6-634c-487d-ac99-6fed79ea494b",
+      "title": "JORT 121 2025 - Décret-loi sociétés communautaires",
+      "target_hits": 0,
+      "off": {
+        "return_code": 0,
+        "timed_out": false,
+        "elapsed_sec": 28.256,
+        "raw_llm_candidates_total": 65,
+        "candidates_dropped_pre_llm_total": 0,
+        "postcall_rejected_total": 9,
+        "final_kept_total": 55,
+        "raw_to_final_conversion_rate": 0.8462,
+        "article_drop_reason_counts": {},
+        "units_dropped_limited_policy_total": 0,
+        "doc_gate_policy": "EXTRACT_FULL",
+        "doc_gate_reason_codes": [
+          "DOC_GATE_DISABLED"
+        ],
+        "stdout_tail": "Chunks empty      : 7\nChunks error      : 0\nDoc gate policy   : EXTRACT_FULL\nDoc gate type     : DISABLED\nDoc gate reasons  : ['DOC_GATE_DISABLED']\nLLM raw outputs   : 65\nInserted          : 55\nRejected low value: 8\nRejected scope    : 0\nRejected except.  : 0\nRejected invented : 0\nRejected oos      : 1\nDeduplicated      : 1\nDedup article-ex  : 0\nDedup doc-exact   : 0\nDedup article-pre : 1\nLong safety chunks: 20\nLong safety forced: 0\nEmpty LLM fallback: 0\nLong safety backup: 0\nSoftened rejects  : 9\nArticle policy cnt: {'EXTRACT_FULL': 36}\nArticle reason cnt: {'ARTICLE_GATE_DISABLED': 36}\nArticle drop rsn  : {}\nArticle dropped   : 0\nUnits drop limited: 0\nLimited forced    : 0\nLimited data arts : 0\nLimited data objs : 0\nLimited data types: {}\nPolicy forced TV  : 0\nProviders used    : ['gemini', 'openai']\nModels used       : ['gemini-2.5-flash', 'gpt-5.4-mini-2026-03-17']\nFallback used     : True\nEvent inserted    : True"
+      },
+      "on": {
+        "return_code": 0,
+        "timed_out": false,
+        "elapsed_sec": 25.264,
+        "raw_llm_candidates_total": 63,
+        "candidates_dropped_pre_llm_total": 2,
+        "postcall_rejected_total": 9,
+        "final_kept_total": 53,
+        "raw_to_final_conversion_rate": 0.8413,
+        "article_drop_reason_counts": {
+          "ARTICLE_INDIVIDUAL_ACT": 2
+        },
+        "units_dropped_limited_policy_total": 0,
+        "doc_gate_policy": "EXTRACT_FULL",
+        "doc_gate_reason_codes": [
+          "DOC_REGULATORY_TITLE"
+        ],
+        "stdout_tail": "Chunks empty      : 9\nChunks error      : 0\nDoc gate policy   : EXTRACT_FULL\nDoc gate type     : REGULATORY_ACT\nDoc gate reasons  : ['DOC_REGULATORY_TITLE']\nLLM raw outputs   : 63\nInserted          : 53\nRejected low value: 8\nRejected scope    : 0\nRejected except.  : 0\nRejected invented : 0\nRejected oos      : 1\nDeduplicated      : 1\nDedup article-ex  : 0\nDedup doc-exact   : 0\nDedup article-pre : 1\nLong safety chunks: 20\nLong safety forced: 0\nEmpty LLM fallback: 0\nLong safety backup: 0\nSoftened rejects  : 9\nArticle policy cnt: {'EXTRACT_FULL': 32, 'EXTRACT_LIMITED': 2, 'DROP': 2}\nArticle reason cnt: {'ARTICLE_DEFAULT_FULL': 21, 'ARTICLE_NORMATIVE': 4, 'ARTICLE_COMMISSION_NORMATIVE': 5, 'ARTICLE_CONCOURS_PROCEDURAL': 2, 'ARTICLE_INDIVIDUAL_ACT': 2, 'ARTICLE_CONCOURS_NORMATIVE': 2}\nArticle drop rsn  : {'ARTICLE_INDIVIDUAL_ACT': 2}\nArticle dropped   : 2\nUnits drop limited: 0\nLimited forced    : 0\nLimited data arts : 0\nLimited data objs : 0\nLimited data types: {}\nPolicy forced TV  : 0\nProviders used    : ['gemini', 'openai']\nModels used       : ['gemini-2.5-flash', 'gpt-5.4-mini-2026-03-17']\nFallback used     : True\nEvent inserted    : True"
+      },
+      "delta_raw_llm_candidates_total": -2,
+      "delta_candidates_dropped_pre_llm_total": 2,
+      "delta_postcall_rejected_total": 0,
+      "delta_final_kept_total": -2,
+      "delta_raw_to_final_conversion_rate": -0.0049,
+      "individual_acts_stopped_pre_llm": 2,
+      "summary_avis_stopped_pre_llm": 0,
+      "share_individual_acts_stopped": 1.0,
+      "share_summary_avis_stopped": 0.0,
+      "postcall_noise_avoided_by_gate": 0
+    }
+  ]
+}

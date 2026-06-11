@@ -1,0 +1,185 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QALITAS AI - Analyses</title>
+  <link rel="stylesheet" href="/ui/base.css" />
+  <link rel="stylesheet" href="/ui/layout.css?v=20260602_02" />
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_06" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body data-page="analytics">
+  <div class="app-shell">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:20px">
+        <a class="brand" href="/ui/dashboard.html"><span class="brand-qali">QALI</span><span class="brand-tas">TAS</span><span class="brand-ai">AI</span></a>
+        <nav class="topbar-nav">
+          <a class="topbar-link" data-top="dashboard" href="/ui/dashboard.html">Pilotage</a>
+          <a class="topbar-link" data-top="requirements" href="/ui/requirements.html">Exigences</a>
+          <a class="topbar-link" data-top="assistant" href="/ui/assistant.html">Assistant expert</a>
+          <a class="topbar-link" data-top="analytics" href="/ui/analytics.html">Analyses</a>
+        </nav>
+      </div>
+      <div class="topbar-right">
+        <span class="tenant-pill" data-auth-tenant>tenant</span>
+        <span class="user-chip"><span class="user-avatar" data-auth-avatar>Q</span><span data-auth-user>Utilisateur</span></span>
+        <button class="logout-link" data-action="logout">Déconnexion</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <section class="sidebar-group">
+        <div class="sidebar-title">Principal</div>
+        <a class="sidebar-link" data-nav="dashboard" href="/ui/dashboard.html">Vue globale</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Pipeline IA</div>
+        <a class="sidebar-link" data-nav="upload" href="/ui/upload.html">Upload & runs</a>
+        <a class="sidebar-link" data-nav="requirements" href="/ui/requirements.html">A1 Exigences</a>
+        <a class="sidebar-link" data-nav="applicability" href="/ui/applicability.html">A2 Applicabilité</a>
+        <a class="sidebar-link" data-nav="compliance" href="/ui/compliance.html">A3 Conformité</a>
+        <a class="sidebar-link" data-nav="assistant" href="/ui/assistant.html">Assistant expert</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Gestion</div>
+        <a class="sidebar-link" data-nav="company" href="/ui/company.html">Entreprise</a>
+        <a class="sidebar-link" data-nav="reports" href="/ui/reports.html">Rapports</a>
+        <a class="sidebar-link" data-nav="settings" href="/ui/settings.html">Paramètres</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Analyse</div>
+        <a class="sidebar-link" data-nav="analytics" href="/ui/analytics.html">Analyses</a>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-head analytics-head">
+        <div>
+          <h1 class="page-title">Analyses réglementaires</h1>
+        </div>
+        <div class="analytics-head-actions">
+          <span id="analytics-scope-label" class="badge badge-info">Périmètre: Tous domaines</span>
+          <span id="analytics-last-update" class="badge badge-absence">MAJ: -</span>
+          <button id="analytics-refresh" class="btn btn-secondary">Rafraîchir</button>
+        </div>
+      </div>
+
+      <section class="card analytics-filter-card">
+        <div class="analytics-filter-layout">
+          <div class="analytics-filter-stack">
+            <div>
+              <div class="filter-title">Périmètre domaine</div>
+              <div class="chips" id="analytics-domain-pills"></div>
+            </div>
+            <div>
+              <div class="filter-title">Fenêtre d'analyse</div>
+              <div class="chips" id="analytics-period-pills"></div>
+            </div>
+          </div>
+          <div id="analytics-context-line" class="analytics-context-line">KPIs cumulés tenant, graphiques pilotés par période.</div>
+        </div>
+      </section>
+
+      <section id="analytics-kpis" class="analytics-kpi-grid"></section>
+      <section id="analytics-ratios" class="analytics-ratio-grid"></section>
+
+      <section class="grid analytics-main-grid">
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h2 class="card-title">Tendance pipeline & conformité</h2>
+              <p class="card-subtitle">Volumes mensuels du pipeline et taux de conformite.</p>
+            </div>
+          </div>
+          <div id="line-panel" class="chart-panel"></div>
+          <div id="line-meta" class="chart-note"></div>
+        </article>
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h2 class="card-title">Repartition des statuts de conformite</h2>
+              <p class="card-subtitle">Conforme / partiel / NC / absence de preuve.</p>
+            </div>
+          </div>
+          <div id="donut-panel" class="chart-panel donut-panel"></div>
+          <div id="status-kpi-list" class="status-kpi-list"></div>
+        </article>
+      </section>
+
+      <section class="grid analytics-lower-grid">
+        <div class="analytics-column-stack">
+          <article class="card">
+            <div class="card-head">
+              <div>
+                <h2 class="card-title">Funnel de progression</h2>
+                <p class="card-subtitle">Conversion entre étapes critiques du cycle réglementaire.</p>
+              </div>
+            </div>
+            <div id="funnel-wrap" class="hr-funnel"></div>
+          </article>
+          <article class="card">
+            <div class="card-head">
+              <div>
+                <h2 class="card-title">Top documents contributeurs</h2>
+                <p class="card-subtitle">Documents les plus denses en exigences détectées.</p>
+              </div>
+            </div>
+            <div id="top-docs"></div>
+          </article>
+        </div>
+        <div class="analytics-column-stack">
+          <article class="card">
+            <div class="card-head">
+              <div>
+                <h2 class="card-title">Top-5 gaps prioritaires</h2>
+                <p class="card-subtitle">Écarts les plus volumineux à traiter en priorité.</p>
+              </div>
+            </div>
+            <div id="top-gaps" class="gap-list"></div>
+          </article>
+          <article class="card">
+            <div class="card-head">
+              <div>
+                <h2 class="card-title">Qualité pipeline & gate</h2>
+                <p class="card-subtitle">Indicateurs de robustesse extraction/validation.</p>
+              </div>
+            </div>
+            <div id="quality-wrap"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title">Insights & recommandations</h2>
+            <p class="card-subtitle">Priorisation QHSE.</p>
+          </div>
+        </div>
+        <div id="insights-panel" class="insights-panel"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title">Heatmap domaines x sévérité</h2>
+            <p class="card-subtitle">Intensité des écarts par domaine et niveau de gravité.</p>
+          </div>
+        </div>
+        <div class="heatmap-legend">
+          <span><i class="legend-swatch hm-0"></i>0</span>
+          <span><i class="legend-swatch hm-1"></i>Faible</span>
+          <span><i class="legend-swatch hm-2"></i>Moyen</span>
+          <span><i class="legend-swatch hm-3"></i>Élevé</span>
+          <span><i class="legend-swatch hm-g1"></i>Conforme faible</span>
+          <span><i class="legend-swatch hm-g3"></i>Conforme élevé</span>
+        </div>
+        <div id="heatmap-wrap" class="heatmap"></div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/ui/js/analytics.js?v=20260506_03"></script>
+</body>
+</html>

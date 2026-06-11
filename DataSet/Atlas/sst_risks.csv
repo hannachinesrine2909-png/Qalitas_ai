@@ -1,0 +1,6 @@
+site_code,risk_code,risk_type,designation,domain,dangers,activities,dangerous_situations,damages,description
+AT1,RSK-001,Chimique,Inhalation de solvants,SST,vapeurs de xylene et acetone,Application peinture epoxy,exposition en cabine ou lors du melange,irritation|maux de tete|effets chroniques,Risque d'exposition par inhalation en zone peinture
+AT1,RSK-002,Incendie,Incendie en depot solvants,SST,produits inflammables,Stockage solvants,futs ouverts ou etiquettes illisibles,brulures|dommages materiels,Risque d'incendie lors du stockage et des transferts
+AT1,RSK-003,Mecanique,Projection lors maintenance compresseur,SST,pieces sous pression,Maintenance compresseur,depose sans consignation,projection|coupure,Risque lors des interventions de maintenance
+AT2,RSK-004,Manutention,Manutention de futs,SST,charge lourde et encombrante,Gestion des dechets dangereux,deplacement manuel de futs,TMS|chute|ecrasement,Risque de manutention dans le depot
+AT3,RSK-005,Organisationnel,Non maitrise de la veille,SST,obligation non suivie,Veille reglementaire,absence de mise a jour du registre,non-conformite|retard,Risque organisationnel sur les obligations QHSE

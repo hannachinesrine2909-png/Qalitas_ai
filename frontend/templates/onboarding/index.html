@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qalitas - Templates d'onboarding</title>
+  <link rel="stylesheet" href="/ui/base.css" />
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_06" />
+  <style>
+    .wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98));
+      border: 0.5px solid var(--border);
+      border-top: 3px solid var(--blue-primary);
+      border-radius: var(--radius-card);
+      padding: 22px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .hero p {
+      margin-top: 10px;
+      max-width: 940px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .warn {
+      margin-top: 14px;
+      padding: 13px 15px;
+      border: 0.5px solid rgba(245, 158, 11, 0.24);
+      border-left: 3px solid var(--amber);
+      border-radius: 12px;
+      background: rgba(255, 251, 235, 0.82);
+      color: var(--text-primary);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .warn-info {
+      border-color: rgba(0, 151, 167, 0.22);
+      border-left-color: var(--cyan-primary);
+      background: rgba(236, 254, 255, 0.78);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+      align-items: stretch;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 18px;
+    }
+
+    .card h2 {
+      margin: 6px 0 0;
+      font-size: 18px;
+      line-height: 1.28;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .card p {
+      margin-top: 10px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .badge {
+      background: var(--status-applicable-bg);
+      color: var(--status-applicable-text);
+      border-color: rgba(21, 101, 192, 0.14);
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    li + li { margin-top: 6px; }
+
+    .conventions-card {
+      grid-column: 1 / -1;
+    }
+
+    .conventions-card ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px 28px;
+    }
+
+    .conventions-card li + li {
+      margin-top: 0;
+    }
+
+    .downloads {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .download {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      min-height: 68px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 0.5px solid rgba(15, 23, 42, 0.12);
+      text-decoration: none;
+      color: var(--text-primary);
+      background: #ffffff;
+      transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+    }
+
+    .download:hover {
+      border-color: rgba(21, 101, 192, 0.34);
+      background: #f8fbff;
+      transform: translateY(-1px);
+    }
+
+    .download div {
+      min-width: 0;
+    }
+
+    .download strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
+    .download span {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .download > span:last-child {
+      color: var(--blue-primary);
+      font-weight: 600;
+      white-space: nowrap;
+      border-radius: 999px;
+      background: rgba(21, 101, 192, 0.08);
+      padding: 5px 9px;
+    }
+
+    code {
+      background: rgba(21, 101, 192, 0.08);
+      color: var(--navy-800);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-family: "IBM Plex Mono", Consolas, monospace;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 24px, 1180px);
+        padding: 18px 0 40px;
+      }
+
+      .hero {
+        padding: 18px;
+      }
+
+      .hero h1 {
+        font-size: 22px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .conventions-card {
+        grid-column: auto;
+      }
+
+      .conventions-card ul {
+        grid-template-columns: 1fr;
+      }
+
+      .download {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .download > span:last-child {
+        justify-self: start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Pack de templates d'onboarding</h1>
+      <p>Pack générique multi-tenant. Les valeurs changent selon l'entreprise.</p>
+    </section>
+
+    <div class="warn">
+      Tables CSV. Documents PDF.
+    </div>
+
+    <div class="warn warn-info">
+      Templates génériques. Données propres à chaque tenant.
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="badge">Initialisation</div>
+        <h2>Identite et corpus reglementaire</h2>
+        <p>Profil société, admin initial et corpus réglementaire.</p>
+        <div class="downloads">
+          <a class="download" href="/ui/templates/onboarding/company_profile.csv" download>
+            <div>
+              <strong>company_profile.csv</strong>
+              <span>Tenant, entreprise, certifications, admin initial</span>
+            </div>
+            <span>Telecharger</span>
+          </a>
+          <a class="download" href="/ui/templates/onboarding/legal_documents_manifest.csv" download>
+            <div>
+              <strong>legal_documents_manifest.csv</strong>
+              <span>Catalogue optionnel des PDF juridiques a traiter</span>
+            </div>
+            <span>Telecharger</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="badge">Structure entreprise</div>
+        <h2>Contexte entreprise structure</h2>
+        <p>Ces fichiers remplacent les classeurs semi-structures par des tables propres, stables et faciles a importer quel que soit le tenant.</p>
+        <div class="downloads">
+          <a class="download" href="/ui/templates/onboarding/sites.csv" download><div><strong>sites.csv</strong><span>Sites, effectifs, activites principales</span></div><span>Telecharger</span></a>
+          <a class="download" href="/ui/templates/onboarding/processes.csv" download><div><strong>processes.csv</strong><span>Processus par site</span></div><span>Telecharger</span></a>
+          <a class="download" href="/ui/templates/onboarding/activities.csv" download><div><strong>activities.csv</strong><span>Activites rattachees a un processus</span></div><span>Telecharger</span></a>
+          <a class="download" href="/ui/templates/onboarding/products.csv" download><div><strong>products.csv</strong><span>Produits, references, types, unites</span></div><span>Telecharger</span></a>
+          <a class="download" href="/ui/templates/onboarding/chemicals.csv" download><div><strong>chemicals.csv</strong><span>Substances chimiques du tenant</span></div><span>Telecharger</span></a>
+          <a class="download" href="/ui/templates/onboarding/equipment.csv" download><div><strong>equipment.csv</strong><span>Equipements et echeances d'intervention</span></div><span>Telecharger</span></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="badge">Contexte & risques</div>
+        <h2>Risques et performance QHSE</h2>
+        <p>Ces donnees enrichissent le contexte metier et servent a l'applicabilite, a l'analyse de conformite et aux explications de l'assistant.</p>
+        <div class="downloads">
+          <a class="download" href="/ui/templates/onboarding/environmental_aspects.csv" download><div><strong>environmental_aspects.csv</strong><span>Aspects environnementaux par site</span></div><span>Telecharger</span></a>
+          <a class="download" href="/ui/templates/onboarding/sst_risks.csv" download><div><strong>sst_risks.csv</strong><span>Registre SST complet</span></div><span>Telecharger</span></a>
+          <a class="download" href="/ui/templates/onboarding/sst_significant_risks.csv" download><div><strong>sst_significant_risks.csv</strong><span>Risques SST cotes ou significatifs</span></div><span>Telecharger</span></a>
+          <a class="download" href="/ui/templates/onboarding/strategic_objectives.csv" download><div><strong>strategic_objectives.csv</strong><span>Axes, objectifs, indicateurs QHSE</span></div><span>Telecharger</span></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="badge">Preuves & audits</div>
+        <h2>Audits, preuves et non-conformites</h2>
+        <p>La conformite combine les decisions d'applicabilite avec des preuves reelles. Les PDF restent a uploader, mais ces manifests preparent l'indexation et le mapping.</p>
+        <div class="downloads">
+          <a class="download" href="/ui/templates/onboarding/nonconformities.csv" download><div><strong>nonconformities.csv</strong><span>Non-conformites historiques et ouvertes</span></div><span>Telecharger</span></a>
+          <a class="download" href="/ui/templates/onboarding/audit_reports_metadata.csv" download><div><strong>audit_reports_metadata.csv</strong><span>Metadonnees des rapports d'audit</span></div><span>Telecharger</span></a>
+          <a class="download" href="/ui/templates/onboarding/compliance_evidence_manifest.csv" download><div><strong>compliance_evidence_manifest.csv</strong><span>Registre de preuves documentaires et rattachement au scope</span></div><span>Telecharger</span></a>
+        </div>
+      </article>
+
+      <article class="card conventions-card">
+        <div class="badge">Rappels</div>
+        <h2>Conventions de remplissage</h2>
+        <ul>
+          <li>Dates: utiliser le format <code>YYYY-MM-DD</code>.</li>
+          <li>Dates+heures: utiliser <code>YYYY-MM-DDTHH:MM:SSZ</code>.</li>
+          <li>Booleens: utiliser <code>true</code> ou <code>false</code>.</li>
+          <li>Multi-valeurs: separer les listes par <code>|</code>.</li>
+          <li>Resolution des liens: privilegier <code>site_code</code>, <code>process_code</code> et <code>activity_code</code> tant que les UUID n'existent pas encore.</li>
+          <li>Des jeux d'exemple peuvent exister dans le projet, mais ils servent seulement de demo et n'influencent pas ces templates generiques.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "version": "A1_DROP_IN_NORMALIZATION_DIAG_V1",
+  "eval_path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\reports\\history\\eval_20260404_170827.json",
+  "dataset_path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\golden_dataset.json",
+  "target_cases_count": 1,
+  "target_cases": [
+    "jort_121_2025_art1_contributions"
+  ],
+  "total_baseline_drop_in_normalization": 0,
+  "total_rerun_drop_in_normalization": 0,
+  "cases": [
+    {
+      "case_id": "jort_121_2025_art1_contributions",
+      "baseline_status": "FAILED_FALSE_NEGATIVE",
+      "baseline_raw_llm_requirements": 0,
+      "baseline_predicted_count": 0,
+      "baseline_drop_in_normalization_total": 0,
+      "rerun_status": "FAILED_FALSE_NEGATIVE",
+      "rerun_raw_llm_requirements": 0,
+      "rerun_predicted_count": 0,
+      "rerun_drop_in_normalization_total": 0,
+      "trace_count": 0,
+      "diagnostic": []
+    }
+  ]
+}

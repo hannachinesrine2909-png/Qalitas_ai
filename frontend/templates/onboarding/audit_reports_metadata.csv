@@ -1,0 +1,2 @@
+reference,audit_type,category,nature,system_scope,date_planned_start,date_planned_end,date_real_start,date_real_end,state,objectives,locations_visited,auditor_names,source_file,scope_level,site_code,process_code,activity_code
+AI-2026-001,Audit Processus,ISO 45001,Audit Interne,QHSE,2026-03-01,2026-03-01,2026-03-01,2026-03-01,TERMINE,Verifier la conformite du site,Site Korba,Auditeur Interne,audits/AI-2026-001.pdf,SITE,S1,,

@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QALITAS AI - Connexion</title>
+  <link rel="stylesheet" href="/ui/base.css?v=20260421_01" />
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_06" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      min-height: 100svh;
+      min-width: 0;
+      padding: clamp(10px, 2vh, 20px);
+      overflow: hidden;
+      background: linear-gradient(135deg, #06101f 0%, #0b1a31 36%, #e7f1f8 36%, #f8fbff 100%);
+    }
+    .login-shell {
+      width: min(1160px, 100%);
+      height: min(660px, calc(100vh - 28px));
+      height: min(660px, calc(100svh - 28px));
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(370px, 430px);
+      gap: 16px;
+      align-items: stretch;
+    }
+    .login-hero,
+    .login-card {
+      background: rgba(255, 255, 255, 0.96);
+      border: 0.5px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 26px 70px rgba(10, 22, 40, 0.14);
+    }
+    .login-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(24px, 4vw, 40px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 22px;
+      color: #eaf6ff;
+      border-color: rgba(125, 211, 252, 0.12);
+      background: linear-gradient(145deg, #071121 0%, #0b2039 55%, #073b49 100%);
+    }
+    .login-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(130deg, rgba(34, 211, 238, 0.18), transparent 38%),
+        linear-gradient(28deg, rgba(6, 182, 212, 0.18), transparent 24%),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 42px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 42px);
+      pointer-events: none;
+    }
+    .login-hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -100px;
+      width: 360px;
+      height: 260px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, rgba(103, 232, 249, 0.18), rgba(37, 99, 235, 0.08));
+      filter: blur(28px);
+      transform: rotate(-16deg);
+      pointer-events: none;
+    }
+    .login-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-top {
+      display: grid;
+      gap: 18px;
+      max-width: 620px;
+    }
+    .login-brand {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+    .login-brand .brand-qali {
+      color: #fff;
+    }
+    .login-brand .brand-tas {
+      color: #67e8f9;
+    }
+    .login-brand .brand-ai {
+      margin-left: 5px;
+      color: rgba(226, 232, 240, 0.86);
+      font-size: 0.74em;
+      letter-spacing: 0.08em;
+    }
+    .login-card .login-brand .brand-qali {
+      color: var(--navy-900);
+    }
+    .login-card .login-brand .brand-ai {
+      color: var(--text-secondary);
+    }
+    .hero-kicker {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #67e8f9;
+      margin-top: 10px;
+    }
+    .hero-title {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      max-width: 15ch;
+      margin: 0;
+      color: #fff;
+    }
+    .hero-copy {
+      margin: 0;
+      color: rgba(226, 232, 240, 0.86);
+      max-width: 56ch;
+      line-height: 1.62;
+      font-size: 15px;
+    }
+    .hero-visual {
+      position: absolute;
+      right: 34px;
+      top: 118px;
+      width: 230px;
+      display: grid;
+      gap: 9px;
+      opacity: 0.66;
+      pointer-events: none;
+    }
+    .visual-card {
+      border: 0.5px solid rgba(125, 211, 252, 0.2);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      padding: 10px;
+    }
+    .visual-card-main {
+      height: 9px;
+      width: 58%;
+      border-radius: 999px;
+      background: rgba(226, 232, 240, 0.76);
+    }
+    .visual-card-line {
+      height: 6px;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.28);
+    }
+    .visual-card-line.is-short {
+      width: 68%;
+    }
+    .visual-flow {
+      height: 54px;
+      border-radius: 16px;
+      border: 0.5px solid rgba(125, 211, 252, 0.18);
+      background:
+        linear-gradient(100deg, transparent 0 12%, rgba(103, 232, 249, 0.28) 12% 14%, transparent 14% 44%, rgba(37, 99, 235, 0.32) 44% 46%, transparent 46% 74%, rgba(103, 232, 249, 0.28) 74% 76%, transparent 76%),
+        rgba(255, 255, 255, 0.05);
+    }
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+    }
+    .hero-point {
+      display: grid;
+      gap: 7px;
+      padding: 11px 12px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 0.5px solid rgba(125, 211, 252, 0.2);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 12px 30px rgba(2, 8, 23, 0.1);
+      backdrop-filter: blur(8px);
+    }
+    .feature-icon {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: rgba(103, 232, 249, 0.14);
+      color: #a5f3fc;
+      border: 0.5px solid rgba(125, 211, 252, 0.18);
+    }
+    .feature-icon svg,
+    .field-icon svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .hero-point strong {
+      display: block;
+      font-size: 14px;
+      color: #fff;
+    }
+    .hero-point p {
+      margin: 0;
+      font-size: 12px;
+      color: rgba(226, 232, 240, 0.78);
+      line-height: 1.45;
+    }
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: rgba(226, 232, 240, 0.75);
+      font-size: 11px;
+    }
+    .hero-trust span {
+      border-radius: 999px;
+      border: 0.5px solid rgba(125, 211, 252, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 5px 9px;
+    }
+    .login-card {
+      padding: clamp(24px, 3vh, 32px);
+      display: grid;
+      gap: 14px;
+      align-content: center;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 252, 255, 0.98));
+      border-color: rgba(15, 23, 42, 0.08);
+    }
+    .login-card-head {
+      display: grid;
+      gap: 7px;
+    }
+    .login-card-title {
+      margin-top: 4px;
+      font-size: 24px;
+      line-height: 1.1;
+      color: var(--navy-900);
+    }
+    .login-muted {
+      color: var(--text-secondary);
+      font-size: 12px;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .mode-switch {
+      display: inline-grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      background: #eef7ff;
+      border: 0.5px solid rgba(37, 99, 235, 0.14);
+    }
+    .mode-btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .mode-btn.is-active {
+      background: #fff;
+      color: var(--text-primary);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.09);
+    }
+    .login-helper {
+      border-radius: 12px;
+      padding: 11px 13px;
+      font-size: 12px;
+      line-height: 1.55;
+      background: rgba(240, 249, 255, 0.92);
+      border: 0.5px solid rgba(14, 165, 233, 0.22);
+      color: #0f172a;
+    }
+    .login-helper strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+    #login-form {
+      display: grid;
+      gap: 10px;
+      max-width: 372px;
+      width: 100%;
+    }
+    .input-shell {
+      position: relative;
+    }
+    .input-shell .input {
+      height: 44px;
+      border-radius: 14px;
+      padding-left: 40px;
+      background: #fff;
+      border-color: rgba(15, 23, 42, 0.14);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.82), inset 0 1px 0 rgba(15, 23, 42, 0.02);
+    }
+    .field-icon {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-flex;
+      color: #64748b;
+      pointer-events: none;
+    }
+    .login-form-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -2px;
+    }
+    .forgot-link {
+      color: #0f4c81;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .forgot-link:hover {
+      color: var(--cyan-primary);
+    }
+    .login-submit {
+      width: 100%;
+      min-height: 44px;
+      margin-top: 2px;
+      border: 0;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.24);
+    }
+    .login-submit:hover {
+      filter: none;
+      transform: translateY(-1px);
+      box-shadow: 0 18px 34px rgba(37, 99, 235, 0.3);
+    }
+    .security-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: #475569;
+      font-size: 11px;
+      line-height: 1.45;
+      text-align: center;
+    }
+    .security-line svg {
+      width: 14px;
+      height: 14px;
+      stroke: #0891b2;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .login-error {
+      min-height: 18px;
+      color: var(--red);
+      font-size: 12px;
+    }
+    .hidden-row {
+      display: none;
+    }
+    @media (max-height: 760px) and (min-width: 921px) {
+      .login-shell {
+        height: calc(100svh - 28px);
+      }
+      .login-hero {
+        padding: 24px;
+      }
+      .hero-top {
+        gap: 12px;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+      .hero-copy {
+        line-height: 1.5;
+      }
+      .hero-visual {
+        display: none;
+      }
+      .hero-point {
+        padding: 10px 11px;
+      }
+      .login-card {
+        padding: 20px;
+      }
+    }
+    @media (max-width: 920px) {
+      body {
+        align-items: flex-start;
+        overflow: auto;
+      }
+      .login-shell {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .hero-title {
+        max-width: none;
+      }
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+      .hero-visual {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-shell">
+    <section class="login-hero">
+      <div class="hero-top">
+        <div class="login-brand"><span class="brand-qali">QALI</span><span class="brand-tas">TAS</span><span class="brand-ai">AI</span></div>
+        <div class="hero-kicker">Plateforme réglementaire QHSE</div>
+        <h1 class="hero-title">La conformité QHSE augmentée par l’intelligence artificielle.</h1>
+        <p class="hero-copy">
+          Centralisez les exigences, les preuves terrain, les écarts et les actions correctives
+          dans une plateforme sécurisée, traçable et multi-tenant.
+        </p>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-card">
+          <div class="visual-card-main"></div>
+          <div class="visual-card-line"></div>
+          <div class="visual-card-line is-short"></div>
+        </div>
+        <div class="visual-flow"></div>
+        <div class="visual-card">
+          <div class="visual-card-main"></div>
+          <div class="visual-card-line"></div>
+          <div class="visual-card-line is-short"></div>
+        </div>
+      </div>
+
+      <div class="hero-points">
+        <article class="hero-point">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h6"/><path d="M10 17h4"/></svg>
+          </span>
+          <strong>Cycle QHSE intelligent</strong>
+          <p>Exigences, applicabilité, conformité et assistance dans un même parcours.</p>
+        </article>
+        <article class="hero-point">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 21V7l8-4 8 4v14"/><path d="M9 21v-6h6v6"/><path d="M8 9h.01"/><path d="M12 9h.01"/><path d="M16 9h.01"/></svg>
+          </span>
+          <strong>Multi-tenant</strong>
+          <p>Chaque entreprise travaille dans un espace sécurisé.</p>
+        </article>
+        <article class="hero-point">
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/><path d="m9 12 2 2 4-5"/></svg>
+          </span>
+          <strong>Traçabilité</strong>
+          <p>Exigences, preuves et actions restent auditables.</p>
+        </article>
+      </div>
+
+      <div class="hero-trust" aria-label="Garanties plateforme">
+        <span>ISO-ready</span>
+        <span>Audit sécurisé</span>
+        <span>Traçabilité complète</span>
+      </div>
+
+    </section>
+
+    <section class="login-card">
+      <div class="login-card-head">
+        <div class="login-brand" style="font-size:24px"><span class="brand-qali">QALI</span><span class="brand-tas">TAS</span><span class="brand-ai">AI</span></div>
+        <h2 class="login-card-title">Bienvenue</h2>
+        <p class="login-muted">Connectez-vous à votre espace QHSE sécurisé.</p>
+      </div>
+
+      <div class="mode-switch" id="mode-switch">
+        <button type="button" class="mode-btn is-active" data-mode="tenant">Connexion entreprise</button>
+        <button type="button" class="mode-btn" data-mode="platform">Connexion plateforme</button>
+      </div>
+
+      <div class="login-helper" id="login-helper">
+        <strong>Mode entreprise</strong>
+        Le champ tenant est requis pour les comptes rattachés à une entreprise. Exemple : <code>tenant_demo</code>.
+      </div>
+
+      <form id="login-form">
+        <div class="field">
+          <label class="field-label" for="username">Nom d'utilisateur</label>
+          <div class="input-shell">
+            <span class="field-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"/><path d="M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/></svg>
+            </span>
+            <input class="input" id="username" name="username" placeholder="utilisateur@entreprise.local" required />
+          </div>
+        </div>
+
+        <div class="field" id="tenant-row" style="margin-top:10px">
+          <label class="field-label" for="tenant_id">Tenant / entreprise</label>
+          <div class="input-shell">
+            <span class="field-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 21V7l8-4 8 4v14"/><path d="M9 21v-6h6v6"/><path d="M8 9h.01"/><path d="M12 9h.01"/><path d="M16 9h.01"/></svg>
+            </span>
+            <input class="input" id="tenant_id" name="tenant_id" placeholder="tenant_demo" />
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:10px">
+          <label class="field-label" for="password">Mot de passe</label>
+          <div class="input-shell">
+            <span class="field-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 11V8a5 5 0 0 1 10 0v3"/><path d="M6 11h12v10H6z"/></svg>
+            </span>
+            <input class="input" id="password" name="password" type="password" placeholder="********" required />
+          </div>
+        </div>
+
+        <div class="login-form-row">
+          <a class="forgot-link" href="#" onclick="return false;">Mot de passe oublié ?</a>
+        </div>
+
+        <button id="login-btn" class="btn btn-primary login-submit" type="submit">Se connecter</button>
+        <div class="security-line">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3"/><path d="M6 11h12v10H6z"/><path d="m10 16 1.5 1.5L15 14"/></svg>
+          Connexion sécurisée - Données isolées par tenant
+        </div>
+        <div id="login-error" class="login-error"></div>
+      </form>
+
+    </section>
+  </div>
+
+  <script type="module">
+    import { api } from '/ui/js/api.js';
+    import { getAuth, isExpired, saveAuth, clearAuth } from '/ui/js/auth.js';
+
+    const nextUrl = new URLSearchParams(window.location.search).get('next') || '/ui/dashboard.html';
+    const tenantParam = new URLSearchParams(window.location.search).get('tenant_id') || '';
+    const session = getAuth();
+    if (session?.token && !isExpired(session)) {
+      window.location.replace(nextUrl);
+    } else {
+      clearAuth();
+    }
+
+    const form = document.getElementById('login-form');
+    const btn = document.getElementById('login-btn');
+    const errorEl = document.getElementById('login-error');
+    const helperEl = document.getElementById('login-helper');
+    const tenantRow = document.getElementById('tenant-row');
+    const modeButtons = Array.from(document.querySelectorAll('[data-mode]'));
+    let authMode = tenantParam ? 'tenant' : 'tenant';
+
+    function syncMode(nextMode) {
+      authMode = nextMode === 'platform' ? 'platform' : 'tenant';
+      modeButtons.forEach((button) => {
+        button.classList.toggle('is-active', button.dataset.mode === authMode);
+      });
+      const showTenant = authMode === 'tenant';
+      tenantRow.classList.toggle('hidden-row', !showTenant);
+      helperEl.innerHTML = showTenant
+        ? '<strong>Mode entreprise</strong>Le champ tenant est requis pour les comptes rattachés à une entreprise. Exemple : <code>tenant_demo</code>.'
+        : '<strong>Mode plateforme</strong>Le rôle <code>SUPER_ADMIN</code> n\'a pas besoin du champ tenant au login. Le tenant actif se choisit ensuite depuis le header.';
+    }
+
+    modeButtons.forEach((button) => {
+      button.addEventListener('click', () => syncMode(button.dataset.mode));
+    });
+
+    if (tenantParam) {
+      form.tenant_id.value = tenantParam;
+      syncMode('tenant');
+    } else {
+      syncMode('tenant');
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      errorEl.textContent = '';
+      btn.disabled = true;
+      btn.textContent = 'Connexion...';
+      const username = form.username.value.trim();
+      const password = form.password.value;
+      const tenant_id = authMode === 'tenant' ? form.tenant_id.value.trim() : '';
+
+      try {
+        const payload = await api.login({ username, password, tenant_id });
+        saveAuth(payload);
+        window.location.replace(nextUrl);
+      } catch (error) {
+        errorEl.textContent = error.message || 'Connexion impossible';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Se connecter';
+      }
+    });
+  </script>
+</body>
+</html>

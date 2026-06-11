@@ -1,0 +1,57 @@
+{
+  "version": "v1",
+  "description": "Mini document-level evaluation set for JORT document qualification gate.",
+  "cases": [
+    {
+      "case_id": "gate_regulatory_decret",
+      "doc_title": "Décret n° 2026-12 fixant les modalités d'application",
+      "doc_text_preview": "Le présent décret fixe les modalités d'application, les obligations de transmission et les délais.",
+      "article_count": 18,
+      "expected_policy": "EXTRACT_FULL",
+      "expected_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ]
+    },
+    {
+      "case_id": "gate_concours_procedural",
+      "doc_title": "Arrêté portant ouverture d'un concours interne",
+      "doc_text_preview": "Le concours est ouvert aux candidats remplissant les conditions d'ancienneté.",
+      "article_count": 9,
+      "expected_policy": "EXTRACT_LIMITED",
+      "expected_reason_codes": [
+        "DOC_CONCOURS_PROCEDURAL"
+      ]
+    },
+    {
+      "case_id": "gate_summary_drop",
+      "doc_title": "Sommaire",
+      "doc_text_preview": "Sommaire, avis et communications, index éditorial du numéro.",
+      "article_count": 0,
+      "expected_policy": "DROP",
+      "expected_reason_codes": [
+        "DOC_SUMMARY_NOTICE"
+      ]
+    },
+    {
+      "case_id": "gate_arabic_only_missing",
+      "doc_title": "Décision publiée uniquement en langue arabe",
+      "doc_text_preview": "Le texte est publié uniquement en arabe.",
+      "article_count": 1,
+      "expected_policy": "TO_VALIDATE_SOURCE_MISSING",
+      "expected_reason_codes": [
+        "DOC_SOURCE_ARABIC_ONLY"
+      ]
+    },
+    {
+      "case_id": "gate_annex_data",
+      "doc_title": "Annexe tarifaire des contributions",
+      "doc_text_preview": "Annexe, tableau des tarifs par type d'analyse et montant en dinars.",
+      "article_count": 4,
+      "expected_policy": "EXTRACT_LIMITED_DATA",
+      "expected_reason_codes": [
+        "DOC_ANNEX_TABLE_DATA"
+      ]
+    }
+  ]
+}
+

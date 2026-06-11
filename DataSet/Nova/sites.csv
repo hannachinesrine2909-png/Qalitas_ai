@@ -1,0 +1,4 @@
+site_code,name,city,region,type,employee_count,main_activities
+S1,Usine Sousse,Sousse,Sousse,Production,120,peinture epoxy|traitement de surface|assemblage
+S2,Depot Mghira,Ben Arous,Tunis,Stockage et logistique,35,stockage solvants|expedition|reception MP
+S3,Siege Tunis,Tunis,Tunis,Administratif,25,qhse|achats|support administratif

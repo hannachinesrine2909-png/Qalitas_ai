@@ -1,0 +1,4 @@
+objective_text,process_name,indicator,indicator_type,frequency,calculation_method,system_scope,unit,strategic_axis
+Porter a 100 pour cent la validation des exigences critiques,Pilotage QHSE,Taux de validation des exigences critiques,Pilotage,Mensuelle,(exigences_critique_validees / exigences_critique_total) * 100,QHSE,%,Conformite reglementaire
+Reduire les incidents solvants de 30 pour cent,Logistique solvants et dechets,Nombre d'incidents solvants,SST,Mensuelle,compte incidents solvants par mois,SST,incident,Prevention
+Avoir 100 pour cent des bordereaux de dechets archives sous 48 heures,Logistique solvants et dechets,Taux d'archivage bordereaux,Operationnel,Hebdomadaire,(bordereaux archives sous 48h / bordereaux emis) * 100,Environnement,%,Traçabilite

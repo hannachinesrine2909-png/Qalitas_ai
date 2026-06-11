@@ -1,0 +1,47 @@
+{
+  "dry_run": true,
+  "backfill": {
+    "target_rows": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "ambiguous": 0,
+    "updated_requirement_ids": [],
+    "unresolved_requirement_ids": [],
+    "ambiguous_requirement_ids": []
+  },
+  "guards": {
+    "index_documents_tenant_sha256": "skipped_dry_run",
+    "requirements_article_id_constraint": "skipped_dry_run"
+  },
+  "post_checks": {
+    "requirements_article_id_null": 0,
+    "duplicate_document_sha_groups": 5,
+    "duplicate_document_sha_details": [
+      {
+        "tenant_id": "tim",
+        "sha256": "e44bd19d329ed95430fb04238a75ba697721012151dc7f1218fc80aceb0217e1",
+        "count": 4
+      },
+      {
+        "tenant_id": "tim",
+        "sha256": "bd57d04fff928a9f2972e5710e9c71a26dea4b761364b5756de884a295fadd70",
+        "count": 3
+      },
+      {
+        "tenant_id": "tim",
+        "sha256": "4de38be05ecc24181fb01e3830ebca41a9029a9461920ec3ae55b55c1d9b5fdd",
+        "count": 3
+      },
+      {
+        "tenant_id": "tim",
+        "sha256": "edd468678e51334f242c317d199e7aa91f9b851a44e8c96ba96a02003ecf7077",
+        "count": 2
+      },
+      {
+        "tenant_id": "tim",
+        "sha256": "0d5221ea561e92d6634a2d754b85216dbd43c49c1633ebfdfd6458ae57a41a8c",
+        "count": 2
+      }
+    ]
+  }
+}

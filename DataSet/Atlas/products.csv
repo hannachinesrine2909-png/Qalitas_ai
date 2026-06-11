@@ -1,0 +1,4 @@
+reference,designation,family,category,product_type,nature,unit,site_name,is_active
+ARI-001,Chassis metallique epoxy bleu,Produit fini,Peinture,Produit,Fabrication,piece,Usine Mghira,true
+ARI-002,Armoire electrique protection anticorrosion,Produit fini,Traitement de surface,Produit,Fabrication,piece,Usine Mghira,true
+ARI-003,Support tubulaire peinture haute tenue,Produit fini,Peinture,Produit,Fabrication,piece,Usine Mghira,true

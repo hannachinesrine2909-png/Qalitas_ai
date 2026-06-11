@@ -1,0 +1,1855 @@
+{
+  "source_benchmark_json": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\reports\\preflight\\a1_real_extraction_benchmark_latest.json",
+  "docs_executed": 50,
+  "thresholds": {
+    "safe_conf": 0.9,
+    "safe_overlap": 0.22,
+    "safe_min_snippet_chars": 70,
+    "limit_conf": 0.8,
+    "limit_overlap": 0.14
+  },
+  "totals": {
+    "requirements_total": 1192,
+    "draft_total": 132,
+    "to_validate_total": 1060,
+    "policy_forced_to_validate_total": 27,
+    "safe_promotable_total": 0,
+    "limit_promotable_total": 567,
+    "risky_to_validate_total": 493,
+    "current_draft_share": 0.1107,
+    "current_to_validate_share": 0.8893,
+    "potential_draft_share_after_safe": 0.1107,
+    "potential_draft_share_after_safe_limit": 0.5864,
+    "potential_to_validate_share_after_safe": 0.8893,
+    "potential_to_validate_share_after_safe_limit": 0.4136,
+    "safe_promotable_share_of_tv": 0.0,
+    "safe_plus_limit_share_of_tv": 0.5349
+  },
+  "band_counts": {
+    "SAFE_PROMOTION_POOL": 0,
+    "LIMITED_PROMOTION_POOL": 0,
+    "RISKY_PROMOTION_POOL": 42,
+    "NO_VALIDATE": 8
+  },
+  "docs": [
+    {
+      "doc_id": "11195a5c-8450-4185-866c-b92c205daed4",
+      "title": "JORT 16 2015 - Délégation de signature",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 7,
+      "requirements_final_per_document": 0,
+      "requirements_total_db": 0,
+      "draft_count": 0,
+      "to_validate_count": 0,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 0.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 0,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.0,
+      "promotion_band": "NO_VALIDATE",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": []
+    },
+    {
+      "doc_id": "3afab354-fd01-4b25-9fa2-a2441ffd0607",
+      "title": "Jo0062026",
+      "doc_gate_policy": "EXTRACT_LIMITED_DATA",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 0,
+      "requirements_final_per_document": 0,
+      "requirements_total_db": 0,
+      "draft_count": 0,
+      "to_validate_count": 0,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 0.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 0,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.0,
+      "promotion_band": "NO_VALIDATE",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": []
+    },
+    {
+      "doc_id": "0dcb52e4-e338-4b11-b629-ea98df76d45b",
+      "title": "Jo0282016",
+      "doc_gate_policy": "DROP",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 0,
+      "requirements_final_per_document": 0,
+      "requirements_total_db": 0,
+      "draft_count": 0,
+      "to_validate_count": 0,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 0.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 0,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.0,
+      "promotion_band": "NO_VALIDATE",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": []
+    },
+    {
+      "doc_id": "31c26f1f-778b-42c2-bd57-a2a0a892fa94",
+      "title": "Jo05769",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 0,
+      "requirements_final_per_document": 0,
+      "requirements_total_db": 0,
+      "draft_count": 0,
+      "to_validate_count": 0,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 0.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 0,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.0,
+      "promotion_band": "NO_VALIDATE",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": []
+    },
+    {
+      "doc_id": "6d133f60-da23-410e-91e9-b07e3e895066",
+      "title": "Jo06575",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 0,
+      "requirements_final_per_document": 0,
+      "requirements_total_db": 0,
+      "draft_count": 0,
+      "to_validate_count": 0,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 0.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 0,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.0,
+      "promotion_band": "NO_VALIDATE",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": []
+    },
+    {
+      "doc_id": "cb2565c1-4a23-415e-aa50-cf8722d6864f",
+      "title": "Jo0692024",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 0,
+      "requirements_final_per_document": 0,
+      "requirements_total_db": 0,
+      "draft_count": 0,
+      "to_validate_count": 0,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 0.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 0,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.0,
+      "promotion_band": "NO_VALIDATE",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": []
+    },
+    {
+      "doc_id": "28c186ab-150b-441d-b730-2ee226b8bd10",
+      "title": "Jo07090",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 0,
+      "requirements_final_per_document": 0,
+      "requirements_total_db": 0,
+      "draft_count": 0,
+      "to_validate_count": 0,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 0.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 0,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.0,
+      "promotion_band": "NO_VALIDATE",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": []
+    },
+    {
+      "doc_id": "b22e7476-3fb6-451a-8256-c297e619bfef",
+      "title": "Jo1262024",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 0,
+      "requirements_final_per_document": 0,
+      "requirements_total_db": 0,
+      "draft_count": 0,
+      "to_validate_count": 0,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 0.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 0,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.0,
+      "promotion_band": "NO_VALIDATE",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": []
+    },
+    {
+      "doc_id": "38385ff6-634c-487d-ac99-6fed79ea494b",
+      "title": "JORT 121 2025 - Décret-loi sociétés communautaires",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 62,
+      "requirements_final_per_document": 52,
+      "requirements_total_db": 53,
+      "draft_count": 10,
+      "to_validate_count": 43,
+      "reject_count": 0,
+      "draft_share": 0.1887,
+      "to_validate_share": 0.8113,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 20,
+      "risky_to_validate_count": 23,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.4651,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.84,
+          "overlap": 0.9677,
+          "text": "Il est mis fin à la participation de tout participant lorsqu'il cesse de satisfaire aux conditions d'agrément de participation ou en cas de manquement aux principes fondamentaux de"
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.8333,
+          "text": "Si un mois s’écoule à compter de la date d’envoi sans qu’aucune suite n’y soit donnée, la condition prévue est remplie."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Les différentes opérations liées à l'accompagnement et à la supervision sont réalisées via la plateforme électronique prévue à l'article 17 (nouveau) du présent décret-loi."
+        }
+      ]
+    },
+    {
+      "doc_id": "39baac4b-132a-4a2d-b714-c488a6db35ae",
+      "title": "JORT 128 2022 - Arrêté concours",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 1,
+      "raw_llm_requirements": 50,
+      "requirements_final_per_document": 42,
+      "requirements_total_db": 42,
+      "draft_count": 4,
+      "to_validate_count": 38,
+      "reject_count": 0,
+      "draft_share": 0.0952,
+      "to_validate_share": 0.9048,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 24,
+      "risky_to_validate_count": 14,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.6316,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le concours interne sur dossiers plusieurs candidats ont obtenu le même nombre de pour la promotion au grade d'ingénieur en chef au points, la priorité est accordée au plus ancien "
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.9333,
+          "text": "Si l'ancienneté dans le grade est la même, la priorité est accordée au candidat le plus âgé."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le concours interne sur dossiers accordée au plus ancien dans le grade et si cette pour la promotion au grade d'inspecteur en chef de ancienneté est la même la priorité est accordé"
+        }
+      ]
+    },
+    {
+      "doc_id": "34112fed-bafd-4519-adb3-7368ccf0815e",
+      "title": "JORT 30 2026 - Arrêté sécheresse",
+      "doc_gate_policy": "EXTRACT_LIMITED",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 13,
+      "requirements_final_per_document": 10,
+      "requirements_total_db": 10,
+      "draft_count": 2,
+      "to_validate_count": 8,
+      "reject_count": 0,
+      "draft_share": 0.2,
+      "to_validate_share": 0.8,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 4,
+      "risky_to_validate_count": 4,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.5,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.81,
+          "overlap": 1.0,
+          "text": "Les dossiers sont évalués par le jury."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le jury du concours interne susvisé, ainsi que la période au cours de laquelle la procède à l'évaluation des dossiers présentés calamité est survenue. conformément aux dispositions"
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.9574,
+          "text": "Les zones situées aux gouvernorats de la Manouba, Zaghouan, Ben Arous, Ariana, Le Kef, Béja et Kairouan sont considérées comme zones sinistrées par la sécheresse ayant affecté les "
+        }
+      ]
+    },
+    {
+      "doc_id": "f3df5549-aded-43e4-ab62-23ce33072948",
+      "title": "Jo01096",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 153,
+      "requirements_final_per_document": 96,
+      "requirements_total_db": 96,
+      "draft_count": 10,
+      "to_validate_count": 86,
+      "reject_count": 0,
+      "draft_share": 0.1042,
+      "to_validate_share": 0.8958,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 31,
+      "risky_to_validate_count": 55,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.3605,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "L'organisation et les modalités de fonctionnement desdites unités sont fixées."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Sa composition et les modalités de son fonctionnement sont fixées."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "L'organisation des unités est fixée par le décret prévu à l'article 7 de la présente loi."
+        }
+      ]
+    },
+    {
+      "doc_id": "e5b78390-7be8-4cf8-b0af-5b30f9d465b4",
+      "title": "Jo0192020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 85,
+      "requirements_final_per_document": 69,
+      "requirements_total_db": 69,
+      "draft_count": 23,
+      "to_validate_count": 46,
+      "reject_count": 0,
+      "draft_share": 0.3333,
+      "to_validate_share": 0.6667,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 22,
+      "risky_to_validate_count": 24,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.4783,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.7692,
+          "text": "Les souscriptions sont payables sur cinq ans à compter de l'année 2020."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "L'intermédiaire agréé domiciliataire procède aux transferts dans la limite des montants des imputations douanières et des factures définitives visées par la douane."
+        },
+        {
+          "req_type": "EXCEPTION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "(nouveau) - L'intermédiaire agréé domiciliataire est habilité à procéder au règlement par anticipation ou au règlement d’acomptes, exigé par le fournisseur en vertu du contrat comm"
+        }
+      ]
+    },
+    {
+      "doc_id": "5b2db215-01fa-431f-8e43-1fa88d19c42a",
+      "title": "Jo0202020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 19,
+      "requirements_final_per_document": 6,
+      "requirements_total_db": 6,
+      "draft_count": 0,
+      "to_validate_count": 6,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 3,
+      "risky_to_validate_count": 3,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.5,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "s fixées à l'article 2 du décret susvisé n° 75- 384 du 17 juin 1975."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "2 - s fixées à l'article 2 du décret susvisé n° 75- 384 du 17 juin 1975."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "2 - les conditions fixées à l'article 2 du"
+        }
+      ]
+    },
+    {
+      "doc_id": "41261636-3787-493d-83ef-27af7bcba903",
+      "title": "Jo0212026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 17,
+      "requirements_final_per_document": 5,
+      "requirements_total_db": 5,
+      "draft_count": 0,
+      "to_validate_count": 5,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 1,
+      "risky_to_validate_count": 4,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.2,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le centre de perception du produit de la débite des produits monopolisés à Siliana est chargé principalement de la perception du produit de la vente des produits monopolisés par le"
+        }
+      ]
+    },
+    {
+      "doc_id": "e708168e-bb8e-4827-b8b8-a98795802156",
+      "title": "Jo0222026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 4,
+      "raw_llm_requirements": 50,
+      "requirements_final_per_document": 38,
+      "requirements_total_db": 38,
+      "draft_count": 2,
+      "to_validate_count": 36,
+      "reject_count": 0,
+      "draft_share": 0.0526,
+      "to_validate_share": 0.9474,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 24,
+      "risky_to_validate_count": 12,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.6667,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "L'intéressée bénéficie des indemnités et avantages accordés à un sous-directeur d'administration centrale à compter du 2 septembre 2025."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Peuvent participer à l'examen professionnel pour l'intégration des ouvriers appartenant aux catégories 5, 6 et 7 dans le grade d'agent technique les ouvriers titulaires."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Peuvent participer à l’examen professionnel pour l’intégration des ouvriers appartenant aux catégories 5, 6 et 7 dans le grade d'agent technique les ouvriers titulaires."
+        }
+      ]
+    },
+    {
+      "doc_id": "1cdcd642-b61c-47ba-a3f5-f8b0698a81ca",
+      "title": "Jo0232026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 20,
+      "requirements_final_per_document": 9,
+      "requirements_total_db": 9,
+      "draft_count": 0,
+      "to_validate_count": 9,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 7,
+      "risky_to_validate_count": 2,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.7778,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le nombre de postes à pourvoir est fixé à deux cent soixante-trois (263) postes."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La date de début de l’inscription des candidatures à distance est fixée au 10 mars 2026."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La date de clôture de la liste des candidatures à distance est fixée au 10 avril 2026."
+        }
+      ]
+    },
+    {
+      "doc_id": "43a755af-3db8-42f6-87e7-683c9cb861ef",
+      "title": "Jo0262026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 21,
+      "requirements_final_per_document": 14,
+      "requirements_total_db": 14,
+      "draft_count": 0,
+      "to_validate_count": 14,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 7,
+      "risky_to_validate_count": 7,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.5,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.9091,
+          "text": "Une commission de tri des candidatures sera créée à cet effet."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le programme de la session de formation ainsi que les modalités d'organisation, de suivi et d'évaluation sont fixés."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.9091,
+          "text": "Une commission de tri des candidatures sera créée à cet effet."
+        }
+      ]
+    },
+    {
+      "doc_id": "0a188942-c87c-4b3c-ad21-c30196b3d262",
+      "title": "Jo0272026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 9,
+      "requirements_final_per_document": 4,
+      "requirements_total_db": 4,
+      "draft_count": 0,
+      "to_validate_count": 4,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 1,
+      "risky_to_validate_count": 3,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.25,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Les crédits mentionnés dans l’article premier sont répartis par programmes, par parties et par sources de financement conformément aux tableaux annexés au présent arrêté."
+        }
+      ]
+    },
+    {
+      "doc_id": "7c8fe295-8ac7-4314-a707-2ad56685036c",
+      "title": "Jo0282014",
+      "doc_gate_policy": "EXTRACT_LIMITED",
+      "policy_forced_to_validate_total": 3,
+      "raw_llm_requirements": 87,
+      "requirements_final_per_document": 59,
+      "requirements_total_db": 59,
+      "draft_count": 1,
+      "to_validate_count": 58,
+      "reject_count": 0,
+      "draft_share": 0.0169,
+      "to_validate_share": 0.9831,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 25,
+      "risky_to_validate_count": 33,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.431,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Les limites de ladite zone industrielle sont fixées conformément au plan annexé au présent arrêté."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Peuvent être candidats au concours interne sur dossiers pour la promotion au grade d'analyste en chef les analystes centraux titulaires dans leur grade."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.89,
+          "overlap": 0.9048,
+          "text": "Les candidats doivent justifier d'au moins cinq (5) ans d'ancienneté dans leur grade à la date de clôture des candidatures."
+        }
+      ]
+    },
+    {
+      "doc_id": "506e45e1-288d-408b-815b-f4e20e29c991",
+      "title": "Jo0282026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 18,
+      "requirements_final_per_document": 10,
+      "requirements_total_db": 10,
+      "draft_count": 2,
+      "to_validate_count": 8,
+      "reject_count": 0,
+      "draft_share": 0.2,
+      "to_validate_share": 0.8,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 5,
+      "risky_to_validate_count": 3,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.625,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Les banques publiques et privées s’engagent à régulariser la situation des créances bancaires des agriculteurs et des entreprises opérant dans le secteur agricole, classées auprès "
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La Banque centrale de Tunisie fixe les conditions et les modalités d'application et d'exécution de la présente loi dans un délai n'excédant pas 15 jours à compter de la date de sa "
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La Banque centrale de Tunisie fixe les modèles unifiés des contrats de régularisation."
+        }
+      ]
+    },
+    {
+      "doc_id": "5b1bfd6e-809f-404a-9467-072dd0b648ef",
+      "title": "Jo0282026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 20,
+      "requirements_final_per_document": 7,
+      "requirements_total_db": 7,
+      "draft_count": 2,
+      "to_validate_count": 5,
+      "reject_count": 0,
+      "draft_share": 0.2857,
+      "to_validate_share": 0.7143,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 5,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 1.0,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Les banques publiques et privées s’engagent à régulariser la situation des créances bancaires des agriculteurs et des entreprises opérant dans le secteur agricole, classées auprès "
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La Banque centrale de Tunisie fixe les conditions et les modalités d'application et d'exécution de la présente loi dans un délai n'excédant pas 15 jours à compter de la date de sa "
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La Banque centrale de Tunisie fixe les modèles unifiés des contrats de régularisation."
+        }
+      ]
+    },
+    {
+      "doc_id": "301d9e33-cf1c-41ca-9b7b-b829dbb9553a",
+      "title": "Jo0292026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 19,
+      "requirements_final_per_document": 7,
+      "requirements_total_db": 7,
+      "draft_count": 2,
+      "to_validate_count": 5,
+      "reject_count": 0,
+      "draft_share": 0.2857,
+      "to_validate_share": 0.7143,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 5,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 1.0,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Les banques publiques et privées s’engagent à régulariser la situation des créances bancaires des agriculteurs et des entreprises opérant dans le secteur agricole, classées auprès "
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La Banque centrale de Tunisie fixe les conditions et les modalités d'application et d'exécution de la présente loi dans un délai n'excédant pas 15 jours à compter de la date de sa "
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La Banque centrale de Tunisie fixe les modèles unifiés des contrats de régularisation."
+        }
+      ]
+    },
+    {
+      "doc_id": "280c189b-f470-4f8f-bff7-abe5456242fd",
+      "title": "Jo0292026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 4,
+      "raw_llm_requirements": 101,
+      "requirements_final_per_document": 74,
+      "requirements_total_db": 74,
+      "draft_count": 3,
+      "to_validate_count": 71,
+      "reject_count": 0,
+      "draft_share": 0.0405,
+      "to_validate_share": 0.9595,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 39,
+      "risky_to_validate_count": 32,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.5493,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le concours susvisé est supervisé par un jury dont la composition est fixée."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Peuvent participer au concours sur épreuves de redéploiement des agents de l’Etat, des collectivités locales et des établissements publics à caractère administratif, dans la limite"
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Peuvent participer au concours sur épreuves de redéploiement des agents de l’Etat, des collectivités locales et des établissements publics à caractère administratif dans le grade d"
+        }
+      ]
+    },
+    {
+      "doc_id": "5ef88f6a-6610-4e04-ad55-e3db79898e0f",
+      "title": "Jo0302026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 1,
+      "raw_llm_requirements": 54,
+      "requirements_final_per_document": 44,
+      "requirements_total_db": 44,
+      "draft_count": 8,
+      "to_validate_count": 36,
+      "reject_count": 0,
+      "draft_share": 0.1818,
+      "to_validate_share": 0.8182,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 21,
+      "risky_to_validate_count": 15,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.5833,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La composition du jury du concours Gouvernement interne susvisé est fixée par arrêté du ministre chargé du commerce."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le concours interne sur dossiers plusieurs candidats ont obtenu le même nombre de pour la promotion au grade d'ingénieur en chef au points, la priorité est accordée au plus ancien "
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.9333,
+          "text": "Si l'ancienneté dans le grade est la même, la priorité est accordée au candidat le plus âgé."
+        }
+      ]
+    },
+    {
+      "doc_id": "88977abf-d5c1-41dd-8d0e-d2f6ed21bb23",
+      "title": "Jo0302026",
+      "doc_gate_policy": "EXTRACT_LIMITED",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 23,
+      "requirements_final_per_document": 19,
+      "requirements_total_db": 19,
+      "draft_count": 1,
+      "to_validate_count": 18,
+      "reject_count": 0,
+      "draft_share": 0.0526,
+      "to_validate_share": 0.9474,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 10,
+      "risky_to_validate_count": 8,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.5556,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Les dossiers sont évalués par le jury du concours interne."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le jury du concours interne susvisé, procède à l'évaluation des dossiers présentés conformément aux dispositions du présent arrêté et décerne une note à chaque candidat qui varie e"
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Si l'ancienneté dans le grade est la même, la priorité est accordée au candidat le plus âgé."
+        }
+      ]
+    },
+    {
+      "doc_id": "4be445ca-2145-4757-87b8-8ec3d9fc9ace",
+      "title": "Jo0312026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 67,
+      "requirements_final_per_document": 14,
+      "requirements_total_db": 14,
+      "draft_count": 0,
+      "to_validate_count": 14,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 9,
+      "risky_to_validate_count": 5,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.6429,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Les tarifs des travaux de mesures gravimétriques, de nivellement et des documents cartographiques pour le compte de l'Etat sont fixés hors taxes conformément aux indications du tab"
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.4615,
+          "text": "La préservation des bornes frontalières est prévue pour un montant de 960,000."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.3,
+          "text": "La restauration est prévue pour un montant de 840,000."
+        }
+      ]
+    },
+    {
+      "doc_id": "779526c7-98d9-49c8-825f-39f3a32d212c",
+      "title": "Jo0332017",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 6,
+      "requirements_final_per_document": 4,
+      "requirements_total_db": 4,
+      "draft_count": 1,
+      "to_validate_count": 3,
+      "reject_count": 0,
+      "draft_share": 0.25,
+      "to_validate_share": 0.75,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 0,
+      "risky_to_validate_count": 3,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.0,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": []
+    },
+    {
+      "doc_id": "6d6ce882-08ad-4201-acf2-e25cdb8e3e99",
+      "title": "Jo0332026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 4,
+      "requirements_final_per_document": 2,
+      "requirements_total_db": 2,
+      "draft_count": 0,
+      "to_validate_count": 2,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 2,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 1.0,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.9677,
+          "text": "Les électeurs inscrits dans la circonscription électorale d’El Kabaria - Tunis sont convoqués aux élections législatives partielles le dimanche 28 juin 2026 de huit heures du matin"
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.9677,
+          "text": "Les électeurs inscrits dans la circonscription électorale d’El Kabaria - Tunis sont convoqués aux élections législatives partielles le dimanche 28 juin 2026 de huit heures du matin"
+        }
+      ]
+    },
+    {
+      "doc_id": "fc901201-8416-4ef1-ab43-e57a14fc993b",
+      "title": "Jo0342026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 55,
+      "requirements_final_per_document": 31,
+      "requirements_total_db": 16,
+      "draft_count": 0,
+      "to_validate_count": 16,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 12,
+      "risky_to_validate_count": 4,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.75,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.9744,
+          "text": "Le concours interne sur dossiers pour la promotion au grade d'administrateur général de la classe supérieure du corps administratif commun des administrations publiques est ouvert "
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.9744,
+          "text": "Le concours interne sur dossiers pour la promotion au grade d'administrateur général de la classe supérieure du corps administratif commun des administrations publiques est ouvert "
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le nombre de postes à pourvoir est fixé à quatre (4) postes."
+        }
+      ]
+    },
+    {
+      "doc_id": "d14ef0e3-7eef-475e-b3b9-62dd76d578c9",
+      "title": "Jo0422012",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 71,
+      "requirements_final_per_document": 48,
+      "requirements_total_db": 48,
+      "draft_count": 6,
+      "to_validate_count": 42,
+      "reject_count": 0,
+      "draft_share": 0.125,
+      "to_validate_share": 0.875,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 34,
+      "risky_to_validate_count": 8,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.8095,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le nombre de postes à pourvoir est fixé à un seul poste (1)."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le nombre de postes à pourvoir est fixé à cinq (5) postes."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le nombre de postes à pourvoir est fixé à un seul poste (1)."
+        }
+      ]
+    },
+    {
+      "doc_id": "c3c74601-c8a9-4d6c-a943-481c051050f6",
+      "title": "Jo0432017",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 18,
+      "requirements_final_per_document": 12,
+      "requirements_total_db": 12,
+      "draft_count": 1,
+      "to_validate_count": 11,
+      "reject_count": 0,
+      "draft_share": 0.0833,
+      "to_validate_share": 0.9167,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 4,
+      "risky_to_validate_count": 7,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.3636,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Ces manuels sont mis à la disposition du public."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Ces manuels sont publiés obligatoirement sur une rubrique dédiée à l’accès à l’information sur le site web de l’instance."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La liste des inscriptions sera close le mardi 30 juin 2017."
+        }
+      ]
+    },
+    {
+      "doc_id": "8bf6f69f-a1e6-40cc-a239-78d2a6e1ad54",
+      "title": "Jo0442020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 164,
+      "requirements_final_per_document": 56,
+      "requirements_total_db": 56,
+      "draft_count": 2,
+      "to_validate_count": 54,
+      "reject_count": 0,
+      "draft_share": 0.0357,
+      "to_validate_share": 0.9643,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 35,
+      "risky_to_validate_count": 19,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.6481,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "INTERDICTION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La représentation de l’un des deux sexes ne peut pas être inférieure à 40%."
+        },
+        {
+          "req_type": "EXCEPTION",
+          "confidence": 0.85,
+          "overlap": 0.9412,
+          "text": "Sous réserve des dispositions des statuts et des textes réglementant les entreprises publiques, les administrateurs représentant les participants publics ne peuvent être désignés à"
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "portant création des structures au Premier ministère, relatif aux modalités d'exercice de la tutelle sur les entreprises publiques, à l'approbation de leurs actes de gestion, à la "
+        }
+      ]
+    },
+    {
+      "doc_id": "c00e7503-b144-4d19-8ff6-afd9281f8abc",
+      "title": "Jo0502014",
+      "doc_gate_policy": "EXTRACT_LIMITED",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 22,
+      "requirements_final_per_document": 13,
+      "requirements_total_db": 13,
+      "draft_count": 0,
+      "to_validate_count": 13,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 4,
+      "risky_to_validate_count": 9,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.3077,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Sont transférés, à titre de propriété, à l'institut national de la météorologie, les immeubles et biens meubles ainsi que le matériel relevant du domaine privé de l'Etat, nécessair"
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.96,
+          "text": "Un concours interne sur dossiers pour la promotion au grade de greffier-adjoint est ouvert au tribunal administratif le 25 décembre 2014 et les jours suivants."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le nombre de postes à pourvoir est fixé à un seul (1) poste."
+        }
+      ]
+    },
+    {
+      "doc_id": "8a59d063-2cf9-4ac9-8eae-74ed3977cf05",
+      "title": "Jo0602021",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 8,
+      "requirements_final_per_document": 6,
+      "requirements_total_db": 6,
+      "draft_count": 0,
+      "to_validate_count": 6,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 5,
+      "risky_to_validate_count": 1,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.8333,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.5714,
+          "text": "Le montant de l'indemnité de sujétions spéciales est fixé selon les catégories et sous-catégories prévues, avec application des montants indiqués à compter du 1er mai 2021, du 1er "
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.8333,
+          "text": "À compter du 1er septembre 2021, le montant brut de l'indemnité de sujétions spéciales est fixé à 61.000 pour la catégorie A1, à 54.000 pour la catégorie A2, à 48.000 pour la catég"
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.8293,
+          "text": "À compter du 1er mai 2021, le montant brut de l'indemnité de sujétions spéciales est fixé à 61.000 pour la catégorie A1, à 53.000 pour la catégorie A2, à 47.000 pour la catégorie A"
+        }
+      ]
+    },
+    {
+      "doc_id": "f5c53036-0eff-437c-82a5-b5bd10490b68",
+      "title": "Jo0612008",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 4,
+      "raw_llm_requirements": 65,
+      "requirements_final_per_document": 34,
+      "requirements_total_db": 12,
+      "draft_count": 0,
+      "to_validate_count": 12,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 7,
+      "risky_to_validate_count": 5,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.5833,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "RESPONSABILITE",
+          "confidence": 0.89,
+          "overlap": 1.0,
+          "text": "Article 20 (nouveau) – Est électeur, tout citoyen possédant la nationalité tunisienne depuis au moins cinq ans, âgé de dix huit ans accomplis et remplissant les conditions prévues "
+        },
+        {
+          "req_type": "RESPONSABILITE",
+          "confidence": 0.89,
+          "overlap": 1.0,
+          "text": "Des dispositions dérogatoires sont insérées au troisième alinéa de l’article 40 de la constitution ainsi qu’il suit : A défaut de remplir la condition de présentation du candidat p"
+        },
+        {
+          "req_type": "DECLARATION",
+          "confidence": 0.85,
+          "overlap": 0.8947,
+          "text": "Sont déclarés d’utilité publique les premiers travaux de voiries dans les rues de la ville de Hammam Chatt mentionnées au texte."
+        }
+      ]
+    },
+    {
+      "doc_id": "885842bd-6177-45ef-87bb-ffb9338bce7a",
+      "title": "Jo0632021",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 62,
+      "requirements_final_per_document": 42,
+      "requirements_total_db": 42,
+      "draft_count": 5,
+      "to_validate_count": 37,
+      "reject_count": 0,
+      "draft_share": 0.119,
+      "to_validate_share": 0.881,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 22,
+      "risky_to_validate_count": 15,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.5946,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.9818,
+          "text": "Sont fixés à la liste annexée au présent décret gouvernemental les équipements, matériels, parties, pièces détachées, accessoires et autres produits nécessaires à l’agriculture et "
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.9818,
+          "text": "Sont fixés à la liste annexée au présent décret gouvernemental les équipements, matériels, parties, pièces détachées, accessoires et autres produits nécessaires à l’agriculture et "
+        },
+        {
+          "req_type": "CONTROLE",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "L'instance tunisienne de l'investissement est chargée du suivi de la réalisation de l'investissement d'extension par la société « COFICAB »."
+        }
+      ]
+    },
+    {
+      "doc_id": "8c745c81-0a5b-44e8-b24b-d930bb80ff8d",
+      "title": "Jo0722020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 4,
+      "raw_llm_requirements": 14,
+      "requirements_final_per_document": 12,
+      "requirements_total_db": 12,
+      "draft_count": 0,
+      "to_validate_count": 12,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 8,
+      "risky_to_validate_count": 4,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.6667,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.89,
+          "overlap": 1.0,
+          "text": "Le bénéfice de l’avantage cité peut être ajusté en cas de remboursement d’une ou de plusieurs échéances des crédits avant les délais prévus par les tableaux d’amortissement."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.89,
+          "overlap": 1.0,
+          "text": "Le bénéfice de l’avantage cité peut être ajusté en cas de remboursement d’une ou de plusieurs échéances des crédits avant les délais prévus par les tableaux d’amortissement, et ce,"
+        },
+        {
+          "req_type": "EXCEPTION",
+          "confidence": 0.85,
+          "overlap": 0.9722,
+          "text": "Le bénéfice de l’avantage de la prise en charge par l’Etat de la bonification du taux d’intérêt est annulé en cas d’enregistrement d’un retard de remboursement de trois échéances s"
+        }
+      ]
+    },
+    {
+      "doc_id": "24e53087-89d0-4241-b80e-ea1195f10661",
+      "title": "Jo0902021",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 1,
+      "raw_llm_requirements": 83,
+      "requirements_final_per_document": 46,
+      "requirements_total_db": 46,
+      "draft_count": 6,
+      "to_validate_count": 40,
+      "reject_count": 0,
+      "draft_share": 0.1304,
+      "to_validate_share": 0.8696,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 21,
+      "risky_to_validate_count": 19,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.525,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "DECLARATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Art. - un rapport d'activité concernant l'année qui précède l'année du concours (coefficient 0.25). Il est attribué à chaque critère une note variant de zéro (0) à vingt (20). 2 - "
+        },
+        {
+          "req_type": "DECLARATION",
+          "confidence": 0.89,
+          "overlap": 1.0,
+          "text": "Les candidats au concours susvisé doivent adresser leurs demandes de candidature par la voie hiérarchique au ministère de la santé."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.7619,
+          "text": "L'emploi fonctionnel est pris en compte à condition de ne pas en avoir été bénéficiaire lors d'un concours de promotion antérieur."
+        }
+      ]
+    },
+    {
+      "doc_id": "cb5f8fd6-0d54-4a61-864b-e594a9af4c18",
+      "title": "Jo0902022",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 43,
+      "requirements_final_per_document": 27,
+      "requirements_total_db": 27,
+      "draft_count": 0,
+      "to_validate_count": 27,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 6,
+      "risky_to_validate_count": 21,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.2222,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "DECLARATION",
+          "confidence": 0.85,
+          "overlap": 0.8286,
+          "text": "La rémunération de l’horaire des travaux relative au traitement technique des documents est fixée conformément aux valeurs suivantes : 500 pour l’assainissement et l’inventaire de "
+        },
+        {
+          "req_type": "DECLARATION",
+          "confidence": 0.85,
+          "overlap": 0.8,
+          "text": "La rémunération de l’horaire des travaux relative au traitement technique des documents est fixée conformément aux valeurs suivantes : 500 pour le traitement informatique (saisie o"
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.8824,
+          "text": "Les conditions et les critères de recrutement des personnes chargées d’effectuer les travaux à titre occasionnel sont fixés."
+        }
+      ]
+    },
+    {
+      "doc_id": "408f28bb-d1d6-4754-bcde-499cf15c4853",
+      "title": "Jo0932020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 0,
+      "requirements_final_per_document": 0,
+      "requirements_total_db": 1,
+      "draft_count": 0,
+      "to_validate_count": 1,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 1,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 1.0,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.81,
+          "overlap": 0.6667,
+          "text": "Le cahier des charges est approuvé."
+        }
+      ]
+    },
+    {
+      "doc_id": "9a171b6a-f2d4-41a7-a332-a497365dcba2",
+      "title": "Jo0932020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 10,
+      "requirements_final_per_document": 8,
+      "requirements_total_db": 8,
+      "draft_count": 1,
+      "to_validate_count": 7,
+      "reject_count": 0,
+      "draft_share": 0.125,
+      "to_validate_share": 0.875,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 1,
+      "risky_to_validate_count": 6,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.1429,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "EXCEPTION",
+          "confidence": 0.85,
+          "overlap": 0.8824,
+          "text": "Les décisions des sanctions disciplinaires qui concernent les agents de la Présidence du gouvernement sont exclues de la sanction de révocation."
+        }
+      ]
+    },
+    {
+      "doc_id": "2bc37fef-f9b7-47ab-8bc4-297fcad6b573",
+      "title": "Jo0942022",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 3,
+      "requirements_final_per_document": 3,
+      "requirements_total_db": 3,
+      "draft_count": 0,
+      "to_validate_count": 3,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 3,
+      "risky_to_validate_count": 0,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 1.0,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "EXCEPTION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le directeur général des affaires administratives et financières au ministère de la défense nationale est habilité à signer par délégation du ministre de la défense nationale tous "
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "ons fixées à l'article deux du décret n° 75- 384 du 17 juin 1975, susvisé."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.9216,
+          "text": "Le seuil du taux d’intérêt excessif correspondant est fixé à 15,99 % pour le leasing mobiliers et immobiliers, à 12,67 % pour les crédits à la consommation, à 12,75 % pour les déco"
+        }
+      ]
+    },
+    {
+      "doc_id": "5545d046-1ce8-4495-8016-5427c3b97d6a",
+      "title": "Jo1002014",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 3,
+      "raw_llm_requirements": 79,
+      "requirements_final_per_document": 49,
+      "requirements_total_db": 49,
+      "draft_count": 0,
+      "to_validate_count": 49,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 14,
+      "risky_to_validate_count": 35,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.2857,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le nombre de places réservées à ce cycle est fixé à soixante (60)."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le nombre de places réservées à ce cycle est fixé à trente (30)."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 0.9286,
+          "text": "Le directeur de l'école nationale d'administration est chargé de l'exécution du présent texte."
+        }
+      ]
+    },
+    {
+      "doc_id": "21d0c672-04c2-470d-b857-43620d538b36",
+      "title": "Jo1212025",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 99,
+      "requirements_final_per_document": 65,
+      "requirements_total_db": 65,
+      "draft_count": 12,
+      "to_validate_count": 53,
+      "reject_count": 0,
+      "draft_share": 0.1846,
+      "to_validate_share": 0.8154,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 24,
+      "risky_to_validate_count": 29,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.4528,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.84,
+          "overlap": 0.9677,
+          "text": "Il est mis fin à la participation de tout participant lorsqu'il cesse de satisfaire aux conditions d'agrément de participation ou en cas de manquement aux principes fondamentaux de"
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Les membres du conseil d'administration sont élus par l'assemblée générale constitutive et l'assemblée générale ordinaire à la majorité des suffrages exprimés."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Les membres du conseil d'administration sont élus pour une durée de trois ans renouvelable deux fois."
+        }
+      ]
+    },
+    {
+      "doc_id": "72df326d-b341-49e7-9ade-41e52fe852ec",
+      "title": "Jo1212025",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 29,
+      "requirements_final_per_document": 4,
+      "requirements_total_db": 4,
+      "draft_count": 1,
+      "to_validate_count": 3,
+      "reject_count": 0,
+      "draft_share": 0.25,
+      "to_validate_share": 0.75,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 2,
+      "risky_to_validate_count": 1,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.6667,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le coût total du programme minimum des travaux de recherche est estimé à trois cent mille dinars."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.8571,
+          "text": "Le permis de recherche est valable pendant la période prévue à l'article premier."
+        }
+      ]
+    },
+    {
+      "doc_id": "1137edef-6a9c-438d-a384-7224de1fa645",
+      "title": "Jo1262025",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 28,
+      "requirements_final_per_document": 20,
+      "requirements_total_db": 20,
+      "draft_count": 0,
+      "to_validate_count": 20,
+      "reject_count": 0,
+      "draft_share": 0.0,
+      "to_validate_share": 1.0,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 13,
+      "risky_to_validate_count": 7,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.65,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.9714,
+          "text": "Un concours interne sur dossiers est ouvert à l’Assemblée des représentants du peuple le 30 décembre 2025 et les jours suivants pour la promotion au grade de conseiller de premier "
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.9714,
+          "text": "Un concours interne sur dossiers est ouvert à l’Assemblée des représentants du peuple le 24 décembre 2025 et les jours suivants pour la promotion au grade de conseiller de deuxième"
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le nombre de postes à pourvoir est fixé à six (6) postes."
+        }
+      ]
+    },
+    {
+      "doc_id": "fae61e0b-08d9-4692-abc9-85af1bd7e873",
+      "title": "Jo1282022",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 1,
+      "raw_llm_requirements": 100,
+      "requirements_final_per_document": 63,
+      "requirements_total_db": 63,
+      "draft_count": 7,
+      "to_validate_count": 56,
+      "reject_count": 0,
+      "draft_share": 0.1111,
+      "to_validate_share": 0.8889,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 34,
+      "risky_to_validate_count": 22,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.6071,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La composition du jury du concours interne susvisé est fixée."
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le jury du concours interne susvisé, procède à l'évaluation des dossiers présentés conformément aux dispositions du présent arrêté et décerne une note à chaque candidat qui varie e"
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Si l'ancienneté dans le grade est la même, la priorité est accordée au candidat le plus âgé."
+        }
+      ]
+    },
+    {
+      "doc_id": "0e9bdf92-b571-43e6-94b5-b76e155f0661",
+      "title": "Jo1282022",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 1,
+      "raw_llm_requirements": 54,
+      "requirements_final_per_document": 44,
+      "requirements_total_db": 44,
+      "draft_count": 8,
+      "to_validate_count": 36,
+      "reject_count": 0,
+      "draft_share": 0.1818,
+      "to_validate_share": 0.8182,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 21,
+      "risky_to_validate_count": 15,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.5833,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La composition du jury du concours Gouvernement interne susvisé est fixée par arrêté du ministre chargé du commerce."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Le concours interne sur dossiers plusieurs candidats ont obtenu le même nombre de pour la promotion au grade d'ingénieur en chef au points, la priorité est accordée au plus ancien "
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.9333,
+          "text": "Si l'ancienneté dans le grade est la même, la priorité est accordée au candidat le plus âgé."
+        }
+      ]
+    },
+    {
+      "doc_id": "729be59d-640f-4888-af3e-8e31143c0017",
+      "title": "Jo1322025",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "policy_forced_to_validate_total": 0,
+      "raw_llm_requirements": 69,
+      "requirements_final_per_document": 59,
+      "requirements_total_db": 59,
+      "draft_count": 12,
+      "to_validate_count": 47,
+      "reject_count": 0,
+      "draft_share": 0.2034,
+      "to_validate_share": 0.7966,
+      "safe_promotable_count": 0,
+      "limit_promotable_count": 31,
+      "risky_to_validate_count": 16,
+      "safe_promotable_share_of_tv": 0.0,
+      "limit_promotable_share_of_tv": 0.6596,
+      "promotion_band": "RISKY_PROMOTION_POOL",
+      "sample_safe_candidates": [],
+      "sample_limit_candidates": [
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "Les sociétés communautaires bénéficient de la location de gré à gré des immeubles relevant du domaine municipal privé, selon la valeur locative fixée par un expert des domaines de "
+        },
+        {
+          "req_type": "OBLIGATION",
+          "confidence": 0.85,
+          "overlap": 1.0,
+          "text": "La durée de location est fixée à une année renouvelable."
+        },
+        {
+          "req_type": "CONDITION",
+          "confidence": 0.85,
+          "overlap": 0.9412,
+          "text": "Chaque société communautaire bénéficie de la location d’un seul immeuble pour l’exercice de son activité économique."
+        }
+      ]
+    }
+  ]
+}

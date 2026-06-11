@@ -1,0 +1,4 @@
+site_code,name,city,region,type,employee_count,main_activities
+AT1,Usine Mghira,Ben Arous,Mghira,Site principal,135,traitement_surface|peinture_epoxy|maintenance
+AT2,Depot Bouargoub,Bouargoub,Nabeul,Depot logistique,28,stockage_solvants|stockage_dechets|expedition
+AT3,Siege Tunis,Tunis,Lac 1,Siege,22,direction|qse|achats|veille_reglementaire

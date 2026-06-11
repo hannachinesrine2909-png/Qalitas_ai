@@ -1,0 +1,4 @@
+site_code,risk_code,year,activities,domain,risk_type,dangers,appreciation,score,date_start,date_end,obligations,exposure,prevention_efficiency,rpn_efficiency
+AT1,RSK-001,2026,Application peinture epoxy,SST,Chimique,vapeurs de solvants,4(G)/4(F)/3(N),16,2026-01-01,2026-12-31,Formation annuelle|visite medicale|ventilation,Continue,68,3.2
+AT1,RSK-002,2026,Stockage solvants,SST,Incendie,liquides inflammables,5(G)/3(F)/3(N),15,2026-01-01,2026-12-31,Extincteurs|inspection hebdomadaire|retention,Frequente,72,3.5
+AT2,RSK-004,2026,Gestion des dechets dangereux,SST,Manutention,futs et conteneurs,3(G)/3(F)/3(N),9,2026-01-01,2026-12-31,stockage separe|bordereau|aide a la manutention,Reguliere,75,2.8

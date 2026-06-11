@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>QALITAS AI - Runs / Historique</title>
+  <link rel="stylesheet" href="/ui/base.css"/>
+  <link rel="stylesheet" href="/ui/layout.css?v=20260602_02"/>
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_06"/>
+</head>
+<body class="app">
+  <header class="topbar" id="topbar"></header>
+  <div class="layout">
+    <nav class="sidebar" id="sidebar"></nav>
+    <main class="main-content">
+
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1>Runs / Historique</h1>
+          <p id="runsSubtitle">Historique des exécutions pipeline</p>
+        </div>
+        <div class="page-header-right">
+          <button class="btn btn-outline btn-sm" onclick="loadRuns()">Actualiser</button>
+          <a href="/ui/upload.html" class="btn btn-primary btn-sm" data-write>+ Nouveau run</a>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-header">
+          <span class="card-title">Liste des runs</span>
+          <span id="runsCount" class="badge badge-gray">—</span>
+        </div>
+        <div id="runsTableWrap">
+          <div class="skeleton skeleton-block" style="margin-bottom:8px"></div>
+          <div class="skeleton skeleton-block" style="margin-bottom:8px"></div>
+          <div class="skeleton skeleton-block"></div>
+        </div>
+      </div>
+
+      <div class="card" id="detailCard" style="display:none">
+        <div class="card-header">
+          <span class="card-title">Détail run</span>
+          <button class="btn btn-ghost btn-sm" onclick="document.getElementById('detailCard').style.display='none'">Fermer</button>
+        </div>
+        <div id="detail" style="font-size:13px"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="/ui/assets/app.js"></script>
+  <script>
+    const me = App.renderShell('runs');
+
+    let autoRefreshTimer = null;
+
+    function loadRuns() {
+      document.getElementById('runsTableWrap').innerHTML =
+        '<div class="skeleton skeleton-block" style="margin-bottom:8px"></div><div class="skeleton skeleton-block"></div>';
+
+      App.api('/api/v1/runs?limit=200')
+        .then(payload => {
+          const rows = payload.items || [];
+          document.getElementById('runsCount').textContent = `${rows.length} runs`;
+          document.getElementById('runsSubtitle').textContent =
+            `${rows.length} exécution(s) enregistrée(s)`;
+
+          if (!rows.length) {
+            document.getElementById('runsTableWrap').innerHTML =
+              '<div class="empty-state" style="padding:32px"><div class="empty-state-title">Aucun run</div><div class="empty-state-msg">Lancez le pipeline pour commencer.</div></div>';
+            return;
+          }
+
+          const hasRunning = rows.some(r => ['RUNNING','PENDING'].includes(String(r.status||'').toUpperCase()));
+          if (hasRunning && !autoRefreshTimer) {
+            autoRefreshTimer = setTimeout(() => { autoRefreshTimer = null; loadRuns(); }, 5000);
+          }
+
+          let html = `<table class="data-table"><thead><tr>
+            <th style="width:80px">job_id</th>
+            <th>Document</th>
+            <th style="width:150px">Date</th>
+            <th style="width:120px">Statut</th>
+            <th style="width:130px">Erreur</th>
+            <th style="width:90px">Doc ID</th>
+            <th style="width:70px"></th>
+          </tr></thead><tbody>`;
+
+          html += rows.map(r => `<tr>
+            <td><code style="font-size:10px">${(r.job_id||'').slice(0,8)}</code></td>
+            <td style="font-size:12px">${App.escHtml(r.file_name||'—')}</td>
+            <td style="font-size:11px;color:var(--text-muted)">${(r.updated_at||'').slice(0,19).replace('T',' ')}</td>
+            <td>${App.statusBadge(r.status||'')}</td>
+            <td style="font-size:11px;color:var(--text-muted)">${App.escHtml(r.error_category||'—')}</td>
+            <td><code style="font-size:10px;color:var(--text-muted)">${(r.doc_id||'—').slice(0,8)}</code></td>
+            <td><button class="btn btn-ghost btn-sm" onclick="openRun('${r.job_id}')">Ouvrir</button></td>
+          </tr>`).join('');
+
+          html += '</tbody></table>';
+          document.getElementById('runsTableWrap').innerHTML = html;
+        })
+        .catch(() => {
+          document.getElementById('runsTableWrap').innerHTML =
+            '<div class="alert alert-error">Erreur chargement runs.</div>';
+        });
+    }
+
+    function openRun(jobId) {
+      document.getElementById('detailCard').style.display = 'block';
+      document.getElementById('detail').innerHTML =
+        '<div class="skeleton skeleton-block" style="margin-bottom:8px"></div><div class="skeleton skeleton-block"></div>';
+
+      App.api(`/api/v1/runs/${jobId}/details`)
+        .then(d => {
+          document.getElementById('detail').innerHTML = `
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;font-size:12px">
+              <div><span style="color:var(--text-muted)">job_id</span><br/><code style="font-size:10px">${d.job_id||'—'}</code></div>
+              <div><span style="color:var(--text-muted)">Statut</span><br/>${App.statusBadge(d.status||'')}</div>
+              <div><span style="color:var(--text-muted)">Document</span><br/><span style="font-weight:500">${App.escHtml(d.file_name||'—')}</span></div>
+              <div><span style="color:var(--text-muted)">doc_id</span><br/><code style="font-size:10px">${d.doc_id||'—'}</code></div>
+              <div><span style="color:var(--text-muted)">Erreur</span><br/>${App.escHtml(d.error_category||'—')}</div>
+              <div><span style="color:var(--text-muted)">Étape échouée</span><br/>${App.escHtml(d.failed_step||'—')}</div>
+              <div><span style="color:var(--text-muted)">Démarré</span><br/>${(d.started_at||'').slice(0,19).replace('T',' ')}</div>
+              <div><span style="color:var(--text-muted)">Terminé</span><br/>${(d.finished_at||'').slice(0,19).replace('T',' ')}</div>
+            </div>
+            ${d.command ? `<div style="margin-bottom:12px"><div style="font-size:11px;font-weight:600;margin-bottom:4px;color:var(--text-muted)">Commande</div><div class="log-output" style="max-height:80px;font-size:10px">${App.escHtml(d.command)}</div></div>` : ''}
+            ${d.stdout_tail ? `<div style="margin-bottom:12px"><div style="font-size:11px;font-weight:600;margin-bottom:4px;color:var(--text-muted)">Stdout</div><div class="log-output" style="max-height:120px;font-size:10px">${App.escHtml(d.stdout_tail)}</div></div>` : ''}
+            ${d.stderr_tail ? `<div><div style="font-size:11px;font-weight:600;margin-bottom:4px;color:var(--red)">Stderr</div><div class="log-output" style="max-height:120px;font-size:10px;border-color:var(--red)">${App.escHtml(d.stderr_tail)}</div></div>` : ''}
+          `;
+          document.getElementById('detailCard').scrollIntoView({ behavior: 'smooth' });
+        })
+        .catch(() => {
+          document.getElementById('detail').innerHTML =
+            '<div class="alert alert-error">Erreur chargement détail run.</div>';
+        });
+    }
+    window.openRun = openRun;
+
+    loadRuns();
+  </script>
+</body>
+</html>

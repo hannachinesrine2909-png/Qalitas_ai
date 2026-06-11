@@ -1,0 +1,10 @@
+site_code,process_code,process_name,code,name,description
+AT1,PROC-SURF,Traitement de surface,ACT-DEG,Degraissage alcalin,Nettoyage des pieces avant phosphatation
+AT1,PROC-SURF,Traitement de surface,ACT-PHOS,Phosphatation,Preparation anticorrosion avec bains chimiques
+AT1,PROC-PAINT,Peinture industrielle,ACT-PAINT,Application peinture epoxy,Application manuelle et automatique de peinture epoxy
+AT1,PROC-PAINT,Peinture industrielle,ACT-CABINE,Cabine de cuisson,Cuisson et polymerisation des pieces peintes
+AT1,PROC-MAINT,Maintenance,ACT-COMP,Maintenance compresseur,Controle et entretien du compresseur principal
+AT2,PROC-LOG,Logistique solvants et dechets,ACT-STOCKSOLV,Stockage solvants,Stockage en local ferme des solvants inflammables
+AT2,PROC-LOG,Logistique solvants et dechets,ACT-WASTE,Gestion des dechets dangereux,Conditionnement et expedition des dechets souilles par solvants
+AT3,PROC-QHSE,Pilotage QHSE,ACT-VEILLE,Veille reglementaire,Mise a jour du registre et evaluation des obligations
+AT3,PROC-QHSE,Pilotage QHSE,ACT-FORM,Gestion des formations,Planification et preuves de formation des operateurs exposes

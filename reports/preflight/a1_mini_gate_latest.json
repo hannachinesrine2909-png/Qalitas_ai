@@ -1,0 +1,43 @@
+{
+  "version": "A1_MINI_GATE_V1",
+  "status": "PASS",
+  "candidate_eval": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\reports\\eval_latest.json",
+  "baseline_eval": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\reports\\history\\eval_20260403_235720.json",
+  "target_cases": [
+    "jort_028_2026_art1_regularisation",
+    "jort_029_2026_art12_redploiement",
+    "jort_029_2026_art1_services_fiscaux",
+    "jort_030_2026_art3_secheresse"
+  ],
+  "known_type_cases": [
+    "jort_128_2022_art3_concours",
+    "jort_029_2026_art12_redploiement"
+  ],
+  "recoverable_cases_count": 3,
+  "recovered_cases_count": 3,
+  "recovered_cases": [
+    "jort_029_2026_art12_redploiement",
+    "jort_029_2026_art1_services_fiscaux",
+    "jort_030_2026_art3_secheresse"
+  ],
+  "recovered_gate": {
+    "pass": true,
+    "min_recovered": 1,
+    "actual_recovered": 3
+  },
+  "fp_gate": {
+    "pass": true,
+    "baseline_fp_rate_global": 0.7353,
+    "candidate_fp_rate_global": 0.7619,
+    "fp_rate_delta": 0.0266,
+    "max_fp_rate_delta": 0.05
+  },
+  "type_gate": {
+    "pass": true,
+    "cases_present_count": 2,
+    "baseline_type_mismatch_total": 0,
+    "candidate_type_mismatch_total": 0
+  },
+  "missing_in_candidate": [],
+  "blockers": []
+}

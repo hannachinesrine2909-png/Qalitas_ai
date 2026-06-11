@@ -1,0 +1,668 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QALITAS AI - Applicabilite</title>
+  <link rel="stylesheet" href="/ui/base.css" />
+  <link rel="stylesheet" href="/ui/layout.css?v=20260602_02" />
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_07" />
+  <style>
+    .a2-kpi-filter {
+      cursor: pointer;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    }
+    .a2-kpi-filter:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+    }
+    .a2-kpi-filter.is-active {
+      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(239,246,255,0.96));
+    }
+    .a2-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .a2-filter-summary {
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .a2-table td {
+      vertical-align: top;
+    }
+    .a2-cell-stack {
+      display: grid;
+      gap: 4px;
+      min-width: 0;
+    }
+    .a2-ref-main,
+    .a2-scope-main {
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.45;
+      word-break: break-word;
+    }
+    .a2-ref-sub,
+    .a2-scope-sub,
+    .a2-decision-sub {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      word-break: break-word;
+    }
+    .a2-scope-preview {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      max-width: 320px;
+    }
+    .a2-justification-preview {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
+      line-height: 1.6;
+      color: var(--text-primary);
+      max-width: 540px;
+      word-break: break-word;
+    }
+    .a2-open-cell {
+      text-align: right;
+      white-space: nowrap;
+    }
+    .a2-open-btn {
+      min-width: 88px;
+    }
+    .a2-table-wrap.hidden,
+    .a2-empty-state.hidden {
+      display: none;
+    }
+    .a2-empty-state {
+      padding-top: 8px;
+    }
+    .a2-decision-cell {
+      min-width: 150px;
+    }
+    .a2-ref-cell {
+      min-width: 220px;
+    }
+    .a2-scope-cell {
+      min-width: 220px;
+    }
+    .a2-domain-cell {
+      min-width: 150px;
+    }
+  </style>
+</head>
+<body data-page="applicability">
+  <div class="app-shell">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:20px">
+        <a class="brand" href="/ui/dashboard.html"><span class="brand-qali">QALI</span><span class="brand-tas">TAS</span><span class="brand-ai">AI</span></a>
+        <nav class="topbar-nav">
+          <a class="topbar-link" data-top="dashboard" href="/ui/dashboard.html">Pilotage</a>
+          <a class="topbar-link" data-top="requirements" href="/ui/requirements.html">Exigences</a>
+          <a class="topbar-link" data-top="assistant" href="/ui/assistant.html">Assistant expert</a>
+          <a class="topbar-link" data-top="analytics" href="/ui/analytics.html">Analyses</a>
+        </nav>
+      </div>
+      <div class="topbar-right">
+        <span class="tenant-pill" data-auth-tenant>tenant</span>
+        <span class="user-chip"><span class="user-avatar" data-auth-avatar>Q</span><span data-auth-user>Utilisateur</span></span>
+        <button class="logout-link" data-action="logout">Déconnexion</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <section class="sidebar-group">
+        <div class="sidebar-title">Principal</div>
+        <a class="sidebar-link" data-nav="dashboard" href="/ui/dashboard.html">Vue globale</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Pipeline IA</div>
+        <a class="sidebar-link" data-nav="upload" href="/ui/upload.html">Upload & runs</a>
+        <a class="sidebar-link" data-nav="requirements" href="/ui/requirements.html">A1 Exigences</a>
+        <a class="sidebar-link" data-nav="applicability" href="/ui/applicability.html">A2 Applicabilité</a>
+        <a class="sidebar-link" data-nav="compliance" href="/ui/compliance.html">A3 Conformité</a>
+        <a class="sidebar-link" data-nav="assistant" href="/ui/assistant.html">Assistant expert</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Gestion</div>
+        <a class="sidebar-link" data-nav="company" href="/ui/company.html">Entreprise</a>
+        <a class="sidebar-link" data-nav="reports" href="/ui/reports.html">Rapports</a>
+        <a class="sidebar-link" data-nav="settings" href="/ui/settings.html">Paramètres</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Analyse</div>
+        <a class="sidebar-link" data-nav="analytics" href="/ui/analytics.html">Analyses</a>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Applicabilité réglementaire</h1>
+        </div>
+      </div>
+
+      <section id="a2-context-banner" class="banner" style="margin-bottom:12px">
+        Vérification du contexte A1/A2...
+      </section>
+
+      <section class="grid grid-5" id="a2-kpis">
+        <article class="kpi-card a2-kpi-filter is-active" data-filter="ALL" tabindex="0" role="button" aria-pressed="true"><p class="kpi-label">Total</p><p class="kpi-value" data-kpi="total">0</p></article>
+        <article class="kpi-card a2-kpi-filter" data-filter="APPLICABLE" tabindex="0" role="button" aria-pressed="false"><p class="kpi-label">Applicable</p><p class="kpi-value" data-kpi="applicable">0</p></article>
+        <article class="kpi-card a2-kpi-filter" data-filter="APPLICABLE_FUTUR" tabindex="0" role="button" aria-pressed="false"><p class="kpi-label">Applicable futur</p><p class="kpi-value" data-kpi="future">0</p></article>
+        <article class="kpi-card a2-kpi-filter" data-filter="NON_APPLICABLE" tabindex="0" role="button" aria-pressed="false"><p class="kpi-label">Non applicable</p><p class="kpi-value" data-kpi="non">0</p></article>
+        <article class="kpi-card a2-kpi-filter" data-filter="INCERTAIN" tabindex="0" role="button" aria-pressed="false"><p class="kpi-label">Incertain</p><p class="kpi-value" data-kpi="incertain">0</p></article>
+      </section>
+
+      <section id="a2-table-section" class="card" style="margin-top:12px">
+        <div class="a2-filter-bar">
+          <div id="a2-filter-summary" class="a2-filter-summary">Affichage de toutes les decisions d'applicabilite.</div>
+          <button id="a2-filter-reset" class="btn btn-secondary hidden" type="button">Afficher tout</button>
+        </div>
+        <div id="a2-empty-state" class="a2-empty-state hidden"></div>
+        <div id="a2-table-wrap" class="table-wrap a2-table-wrap">
+          <table class="table a2-table">
+            <thead>
+              <tr>
+                <th>Ref</th>
+                <th>Périmètre</th>
+                <th>Domaine</th>
+                <th>Décision</th>
+                <th>Justification</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="a2-body"><tr><td colspan="6">Chargement...</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <aside id="a2-drawer" class="drawer">
+    <div class="card-head">
+      <h3 class="card-title">Détail décision</h3>
+      <button id="close-drawer" class="btn btn-ghost">Fermer</button>
+    </div>
+    <div id="drawer-content" class="page-subtitle">Sélectionner une ligne.</div>
+  </aside>
+
+  <script type="module">
+    import { getAuth, initShell, isReadOnlyRole } from '/ui/js/auth.js';
+    import { api } from '/ui/js/api.js';
+    import { domainBadge, escapeHtml, numberFmt, renderEmpty, renderError, truncate } from '/ui/js/utils.js';
+
+    const session = initShell('applicability');
+    if (!session) throw new Error('Session absente');
+
+    const state = {
+      rows: [],
+      selectedDecisionKey: null,
+      saving: false,
+      activeFilter: 'ALL',
+    };
+
+    const refs = {
+      section: document.getElementById('a2-table-section'),
+      summary: document.getElementById('a2-filter-summary'),
+      resetFilter: document.getElementById('a2-filter-reset'),
+      kpiCards: Array.from(document.querySelectorAll('#a2-kpis [data-filter]')),
+      banner: document.getElementById('a2-context-banner'),
+      tableWrap: document.getElementById('a2-table-wrap'),
+      tableBody: document.getElementById('a2-body'),
+      emptyState: document.getElementById('a2-empty-state'),
+      drawer: document.getElementById('a2-drawer'),
+      drawerContent: document.getElementById('drawer-content'),
+      closeDrawer: document.getElementById('close-drawer'),
+    };
+
+    function renderContextBanner(message, tone = 'info') {
+      if (!refs.banner) return;
+      if (!message || tone === 'success') {
+        refs.banner.classList.add('hidden');
+        return;
+      }
+      refs.banner.classList.remove('hidden');
+      refs.banner.textContent = message;
+      if (tone === 'danger') {
+        refs.banner.style.background = '#fff1f2';
+        refs.banner.style.borderColor = 'rgba(220, 38, 38, 0.45)';
+        refs.banner.style.color = '#991b1b';
+        return;
+      }
+      if (tone === 'success') {
+        refs.banner.style.background = '#f0fdf4';
+        refs.banner.style.borderColor = 'rgba(22, 163, 74, 0.35)';
+        refs.banner.style.color = '#166534';
+        return;
+      }
+      refs.banner.style.background = '#fffbeb';
+      refs.banner.style.borderColor = 'rgba(245, 158, 11, 0.6)';
+      refs.banner.style.color = '#92400e';
+    }
+
+    function decisionBadge(status) {
+      const s = String(status || '').toUpperCase();
+      if (s === 'APPLICABLE') return '<span class="badge badge-conforme">APPLICABLE</span>';
+      if (s === 'APPLICABLE_FUTUR') return '<span class="badge badge-blue">APPLICABLE_FUTUR</span>';
+      if (s === 'NON_APPLICABLE') return '<span class="badge badge-absence">NON_APPLICABLE</span>';
+      if (s === 'APPLICABLE_SOUS_CONDITIONS' || s === 'SOUS_CONDITIONS') return '<span class="badge badge-amber">SOUS_CONDITIONS</span>';
+      if (s === 'INCERTAIN') return '<span class="badge badge-warning">INCERTAIN</span>';
+      return '<span class="badge badge-unknown">N/A</span>';
+    }
+
+    function setKpi(id, value) {
+      const node = document.querySelector(`[data-kpi="${id}"]`);
+      if (node) node.textContent = numberFmt(value || 0);
+    }
+
+    function normalizeDecision(status) {
+      const s = String(status || '').toUpperCase();
+      if (s === 'APPLICABLE_SOUS_CONDITIONS' || s === 'SOUS_CONDITIONS') return 'APPLICABLE';
+      return s || 'UNKNOWN';
+    }
+
+    function filteredRows() {
+      if (state.activeFilter === 'ALL') return state.rows;
+      return state.rows.filter((row) => normalizeDecision(row.status) === state.activeFilter);
+    }
+
+    function filterLabel(filterKey) {
+      if (filterKey === 'APPLICABLE') return 'Applicables';
+      if (filterKey === 'APPLICABLE_FUTUR') return 'Applicables futures';
+      if (filterKey === 'NON_APPLICABLE') return 'Non applicables';
+      if (filterKey === 'INCERTAIN') return 'Incertaines';
+      return 'Toutes les decisions';
+    }
+
+    function formatEffectiveDate(value) {
+      if (!value) return '-';
+      const d = new Date(value);
+      if (Number.isNaN(d.getTime())) return escapeHtml(String(value));
+      return new Intl.DateTimeFormat('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' }).format(d);
+    }
+
+    function applyActiveFilterVisual() {
+      refs.kpiCards.forEach((card) => {
+        const active = String(card.dataset.filter || 'ALL').toUpperCase() === state.activeFilter;
+        card.classList.toggle('is-active', active);
+        card.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      const rows = filteredRows();
+      const currentLabel = filterLabel(state.activeFilter);
+      if (refs.summary) {
+        refs.summary.textContent = state.activeFilter === 'ALL'
+          ? `Affichage de toutes les decisions d'applicabilite (${numberFmt(rows.length)} ligne(s)).`
+          : `Filtre actif : ${currentLabel} (${numberFmt(rows.length)} ligne(s)).`;
+      }
+      if (refs.resetFilter) {
+        refs.resetFilter.classList.toggle('hidden', state.activeFilter === 'ALL');
+      }
+    }
+
+    function renderTable() {
+      const rows = filteredRows();
+      const body = refs.tableBody;
+      if (!body) return;
+      refs.tableWrap.classList.remove('hidden');
+      refs.emptyState.classList.add('hidden');
+      refs.emptyState.innerHTML = '';
+
+      if (!rows.length) {
+        body.innerHTML = `<tr><td colspan="6">Aucune decision ne correspond au filtre actif.</td></tr>`;
+        refs.drawer.classList.remove('is-open');
+        state.selectedDecisionKey = null;
+        applyActiveFilterVisual();
+        return;
+      }
+
+      body.innerHTML = rows.map((row, idx) => `
+        <tr data-row="${idx}" style="cursor:pointer">
+          <td class="a2-ref-cell">
+            <div class="a2-cell-stack">
+              <div class="a2-ref-main">${escapeHtml(row.article_ref || row.citation_ref || `REQ-${idx + 1}`)}</div>
+              <div class="a2-ref-sub">${escapeHtml(row.doc_title || row.req_type || '-')}</div>
+            </div>
+          </td>
+          <td class="a2-scope-cell">
+            <div class="a2-cell-stack">
+              <div class="a2-scope-main">${escapeHtml(scopeDisplayLabel(row))}</div>
+              <div class="a2-scope-sub a2-scope-preview" title="${escapeHtml(scopeRawLabel(row))}">${escapeHtml(scopeMetaLabel(row))}</div>
+            </div>
+          </td>
+          <td class="a2-domain-cell">${domainBadge(row.qse_domain)}</td>
+          <td class="a2-decision-cell">
+            <div class="a2-cell-stack">
+              <div>${decisionBadge(row.status)}</div>
+              <div class="a2-decision-sub">${
+                String(row.status || '').toUpperCase() === 'APPLICABLE_FUTUR' && row.effective_date
+                  ? `Effet ${formatEffectiveDate(row.effective_date)}`
+                  : `Confiance ${Math.round(Number(row.confidence || 0) * 100)}%`
+              }</div>
+            </div>
+          </td>
+          <td title="${escapeHtml(row.justification || '')}">
+            <div class="a2-justification-preview">${escapeHtml(truncate(row.justification || '', 260))}</div>
+          </td>
+          <td class="a2-open-cell">
+            <button type="button" class="btn btn-secondary btn-sm a2-open-btn" data-row="${idx}">Voir</button>
+          </td>
+        </tr>
+      `).join('');
+
+      body.querySelectorAll('tr[data-row]').forEach((tr) => {
+        tr.addEventListener('click', () => openDrawer(rows[Number(tr.dataset.row)]));
+      });
+      body.querySelectorAll('button[data-row]').forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+          event.stopPropagation();
+          openDrawer(rows[Number(btn.dataset.row)]);
+        });
+      });
+
+      const selected = findSelectedRow();
+      if (selected && rows.some((row) => decisionKey(row) === decisionKey(selected))) {
+        openDrawer(selected);
+      } else {
+        refs.drawer.classList.remove('is-open');
+        state.selectedDecisionKey = null;
+      }
+      applyActiveFilterVisual();
+    }
+
+    function decisionKey(row) {
+      return `${row.requirement_id || ''}::${row.scope_key || 'ORGANIZATION'}`;
+    }
+
+    function scopeText(row) {
+      const level = String(row.scope_level || 'ORGANIZATION').toUpperCase();
+      if (level === 'SITE') return 'Portée site';
+      if (level === 'PROCESS') return 'Portée processus';
+      if (level === 'ACTIVITY') return 'Portée activité';
+      return 'Portée organisation';
+    }
+
+    function cleanInlineText(value) {
+      return String(value || '')
+        .replace(/\s+/g, ' ')
+        .replace(/\s*:\s*/g, ': ')
+        .trim();
+    }
+
+    function scopeRawLabel(row) {
+      const level = String(row.scope_level || 'ORGANIZATION').toUpperCase();
+      if (level === 'ACTIVITY') {
+        return cleanInlineText(row.scope_activity || row.scope_label || row.scope_key || 'Activité');
+      }
+      if (level === 'PROCESS') {
+        return cleanInlineText(row.scope_process || row.scope_label || row.scope_key || 'Processus');
+      }
+      if (level === 'SITE') {
+        return cleanInlineText(row.scope_site || row.scope_label || row.scope_key || 'Site');
+      }
+      return cleanInlineText(row.scope_label || row.scope_key || 'Organisation');
+    }
+
+    function scopeDisplayLabel(row) {
+      const raw = scopeRawLabel(row);
+      const level = String(row.scope_level || 'ORGANIZATION').toUpperCase();
+      if (level === 'ORGANIZATION') {
+        return truncate(raw || 'Organisation', 56);
+      }
+      return truncate(raw || scopeText(row), 72);
+    }
+
+    function scopeMetaLabel(row) {
+      const levelLabel = scopeText(row);
+      const raw = scopeRawLabel(row);
+      if (!raw) return levelLabel;
+      if (raw.length <= 72) return `${levelLabel} - ${raw}`;
+      return `${levelLabel} - ${truncate(raw, 140)}`;
+    }
+
+    function renderReviewSection(row) {
+      if (isReadOnlyRole(session.role)) {
+        return `
+          <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--border)">
+            <span class="badge badge-absence">Lecture seule (AUDITEUR)</span>
+          </div>
+        `;
+      }
+      const current = String(row.status || '').toUpperCase();
+      const isPriority = current === 'INCERTAIN';
+      return `
+        <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--border)">
+          <div class="field-label">Validation humaine</div>
+          <p class="page-subtitle" style="margin:4px 0 8px">
+            ${isPriority
+              ? '<strong>Priorité revue:</strong> statut INCERTAIN.'
+              : 'Impact A3: <strong>APPLICABLE</strong> et <strong>SOUS_CONDITIONS</strong>.'}
+          </p>
+          <select id="a2-review-status" class="select">
+            <option value="APPLICABLE" ${current === 'APPLICABLE' ? 'selected' : ''}>APPLICABLE</option>
+            <option value="APPLICABLE_FUTUR" ${current === 'APPLICABLE_FUTUR' ? 'selected' : ''}>APPLICABLE_FUTUR</option>
+            <option value="APPLICABLE_SOUS_CONDITIONS" ${current === 'APPLICABLE_SOUS_CONDITIONS' ? 'selected' : ''}>SOUS_CONDITIONS</option>
+            <option value="NON_APPLICABLE" ${current === 'NON_APPLICABLE' ? 'selected' : ''}>NON_APPLICABLE</option>
+            <option value="INCERTAIN" ${current === 'INCERTAIN' ? 'selected' : ''}>INCERTAIN</option>
+          </select>
+          <textarea id="a2-review-comment" class="textarea" placeholder="Commentaire (optionnel)"></textarea>
+          <button id="a2-review-save" class="btn btn-primary" style="margin-top:8px">Enregistrer décision</button>
+        </div>
+      `;
+    }
+
+    function findSelectedRow() {
+      if (!state.selectedDecisionKey) return null;
+      return state.rows.find((item) => decisionKey(item) === state.selectedDecisionKey) || null;
+    }
+
+    function bindReviewAction(row) {
+      const saveBtn = document.getElementById('a2-review-save');
+      if (!saveBtn || !row.requirement_id) return;
+
+      saveBtn.addEventListener('click', async () => {
+        if (state.saving) return;
+        const statusNode = document.getElementById('a2-review-status');
+        const commentNode = document.getElementById('a2-review-comment');
+        const nextStatus = String(statusNode?.value || '').toUpperCase();
+        const comment = String(commentNode?.value || '');
+        state.saving = true;
+        saveBtn.disabled = true;
+        saveBtn.textContent = 'Enregistrement...';
+        try {
+          await api.reviewApplicabilityDecision(row.requirement_id, {
+            tenant_id: getAuth().tenant_id,
+            status: nextStatus,
+            comment,
+            scope_key: row.scope_key || 'ORGANIZATION',
+          });
+          state.selectedDecisionKey = decisionKey(row);
+          await loadA2();
+        } catch (error) {
+          alert(error?.message || 'Erreur de validation');
+        } finally {
+          state.saving = false;
+          if (saveBtn.isConnected) {
+            saveBtn.disabled = false;
+            saveBtn.textContent = 'Enregistrer décision';
+          }
+        }
+      });
+    }
+
+    function openDrawer(row) {
+      state.selectedDecisionKey = decisionKey(row);
+      refs.drawer.classList.add('is-open');
+      refs.drawerContent.innerHTML = `
+        <div><strong>Statut:</strong> ${decisionBadge(row.status)}</div>
+        <div style="margin-top:8px"><strong>Périmètre:</strong> ${escapeHtml(scopeText(row))}</div>
+        <div style="margin-top:8px"><strong>Scope clé:</strong> ${escapeHtml(row.scope_key || 'ORGANIZATION')}</div>
+        <div style="margin-top:8px"><strong>Domaine:</strong> ${escapeHtml(row.qse_domain || '-')}</div>
+        <div style="margin-top:8px"><strong>Sous-domaine:</strong> ${escapeHtml(row.qse_sub_domain || '-')}</div>
+        <div style="margin-top:8px"><strong>Type:</strong> ${escapeHtml(row.req_type || '-')}</div>
+        <div style="margin-top:8px"><strong>Confiance:</strong> ${Math.round(Number(row.confidence || 0) * 100)}%</div>
+        ${row.effective_date ? `<div style="margin-top:8px"><strong>Date d'effet:</strong> ${formatEffectiveDate(row.effective_date)}</div>` : ''}
+        ${row.transition_period_days ? `<div style="margin-top:8px"><strong>Délai transitoire:</strong> ${escapeHtml(String(row.transition_period_days))} jour(s)</div>` : ''}
+        ${row.temporal_basis ? `<div style="margin-top:8px"><strong>Base temporelle:</strong><br/>${escapeHtml(row.temporal_basis)}</div>` : ''}
+        <div style="margin-top:8px"><strong>Moteur décision:</strong> ${escapeHtml(row.decision_engine || 'LLM')}</div>
+        <div style="margin-top:8px"><strong>Document:</strong> ${escapeHtml(row.doc_title || '-')}</div>
+        <div style="margin-top:8px"><strong>Article:</strong> ${escapeHtml(row.article_ref || '-')}</div>
+        <div style="margin-top:8px"><strong>Citation:</strong> ${escapeHtml(row.citation_ref || '-')}</div>
+        <div style="margin-top:8px"><strong>Condition évaluée:</strong><br/>${escapeHtml(row.condition_evaluated || '-')}</div>
+        <div style="margin-top:8px"><strong>Donnée entreprise utilisée:</strong><br/>${escapeHtml(row.company_data_used || '-')}</div>
+        <div style="margin-top:8px"><strong>Extrait cité:</strong><br/>${escapeHtml(row.citation_snippet || '-')}</div>
+        <div style="margin-top:8px"><strong>Justification complète:</strong><br/>${escapeHtml(row.justification || '-')}</div>
+        <div style="margin-top:8px"><strong>Texte exigence:</strong><br/>${escapeHtml(row.requirement_text || '-')}</div>
+        ${renderReviewSection(row)}
+      `;
+      bindReviewAction(row);
+    }
+
+    async function loadA2() {
+      refs.tableWrap.classList.remove('hidden');
+      refs.emptyState.classList.add('hidden');
+      refs.emptyState.innerHTML = '';
+      refs.tableBody.innerHTML = `<tr><td colspan="6"><div class="skeleton skeleton-line"></div></td></tr>`;
+      try {
+        const tenant = getAuth().tenant_id;
+        const [data, overview] = await Promise.all([
+          api.applicabilitySummary(tenant),
+          api.dashboardOverview(tenant),
+        ]);
+        const rows = [...(data.decisions || [])].sort((a, b) => {
+          const scopeRank = (value) => {
+            const scope = String(value || '').toUpperCase();
+            if (scope === 'ORGANIZATION') return 0;
+            if (scope === 'SITE') return 1;
+            if (scope === 'PROCESS') return 2;
+            if (scope === 'ACTIVITY') return 3;
+            return 9;
+          };
+          const rank = (status) => {
+            const s = String(status || '').toUpperCase();
+            if (s === 'INCERTAIN') return 0;
+            if (s === 'APPLICABLE_SOUS_CONDITIONS') return 1;
+            if (s === 'APPLICABLE_FUTUR') return 2;
+            if (s === 'NON_APPLICABLE') return 3;
+            if (s === 'APPLICABLE') return 4;
+            return 5;
+          };
+          const sa = scopeRank(a.scope_level);
+          const sb = scopeRank(b.scope_level);
+          if (sa !== sb) return sa - sb;
+          const ra = rank(a.status);
+          const rb = rank(b.status);
+          if (ra !== rb) return ra - rb;
+          const la = String(a.scope_label || '').toLowerCase();
+          const lb = String(b.scope_label || '').toLowerCase();
+          if (la !== lb) return la.localeCompare(lb);
+          const ca = Number(a.confidence || 0);
+          const cb = Number(b.confidence || 0);
+          return ca - cb;
+        });
+        state.rows = rows;
+        const counts = data.counts || {};
+
+        setKpi('total', data.total || 0);
+        setKpi('applicable', (counts.APPLICABLE || 0) + (counts.APPLICABLE_SOUS_CONDITIONS || 0));
+        setKpi('future', counts.APPLICABLE_FUTUR || 0);
+        setKpi('non', counts.NON_APPLICABLE || 0);
+        setKpi('incertain', counts.INCERTAIN || 0);
+        applyActiveFilterVisual();
+
+        const requirementsTotal = Number(overview?.requirements_total || 0);
+        const promotedTotal = Number(overview?.promoted_total || 0);
+        const draftTotal = Number(overview?.draft_total || 0);
+        const toValidateTotal = Number(overview?.to_validate_total || 0);
+        const futureTotal = Number(counts.APPLICABLE_FUTUR || 0);
+        if (requirementsTotal === 0 && Number(data.total || 0) > 0) {
+          renderContextBanner(
+            "Décisions A2 héritées sans corpus A1 actif.",
+            'danger',
+          );
+        } else if (requirementsTotal === 0) {
+          renderContextBanner(
+            "Aucune exigence promue disponible.",
+            'info',
+          );
+        } else if (promotedTotal === 0 && (draftTotal > 0 || toValidateTotal > 0)) {
+          renderContextBanner(
+            `Registre final vide: ${numberFmt(draftTotal)} pré-validée(s), ${numberFmt(toValidateTotal)} à valider.`,
+            'info',
+          );
+        } else if (promotedTotal === 0) {
+          renderContextBanner(
+            "Aucune exigence validée dans le registre final.",
+            'info',
+          );
+        } else if (draftTotal > 0 || toValidateTotal > 0) {
+          renderContextBanner(
+            "",
+            'success',
+          );
+        } else {
+          renderContextBanner(
+            "",
+            'success',
+          );
+        }
+
+        if (!rows.length) {
+          const message = promotedTotal === 0
+            ? "Aucune décision d'applicabilité: le registre final A1 n'est pas encore prêt."
+            : "Aucune décision d'applicabilité disponible. Lance ou relance A2 après la reconstruction du corpus.";
+          refs.tableWrap.classList.add('hidden');
+          refs.emptyState.classList.remove('hidden');
+          renderEmpty(refs.emptyState, message, 'Ouvrir Upload & runs', () => {
+            window.location.href = '/ui/upload.html';
+          });
+          return;
+        }
+        renderTable();
+      } catch (error) {
+        state.rows = [];
+        refs.tableWrap.classList.add('hidden');
+        refs.emptyState.classList.remove('hidden');
+        renderError(refs.emptyState, error, 'Réessayer', loadA2);
+      }
+    }
+
+    refs.kpiCards.forEach((card) => {
+      const activate = () => {
+        state.activeFilter = String(card.dataset.filter || 'ALL').toUpperCase();
+        renderTable();
+      };
+      card.addEventListener('click', activate);
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          activate();
+        }
+      });
+    });
+
+    refs.resetFilter?.addEventListener('click', () => {
+      state.activeFilter = 'ALL';
+      renderTable();
+    });
+
+    refs.closeDrawer.addEventListener('click', () => {
+      refs.drawer.classList.remove('is-open');
+      state.selectedDecisionKey = null;
+    });
+    await loadA2();
+  </script>
+</body>
+</html>

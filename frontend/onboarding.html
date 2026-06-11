@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QALITAS AI - Onboarding entreprise</title>
+  <link rel="stylesheet" href="/ui/base.css" />
+  <link rel="stylesheet" href="/ui/layout.css?v=20260602_02" />
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_06" />
+  <style>
+    .wizard-rail { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; margin-bottom:18px; }
+    .wizard-step {
+      border:0.5px solid var(--border);
+      border-radius:16px;
+      padding:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,250,252,.98));
+      color:var(--text-secondary);
+      cursor:pointer;
+      transition:border-color .18s ease, transform .18s ease, color .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .wizard-step:hover { transform:translateY(-1px); }
+    .wizard-step.is-active {
+      border-color:rgba(21,101,192,.45);
+      color:var(--text-primary);
+      background:linear-gradient(180deg, #eff6ff, #f8fbff);
+      box-shadow:0 12px 26px rgba(15,23,42,.08);
+    }
+    .wizard-step strong { display:block; font-size:13px; margin-bottom:4px; }
+    .wizard-step span { font-size:11px; display:block; }
+    .wizard-panel { display:none; }
+    .wizard-panel.is-active { display:block; }
+    .stack-card { display:grid; gap:14px; }
+    .subgrid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; }
+    .mini-form {
+      display:grid;
+      gap:10px;
+      padding:16px;
+      border:0.5px solid var(--border);
+      border-radius:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(248,250,252,.95));
+    }
+    .mini-list { display:grid; gap:8px; }
+    .mini-row {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      padding:12px 14px;
+      border:0.5px solid var(--border);
+      border-radius:12px;
+      background:var(--bg-card);
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .mini-row:hover {
+      transform:translateY(-1px);
+      border-color:rgba(21,101,192,.16);
+      box-shadow:0 10px 22px rgba(15,23,42,.05);
+    }
+    .mini-row-title { font-size:13px; font-weight:600; }
+    .mini-row-sub { font-size:11px; color:var(--text-secondary); margin-top:2px; }
+    .wizard-actions { display:flex; justify-content:space-between; gap:12px; margin-top:18px; }
+    .hint-box {
+      padding:14px 16px;
+      border-radius:16px;
+      border:0.5px solid rgba(0,151,167,.24);
+      background:linear-gradient(180deg, rgba(240,249,255,.98), rgba(236,254,255,.92));
+      color:#0f172a;
+      font-size:12px;
+      line-height:1.6;
+    }
+    .chips-preview { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .chips-preview span {
+      display:inline-flex;
+      align-items:center;
+      padding:5px 10px;
+      border-radius:999px;
+      background:rgba(21,101,192,.08);
+      border:0.5px solid rgba(21,101,192,.18);
+      font-size:11px;
+    }
+    .upload-list { display:grid; gap:8px; margin-top:10px; }
+    .upload-item {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      padding:12px 14px;
+      border-radius:12px;
+      border:0.5px solid var(--border);
+      background:var(--bg-card);
+    }
+    .summary-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; }
+    .summary-block {
+      border:0.5px solid var(--border);
+      border-radius:16px;
+      padding:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,250,252,.98));
+    }
+    .summary-block h3 { font-size:13px; margin-bottom:8px; }
+    .summary-block ul { margin:0; padding-left:18px; font-size:12px; color:var(--text-secondary); }
+    .template-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; }
+    .template-card {
+      border:0.5px solid var(--border);
+      border-radius:16px;
+      padding:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,250,252,.98));
+    }
+    .template-card h3 { margin:0 0 8px; font-size:13px; }
+    .template-card p { margin:0 0 8px; font-size:12px; color:var(--text-secondary); line-height:1.55; }
+    .template-card ul { margin:0; padding-left:18px; font-size:12px; color:var(--text-secondary); }
+    .status-box { margin-top:14px; }
+    .status-box .state { margin-top:0; }
+    @media (max-width: 960px) {
+      .wizard-rail,
+      .subgrid,
+      .summary-grid,
+      .template-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body data-page="onboarding">
+  <div class="app-shell">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:20px">
+        <a class="brand" href="/ui/dashboard.html"><span class="brand-qali">QALI</span><span class="brand-tas">TAS</span><span class="brand-ai">AI</span></a>
+        <nav class="topbar-nav">
+          <a class="topbar-link" data-top="dashboard" href="/ui/dashboard.html">Pilotage</a>
+          <a class="topbar-link" data-top="requirements" href="/ui/requirements.html">Exigences</a>
+          <a class="topbar-link" data-top="assistant" href="/ui/assistant.html">Assistant expert</a>
+          <a class="topbar-link" data-top="analytics" href="/ui/analytics.html">Analyses</a>
+        </nav>
+      </div>
+      <div class="topbar-right">
+        <span class="tenant-pill" data-auth-tenant>tenant</span>
+        <span class="user-chip"><span class="user-avatar" data-auth-avatar>Q</span><span data-auth-user>Utilisateur</span></span>
+        <button class="logout-link" data-action="logout">Deconnexion</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <section class="sidebar-group">
+        <div class="sidebar-title">Principal</div>
+        <a class="sidebar-link" data-nav="dashboard" href="/ui/dashboard.html">Vue globale</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Pipeline IA</div>
+        <a class="sidebar-link" data-nav="upload" href="/ui/upload.html">Upload & runs</a>
+        <a class="sidebar-link" data-nav="requirements" href="/ui/requirements.html">A1 Exigences</a>
+        <a class="sidebar-link" data-nav="applicability" href="/ui/applicability.html">A2 Applicabilite</a>
+        <a class="sidebar-link" data-nav="compliance" href="/ui/compliance.html">A3 Conformite</a>
+        <a class="sidebar-link" data-nav="assistant" href="/ui/assistant.html">Assistant expert</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Gestion</div>
+        <a class="sidebar-link" data-nav="onboarding" href="/ui/onboarding.html" data-role="SUPER_ADMIN">Onboarding</a>
+        <a class="sidebar-link" data-nav="company" href="/ui/company.html">Entreprise</a>
+        <a class="sidebar-link" data-nav="reports" href="/ui/reports.html">Rapports</a>
+        <a class="sidebar-link" data-nav="settings" href="/ui/settings.html">Parametres</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Analyse</div>
+        <a class="sidebar-link" data-nav="analytics" href="/ui/analytics.html">Analyses</a>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Onboarding nouvelle entreprise</h1>
+        </div>
+      </div>
+
+      <div id="super-admin-required" class="state hidden">
+        <strong>Acces reserve</strong>
+        <div style="margin-top:6px">Role requis: <code>SUPER_ADMIN</code>.</div>
+      </div>
+
+      <div id="onboarding-root" class="stack-card">
+        <div class="hint-box" style="margin-bottom:14px">
+          Templates CSV/XLSX disponibles.
+          <a href="/ui/templates/onboarding/index.html" target="_blank" rel="noopener" style="font-weight:700">Ouvrir le pack de templates</a>
+        </div>
+
+        <section class="card">
+          <div class="wizard-rail" id="wizard-rail">
+            <button type="button" class="wizard-step is-active" data-step="0"><strong>1. Identite</strong><span>Tenant, societe, admin initial</span></button>
+            <button type="button" class="wizard-step" data-step="1"><strong>2. Structure</strong><span>Sites, processus, activites, produits</span></button>
+            <button type="button" class="wizard-step" data-step="2"><strong>3. Sources</strong><span>Preuves, imports et corpus reglementaire</span></button>
+            <button type="button" class="wizard-step" data-step="3"><strong>4. Validation</strong><span>Resume, provisioning et bascule</span></button>
+          </div>
+
+          <div class="wizard-panel is-active" data-panel="0">
+            <div class="subgrid">
+              <div class="field">
+                <label class="field-label">Tenant ID *</label>
+                <input id="tenant-id" class="input" placeholder="nova_industrie" />
+              </div>
+              <div class="field">
+                <label class="field-label">Nom entreprise *</label>
+                <input id="company-name" class="input" placeholder="Nova Industrie" />
+              </div>
+              <div class="field">
+                <label class="field-label">Secteur</label>
+                <input id="company-sector" class="input" placeholder="Industrie" />
+              </div>
+              <div class="field">
+                <label class="field-label">Sous-secteur</label>
+                <input id="company-sub-sector" class="input" placeholder="Assemblage metallique" />
+              </div>
+              <div class="field">
+                <label class="field-label">Pays</label>
+                <input id="company-country" class="input" value="TN" />
+              </div>
+              <div class="field">
+                <label class="field-label">Effectif total</label>
+                <input id="company-headcount" type="number" min="0" class="input" />
+              </div>
+            </div>
+            <div class="field" style="margin-top:12px">
+              <label class="field-label">Activites principales</label>
+              <textarea id="company-main-activities" class="textarea" rows="3" placeholder="Assemblage, traitement de surface, controle qualite..."></textarea>
+            </div>
+            <div class="field" style="margin-top:12px">
+              <label class="field-label">Certifications</label>
+              <input id="company-certifications" class="input" placeholder="ISO 9001, ISO 14001, ISO 45001" />
+            </div>
+
+            <div class="card" style="margin-top:14px">
+              <div class="card-head"><h2 class="card-title">Compte administrateur initial</h2></div>
+              <div class="subgrid">
+                <div class="field">
+                  <label class="field-label">Username *</label>
+                  <input id="admin-username" class="input" placeholder="qhse@nova.local" />
+                </div>
+                <div class="field">
+                  <label class="field-label">Mot de passe *</label>
+                  <input id="admin-password" type="password" class="input" placeholder="Minimum 8 caracteres" />
+                </div>
+                <div class="field">
+                  <label class="field-label">Nom affiche</label>
+                  <input id="admin-display-name" class="input" placeholder="Responsable QHSE" />
+                </div>
+                <div class="field">
+                  <label class="field-label">Role</label>
+                  <select id="admin-role" class="input">
+                    <option value="ADMIN_QHSE">ADMIN_QHSE</option>
+                    <option value="ANALYSTE_CONFORMITE">ANALYSTE_CONFORMITE</option>
+                    <option value="AUDITEUR">AUDITEUR</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wizard-panel" data-panel="1">
+            <div class="hint-box">Contexte métier A2/A3.</div>
+
+            <div class="hint-box" style="margin-top:10px">Templates: <code>sites.csv</code>, <code>processes.csv</code>, <code>activities.csv</code>, <code>products.csv</code>.</div>
+
+            <div class="subgrid" style="margin-top:14px">
+              <div class="card stack-card">
+                <div class="card-head"><h2 class="card-title">Sites</h2></div>
+                <div class="mini-form">
+                  <div class="subgrid">
+                    <div class="field"><label class="field-label">Code site</label><input id="site-code" class="input" placeholder="S1" /></div>
+                    <div class="field"><label class="field-label">Nom site</label><input id="site-name" class="input" placeholder="Site Sousse" /></div>
+                    <div class="field"><label class="field-label">Ville</label><input id="site-city" class="input" /></div>
+                    <div class="field"><label class="field-label">Region</label><input id="site-region" class="input" /></div>
+                    <div class="field"><label class="field-label">Type</label><input id="site-type" class="input" placeholder="Production" /></div>
+                    <div class="field"><label class="field-label">Effectif</label><input id="site-employees" type="number" min="0" class="input" /></div>
+                  </div>
+                  <div class="field"><label class="field-label">Activites principales</label><input id="site-main-activities" class="input" /></div>
+                  <button type="button" class="btn btn-secondary" id="add-site">Ajouter le site</button>
+                </div>
+                <div class="mini-list" id="sites-list"></div>
+              </div>
+
+              <div class="card stack-card">
+                <div class="card-head"><h2 class="card-title">Processus</h2></div>
+                <div class="mini-form">
+                  <div class="subgrid">
+                    <div class="field"><label class="field-label">Nom processus</label><input id="process-name" class="input" placeholder="Production" /></div>
+                    <div class="field"><label class="field-label">Code</label><input id="process-code" class="input" placeholder="PROC-01" /></div>
+                  </div>
+                  <div class="field"><label class="field-label">Description</label><input id="process-description" class="input" /></div>
+                  <button type="button" class="btn btn-secondary" id="add-process">Ajouter le processus</button>
+                </div>
+                <div class="mini-list" id="processes-list"></div>
+              </div>
+            </div>
+
+            <div class="subgrid" style="margin-top:14px">
+              <div class="card stack-card">
+                <div class="card-head"><h2 class="card-title">Activites</h2></div>
+                <div class="mini-form">
+                  <div class="subgrid">
+                    <div class="field"><label class="field-label">Nom activite</label><input id="activity-name" class="input" placeholder="Assemblage final" /></div>
+                    <div class="field"><label class="field-label">Processus parent</label><input id="activity-process-name" class="input" placeholder="Production" /></div>
+                    <div class="field"><label class="field-label">Code</label><input id="activity-code" class="input" placeholder="ACT-01" /></div>
+                    <div class="field"><label class="field-label">Description</label><input id="activity-description" class="input" /></div>
+                  </div>
+                  <button type="button" class="btn btn-secondary" id="add-activity">Ajouter l'activite</button>
+                </div>
+                <div class="mini-list" id="activities-list"></div>
+              </div>
+
+              <div class="card stack-card">
+                <div class="card-head"><h2 class="card-title">Produits & substances</h2></div>
+                <div class="mini-form">
+                  <div class="subgrid">
+                    <div class="field"><label class="field-label">Designation</label><input id="product-designation" class="input" placeholder="Produit fini A" /></div>
+                    <div class="field"><label class="field-label">Reference</label><input id="product-reference" class="input" placeholder="P-01" /></div>
+                    <div class="field"><label class="field-label">Famille</label><input id="product-family" class="input" /></div>
+                    <div class="field"><label class="field-label">Categorie</label><input id="product-category" class="input" /></div>
+                    <div class="field"><label class="field-label">Type</label><input id="product-type" class="input" /></div>
+                    <div class="field"><label class="field-label">Nature</label><input id="product-nature" class="input" /></div>
+                    <div class="field"><label class="field-label">Unite</label><input id="product-unit" class="input" placeholder="kg" /></div>
+                  </div>
+                  <button type="button" class="btn btn-secondary" id="add-product">Ajouter le produit</button>
+                </div>
+                <div class="mini-list" id="products-list"></div>
+                <div class="field">
+                  <label class="field-label">Substances chimiques</label>
+                  <textarea id="chemicals-text" class="textarea" rows="4" placeholder="Une substance par ligne ou separee par virgule"></textarea>
+                  <div id="chemicals-preview" class="chips-preview"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wizard-panel" data-panel="2">
+            <div class="subgrid">
+              <div class="card stack-card">
+                <div class="card-head"><h2 class="card-title">Audit / preuve initiale</h2></div>
+                <p class="page-subtitle">PDF initial de conformité.</p>
+                <div class="field">
+                  <label class="field-label">Type de document initial</label>
+                  <input id="proof-audit-type" class="input" value="audit_initial" />
+                </div>
+                <div class="field">
+                  <label class="field-label">PDF audit / preuve initiale</label>
+                  <input id="proof-files" type="file" accept="application/pdf" class="input" />
+                </div>
+                <div class="upload-list" id="proof-files-list"></div>
+              </div>
+
+              <div class="card stack-card">
+                <div class="card-head"><h2 class="card-title">Documents reglementaires</h2></div>
+                <p class="page-subtitle">Corpus réglementaire initial.</p>
+                <div class="field">
+                  <label class="field-label">PDF reglementaires</label>
+                  <input id="reg-files" type="file" accept="application/pdf" multiple class="input" />
+                </div>
+                <div class="upload-list" id="reg-files-list"></div>
+              </div>
+            </div>
+
+            <div class="card stack-card" style="margin-top:14px">
+              <div class="card-head"><h2 class="card-title">Imports CSV / XLSX</h2></div>
+              <p class="page-subtitle">Imports contexte, risques, preuves, audits et équipements.</p>
+              <div class="subgrid">
+                <div class="field">
+                  <label class="field-label">Type de donnees</label>
+                  <select id="import-dataset-type" class="input">
+                    <option value="sites">Sites</option>
+                    <option value="processes">Processus</option>
+                    <option value="activities">Activites</option>
+                    <option value="products">Produits</option>
+                    <option value="chemicals">Substances chimiques</option>
+                    <option value="equipment">Equipements</option>
+                    <option value="environmental_aspects">Aspects environnementaux</option>
+                    <option value="sst_risks">Risques SST</option>
+                    <option value="sst_significant_risks">Risques SST significatifs</option>
+                    <option value="strategic_objectives">Objectifs strategiques</option>
+                    <option value="nonconformities">Non-conformites</option>
+                    <option value="audit_reports_metadata">Metadonnees audits</option>
+                    <option value="compliance_evidence_manifest">Manifest de preuves</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="field-label">Fichier CSV / XLSX</label>
+                  <input id="import-file" type="file" accept=".csv,.xlsx,.xls" class="input" />
+                </div>
+              </div>
+              <button type="button" class="btn btn-secondary" id="add-import-file">Ajouter a la file d'import</button>
+              <div class="upload-list" id="import-files-list"></div>
+            </div>
+
+            <div class="template-grid" style="margin-top:14px">
+              <div class="template-card">
+                <h3>Templates - contexte et applicabilite</h3>
+                <p>Ces imports structurent le contexte entreprise avant le calcul d'applicabilite.</p>
+                <ul>
+                  <li><code>company_profile.csv</code>, <code>sites.csv</code>, <code>processes.csv</code>, <code>activities.csv</code></li>
+                  <li><code>products.csv</code>, <code>chemicals.csv</code>, <code>equipment.csv</code></li>
+                  <li><code>environmental_aspects.csv</code>, <code>sst_risks.csv</code>, <code>sst_significant_risks.csv</code>, <code>strategic_objectives.csv</code></li>
+                </ul>
+              </div>
+              <div class="template-card">
+                <h3>Templates - preuves, audits et NC</h3>
+                <p>Ces imports completent les metadonnees qui seront relues par l'analyse de conformite apres l'applicabilite.</p>
+                <ul>
+                  <li><code>nonconformities.csv</code></li>
+                  <li><code>audit_reports_metadata.csv</code></li>
+                  <li><code>compliance_evidence_manifest.csv</code></li>
+                  <li>Les preuves PDF reelles restent uploadees comme fichiers</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="hint-box" style="margin-top:14px">
+              Logique du pipeline : <strong>l'extraction</strong> structure les PDF juridiques,
+              <strong>l'applicabilite</strong> combine ces exigences avec le contexte importe,
+              <strong>la conformite</strong> analyse ensuite les preuves, audits, risques et NC,
+              puis <strong>l'assistant expert</strong> exploite le tout dans le RAG du tenant actif.
+            </div>
+          </div>
+
+          <div class="wizard-panel" data-panel="3">
+            <div class="summary-grid">
+              <div class="summary-block">
+                <h3>Entreprise</h3>
+                <div id="summary-company"></div>
+              </div>
+              <div class="summary-block">
+                <h3>Admin initial</h3>
+                <div id="summary-admin"></div>
+              </div>
+              <div class="summary-block">
+                <h3>Structure</h3>
+                <div id="summary-structure"></div>
+              </div>
+              <div class="summary-block">
+                <h3>Documents</h3>
+                <div id="summary-docs"></div>
+              </div>
+            </div>
+            <div class="status-box" id="status-box"></div>
+          </div>
+
+          <div class="wizard-actions">
+            <button type="button" class="btn btn-secondary" id="btn-prev">Precedent</button>
+            <div style="display:flex;gap:8px">
+              <button type="button" class="btn btn-secondary" id="btn-next">Suivant</button>
+              <button type="button" class="btn btn-primary hidden" id="btn-submit">Creer l'entreprise</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/ui/js/onboarding.js?v=20260420_02"></script>
+</body>
+</html>

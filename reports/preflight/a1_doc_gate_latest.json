@@ -1,0 +1,1035 @@
+{
+  "source_benchmark_json": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\reports\\preflight\\a1_real_extraction_benchmark_latest.json",
+  "docs_executed": 50,
+  "doc_gate_policy_counts": {
+    "EXTRACT_FULL": 44,
+    "EXTRACT_LIMITED": 4,
+    "DROP": 1,
+    "EXTRACT_LIMITED_DATA": 1
+  },
+  "doc_gate_reason_code_counts": {
+    "DOC_REGULATORY_TITLE": 18,
+    "DOC_LONG_NORMATIVE_ACT": 17,
+    "DOC_DEFAULT_CONSERVATIVE": 8,
+    "DOC_CONCOURS_PROCEDURAL": 4,
+    "DOC_ANNEX_TABLE_DATA": 1,
+    "DOC_DEFAULT_NORMATIVE": 1,
+    "DOC_SUMMARY_NOTICE": 1
+  },
+  "drop_reason_code_counts": {
+    "ARTICLE_ANNEX_TABLE_DATA": 70,
+    "ARTICLE_INDIVIDUAL_ACT": 5,
+    "ARTICLE_INHERIT_DOC_DATA": 3,
+    "ARTICLE_SUMMARY_NOTICE": 1
+  },
+  "drop_share_by_reason_code": {
+    "ARTICLE_ANNEX_TABLE_DATA": 0.8861,
+    "ARTICLE_INDIVIDUAL_ACT": 0.0633,
+    "ARTICLE_INHERIT_DOC_DATA": 0.038,
+    "ARTICLE_SUMMARY_NOTICE": 0.0127
+  },
+  "requirements_final_per_document_avg": 24.54,
+  "to_validate_share_avg": 0.9042,
+  "documents": [
+    {
+      "doc_id": "3afab354-fd01-4b25-9fa2-a2441ffd0607",
+      "title": "Jo0062026",
+      "doc_gate_policy": "EXTRACT_LIMITED_DATA",
+      "doc_gate_reason_codes": [
+        "DOC_ANNEX_TABLE_DATA"
+      ],
+      "total_articles": 8,
+      "extract_full_articles": 0,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 8,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 0,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.0,
+      "article_dropped_by_policy_total": 8,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 8
+    },
+    {
+      "doc_id": "f3df5549-aded-43e4-ab62-23ce33072948",
+      "title": "Jo01096",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_DEFAULT_CONSERVATIVE"
+      ],
+      "total_articles": 26,
+      "extract_full_articles": 24,
+      "extract_limited_articles": 2,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 96,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.8958,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 6,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "e5b78390-7be8-4cf8-b0af-5b30f9d465b4",
+      "title": "Jo0192020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 34,
+      "extract_full_articles": 31,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 3,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 69,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.6667,
+      "article_dropped_by_policy_total": 3,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 3
+    },
+    {
+      "doc_id": "5b2db215-01fa-431f-8e43-1fa88d19c42a",
+      "title": "Jo0202020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 40,
+      "extract_full_articles": 40,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 6,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "41261636-3787-493d-83ef-27af7bcba903",
+      "title": "Jo0212026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 16,
+      "extract_full_articles": 16,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 5,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "e708168e-bb8e-4827-b8b8-a98795802156",
+      "title": "Jo0222026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 22,
+      "extract_full_articles": 7,
+      "extract_limited_articles": 15,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 38,
+      "forced_to_validate_total": 4,
+      "to_validate_share": 0.9474,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 37,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "1cdcd642-b61c-47ba-a3f5-f8b0698a81ca",
+      "title": "Jo0232026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 12,
+      "extract_full_articles": 10,
+      "extract_limited_articles": 2,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 9,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 1,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "43a755af-3db8-42f6-87e7-683c9cb861ef",
+      "title": "Jo0262026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 38,
+      "extract_full_articles": 33,
+      "extract_limited_articles": 4,
+      "extract_limited_data_articles": 1,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 14,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 1,
+      "units_dropped_limited_policy_total": 3,
+      "limited_data_objects_total": 1
+    },
+    {
+      "doc_id": "0a188942-c87c-4b3c-ad21-c30196b3d262",
+      "title": "Jo0272026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_DEFAULT_CONSERVATIVE"
+      ],
+      "total_articles": 9,
+      "extract_full_articles": 9,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 4,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "7c8fe295-8ac7-4314-a707-2ad56685036c",
+      "title": "Jo0282014",
+      "doc_gate_policy": "EXTRACT_LIMITED",
+      "doc_gate_reason_codes": [
+        "DOC_CONCOURS_PROCEDURAL"
+      ],
+      "total_articles": 34,
+      "extract_full_articles": 8,
+      "extract_limited_articles": 26,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 59,
+      "forced_to_validate_total": 3,
+      "to_validate_share": 0.9831,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 28,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "0dcb52e4-e338-4b11-b629-ea98df76d45b",
+      "title": "Jo0282016",
+      "doc_gate_policy": "DROP",
+      "doc_gate_reason_codes": [
+        "DOC_SUMMARY_NOTICE"
+      ],
+      "total_articles": 0,
+      "extract_full_articles": 0,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 0,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "506e45e1-288d-408b-815b-f4e20e29c991",
+      "title": "Jo0282026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 38,
+      "extract_full_articles": 38,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 10,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.8,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "5b1bfd6e-809f-404a-9467-072dd0b648ef",
+      "title": "Jo0282026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 14,
+      "extract_full_articles": 10,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 4,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 7,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.7143,
+      "article_dropped_by_policy_total": 4,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 6
+    },
+    {
+      "doc_id": "280c189b-f470-4f8f-bff7-abe5456242fd",
+      "title": "Jo0292026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 36,
+      "extract_full_articles": 11,
+      "extract_limited_articles": 25,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 74,
+      "forced_to_validate_total": 4,
+      "to_validate_share": 0.9595,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 33,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "301d9e33-cf1c-41ca-9b7b-b829dbb9553a",
+      "title": "Jo0292026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 12,
+      "extract_full_articles": 9,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 3,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 7,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.7143,
+      "article_dropped_by_policy_total": 3,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 6
+    },
+    {
+      "doc_id": "5ef88f6a-6610-4e04-ad55-e3db79898e0f",
+      "title": "Jo0302026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 39,
+      "extract_full_articles": 13,
+      "extract_limited_articles": 26,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 44,
+      "forced_to_validate_total": 1,
+      "to_validate_share": 0.8182,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 27,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "88977abf-d5c1-41dd-8d0e-d2f6ed21bb23",
+      "title": "Jo0302026",
+      "doc_gate_policy": "EXTRACT_LIMITED",
+      "doc_gate_reason_codes": [
+        "DOC_CONCOURS_PROCEDURAL"
+      ],
+      "total_articles": 16,
+      "extract_full_articles": 3,
+      "extract_limited_articles": 13,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 19,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.9474,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 13,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "4be445ca-2145-4757-87b8-8ec3d9fc9ace",
+      "title": "Jo0312026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_DEFAULT_NORMATIVE"
+      ],
+      "total_articles": 24,
+      "extract_full_articles": 22,
+      "extract_limited_articles": 2,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 14,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 12,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "779526c7-98d9-49c8-825f-39f3a32d212c",
+      "title": "Jo0332017",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 34,
+      "extract_full_articles": 33,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 1,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 4,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.75,
+      "article_dropped_by_policy_total": 1,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 1
+    },
+    {
+      "doc_id": "6d6ce882-08ad-4201-acf2-e25cdb8e3e99",
+      "title": "Jo0332026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 4,
+      "extract_full_articles": 4,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 2,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "fc901201-8416-4ef1-ab43-e57a14fc993b",
+      "title": "Jo0342026",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 40,
+      "extract_full_articles": 29,
+      "extract_limited_articles": 11,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 31,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 12,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "d14ef0e3-7eef-475e-b3b9-62dd76d578c9",
+      "title": "Jo0422012",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 31,
+      "extract_full_articles": 23,
+      "extract_limited_articles": 8,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 48,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.875,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 8,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "c3c74601-c8a9-4d6c-a943-481c051050f6",
+      "title": "Jo0432017",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_DEFAULT_CONSERVATIVE"
+      ],
+      "total_articles": 37,
+      "extract_full_articles": 29,
+      "extract_limited_articles": 1,
+      "extract_limited_data_articles": 7,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 12,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.9167,
+      "article_dropped_by_policy_total": 7,
+      "units_dropped_limited_policy_total": 1,
+      "limited_data_objects_total": 7
+    },
+    {
+      "doc_id": "8bf6f69f-a1e6-40cc-a239-78d2a6e1ad54",
+      "title": "Jo0442020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 29,
+      "extract_full_articles": 14,
+      "extract_limited_articles": 15,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 56,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.9643,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 21,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "c00e7503-b144-4d19-8ff6-afd9281f8abc",
+      "title": "Jo0502014",
+      "doc_gate_policy": "EXTRACT_LIMITED",
+      "doc_gate_reason_codes": [
+        "DOC_CONCOURS_PROCEDURAL"
+      ],
+      "total_articles": 38,
+      "extract_full_articles": 11,
+      "extract_limited_articles": 25,
+      "extract_limited_data_articles": 2,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 13,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 2,
+      "units_dropped_limited_policy_total": 28,
+      "limited_data_objects_total": 2
+    },
+    {
+      "doc_id": "31c26f1f-778b-42c2-bd57-a2a0a892fa94",
+      "title": "Jo05769",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_DEFAULT_CONSERVATIVE"
+      ],
+      "total_articles": 0,
+      "extract_full_articles": 0,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 0,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "8a59d063-2cf9-4ac9-8eae-74ed3977cf05",
+      "title": "Jo0602021",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_DEFAULT_CONSERVATIVE"
+      ],
+      "total_articles": 40,
+      "extract_full_articles": 34,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 6,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 6,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 6,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 6
+    },
+    {
+      "doc_id": "f5c53036-0eff-437c-82a5-b5bd10490b68",
+      "title": "Jo0612008",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 35,
+      "extract_full_articles": 27,
+      "extract_limited_articles": 6,
+      "extract_limited_data_articles": 2,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 34,
+      "forced_to_validate_total": 4,
+      "to_validate_share": 0.9118,
+      "article_dropped_by_policy_total": 2,
+      "units_dropped_limited_policy_total": 17,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "885842bd-6177-45ef-87bb-ffb9338bce7a",
+      "title": "Jo0632021",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 38,
+      "extract_full_articles": 35,
+      "extract_limited_articles": 3,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 42,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.881,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 1,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "6d133f60-da23-410e-91e9-b07e3e895066",
+      "title": "Jo06575",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_DEFAULT_CONSERVATIVE"
+      ],
+      "total_articles": 0,
+      "extract_full_articles": 0,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 0,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "cb2565c1-4a23-415e-aa50-cf8722d6864f",
+      "title": "Jo0692024",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 9,
+      "extract_full_articles": 9,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 0,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "28c186ab-150b-441d-b730-2ee226b8bd10",
+      "title": "Jo07090",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_DEFAULT_CONSERVATIVE"
+      ],
+      "total_articles": 0,
+      "extract_full_articles": 0,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 0,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "8c745c81-0a5b-44e8-b24b-d930bb80ff8d",
+      "title": "Jo0722020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 30,
+      "extract_full_articles": 15,
+      "extract_limited_articles": 8,
+      "extract_limited_data_articles": 6,
+      "drop_articles": 1,
+      "source_missing_articles": 0,
+      "requirements_final": 12,
+      "forced_to_validate_total": 4,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 7,
+      "units_dropped_limited_policy_total": 21,
+      "limited_data_objects_total": 5
+    },
+    {
+      "doc_id": "24e53087-89d0-4241-b80e-ea1195f10661",
+      "title": "Jo0902021",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 39,
+      "extract_full_articles": 25,
+      "extract_limited_articles": 14,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 46,
+      "forced_to_validate_total": 1,
+      "to_validate_share": 0.8696,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 9,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "cb5f8fd6-0d54-4a61-864b-e594a9af4c18",
+      "title": "Jo0902022",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 39,
+      "extract_full_articles": 35,
+      "extract_limited_articles": 2,
+      "extract_limited_data_articles": 1,
+      "drop_articles": 1,
+      "source_missing_articles": 0,
+      "requirements_final": 27,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 2,
+      "units_dropped_limited_policy_total": 4,
+      "limited_data_objects_total": 1
+    },
+    {
+      "doc_id": "408f28bb-d1d6-4754-bcde-499cf15c4853",
+      "title": "Jo0932020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_DEFAULT_CONSERVATIVE"
+      ],
+      "total_articles": 40,
+      "extract_full_articles": 40,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 0,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "9a171b6a-f2d4-41a7-a332-a497365dcba2",
+      "title": "Jo0932020",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 40,
+      "extract_full_articles": 38,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 2,
+      "source_missing_articles": 0,
+      "requirements_final": 8,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.875,
+      "article_dropped_by_policy_total": 2,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "2bc37fef-f9b7-47ab-8bc4-297fcad6b573",
+      "title": "Jo0942022",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 14,
+      "extract_full_articles": 4,
+      "extract_limited_articles": 8,
+      "extract_limited_data_articles": 2,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 3,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 2,
+      "units_dropped_limited_policy_total": 8,
+      "limited_data_objects_total": 2
+    },
+    {
+      "doc_id": "5545d046-1ce8-4495-8016-5427c3b97d6a",
+      "title": "Jo1002014",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 35,
+      "extract_full_articles": 15,
+      "extract_limited_articles": 20,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 49,
+      "forced_to_validate_total": 3,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 27,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "21d0c672-04c2-470d-b857-43620d538b36",
+      "title": "Jo1212025",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 35,
+      "extract_full_articles": 28,
+      "extract_limited_articles": 7,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 65,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.8154,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 11,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "72df326d-b341-49e7-9ade-41e52fe852ec",
+      "title": "Jo1212025",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 40,
+      "extract_full_articles": 40,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 4,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.75,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "b22e7476-3fb6-451a-8256-c297e619bfef",
+      "title": "Jo1262024",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 3,
+      "extract_full_articles": 0,
+      "extract_limited_articles": 3,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 0,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 3,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "1137edef-6a9c-438d-a384-7224de1fa645",
+      "title": "Jo1262025",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 40,
+      "extract_full_articles": 11,
+      "extract_limited_articles": 29,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 20,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 1.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 14,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "0e9bdf92-b571-43e6-94b5-b76e155f0661",
+      "title": "Jo1282022",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 39,
+      "extract_full_articles": 13,
+      "extract_limited_articles": 26,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 44,
+      "forced_to_validate_total": 1,
+      "to_validate_share": 0.8182,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 27,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "fae61e0b-08d9-4692-abc9-85af1bd7e873",
+      "title": "Jo1282022",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 36,
+      "extract_full_articles": 11,
+      "extract_limited_articles": 25,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 63,
+      "forced_to_validate_total": 1,
+      "to_validate_share": 0.8889,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 24,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "729be59d-640f-4888-af3e-8e31143c0017",
+      "title": "Jo1322025",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 35,
+      "extract_full_articles": 22,
+      "extract_limited_articles": 13,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 59,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.7966,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 11,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "38385ff6-634c-487d-ac99-6fed79ea494b",
+      "title": "JORT 121 2025 - Décret-loi sociétés communautaires",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 36,
+      "extract_full_articles": 32,
+      "extract_limited_articles": 2,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 2,
+      "source_missing_articles": 0,
+      "requirements_final": 52,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.8077,
+      "article_dropped_by_policy_total": 2,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "39baac4b-132a-4a2d-b714-c488a6db35ae",
+      "title": "JORT 128 2022 - Arrêté concours",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "total_articles": 31,
+      "extract_full_articles": 2,
+      "extract_limited_articles": 29,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 42,
+      "forced_to_validate_total": 1,
+      "to_validate_share": 0.9048,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 37,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "11195a5c-8450-4185-866c-b92c205daed4",
+      "title": "JORT 16 2015 - Délégation de signature",
+      "doc_gate_policy": "EXTRACT_FULL",
+      "doc_gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "total_articles": 15,
+      "extract_full_articles": 15,
+      "extract_limited_articles": 0,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 0,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.0,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "limited_data_objects_total": 0
+    },
+    {
+      "doc_id": "34112fed-bafd-4519-adb3-7368ccf0815e",
+      "title": "JORT 30 2026 - Arrêté sécheresse",
+      "doc_gate_policy": "EXTRACT_LIMITED",
+      "doc_gate_reason_codes": [
+        "DOC_CONCOURS_PROCEDURAL"
+      ],
+      "total_articles": 16,
+      "extract_full_articles": 2,
+      "extract_limited_articles": 14,
+      "extract_limited_data_articles": 0,
+      "drop_articles": 0,
+      "source_missing_articles": 0,
+      "requirements_final": 10,
+      "forced_to_validate_total": 0,
+      "to_validate_share": 0.8,
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 11,
+      "limited_data_objects_total": 0
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+site_code,process_code,name,description
+AT1,PROC-SURF,Traitement de surface,"Degraissage, phosphatation et preparation des pieces avant peinture"
+AT1,PROC-PAINT,Peinture industrielle,"Application epoxy, sechage et controle visuel final"
+AT1,PROC-MAINT,Maintenance,"Maintenance preventive du compresseur, de la cabine et des utilites"
+AT2,PROC-LOG,Logistique solvants et dechets,"Reception solvants, stockage, expedition et gestion des dechets dangereux"
+AT3,PROC-QHSE,Pilotage QHSE,"Veille reglementaire, audits, plan d'action et suivi des formations"

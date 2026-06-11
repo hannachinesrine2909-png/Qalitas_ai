@@ -1,0 +1,5 @@
+site_code,reference,year,nature,process_name,title,source,audit_type,responsible_service,detected_at,state,severity,nc_type,frequency,nc_category,gravity,priority,closed_at,system_scope,progress_pct,closure_rate
+AT2,ATLAS-NC-001,2026,Reelle,Logistique solvants et dechets,Stockage exterieur de futs sans bac de retention,ATLAS-AUD-001,Audit Interne,Logistique,2026-04-05,EN_COURS,Majeure,Securite,Occasionnelle,Reglementaire,Critique,Haute,,SST,30,15
+AT1,ATLAS-NC-002,2026,Reelle,Pilotage QHSE,Visites medicales annuelles incompletes pour les operateurs exposes,ATLAS-AUD-003,Revue Interne,RH|QHSE,2026-04-18,EN_COURS,Majeure,Sante,Recurrente,Reglementaire,Majeure,Haute,,SST,20,10
+AT1,ATLAS-NC-003,2026,Reelle,Pilotage QHSE,Registre des incidents de fuite non renseigne sous 24 heures,ATLAS-AUD-003,Revue Interne,QHSE,2026-04-18,EN_COURS,Mineure,Documentaire,Occasionnelle,Reglementaire,Majeure,Moyenne,,QHSE,10,5
+AT1,ATLAS-NC-004,2026,Reelle,Pilotage QHSE,Formation solvants non renouvelee en 2026,ATLAS-AUD-002,Inspection,QHSE,2026-04-12,EN_COURS,Mineure,Formation,Annuelle,SST,Majeure,Moyenne,,SST,15,5

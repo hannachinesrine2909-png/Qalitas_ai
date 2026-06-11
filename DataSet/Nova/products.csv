@@ -1,0 +1,7 @@
+reference,designation,family,category,product_type,nature,unit,site_name,is_active
+NOVA-PF-001,Coffret metallique peint,Produit fini,Produit,Industriel,Solide,unite,Usine Sousse,true
+NOVA-MP-001,Peinture epoxy bleue,Matiere premiere,Chimique,Peinture,Liquide,kg,Usine Sousse,true
+NOVA-MP-002,Diluant universel,Matiere premiere,Chimique,Solvant,Liquide,L,Usine Sousse,true
+NOVA-MP-003,Acide phosphorique,Matiere premiere,Chimique,Acide,Liquide,L,Usine Sousse,true
+NOVA-CONS-001,Absorbant industriel,Consommable,Securite,Absorbant,Solide,kg,Depot Mghira,true
+NOVA-EMB-001,Fut homologe 200L,Emballage,Stockage,Contenant,Solide,unite,Depot Mghira,true

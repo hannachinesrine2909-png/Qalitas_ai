@@ -1,0 +1,20 @@
+{
+  "docs_total": 1,
+  "docs_ok": 1,
+  "docs_failed": 0,
+  "runs": [
+    {
+      "doc_id": "cca58b13-44d8-46f5-84bb-3da389bcbb1a",
+      "ok": true,
+      "title": "Code du travail",
+      "pdf_path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\storage\\pdfs\\textile\\cca58b13-44d8-46f5-84bb-3da389bcbb1a.pdf",
+      "page_count": 98,
+      "non_empty_pages": 98,
+      "segmentation": {
+        "articles_inserted": 531,
+        "chunks_created": 622,
+        "event_inserted": true
+      }
+    }
+  ]
+}

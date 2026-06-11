@@ -1,0 +1,90 @@
+{
+  "dataset": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\doc_gate_eval_set.json",
+  "cases_total": 5,
+  "policy_accuracy": 1.0,
+  "document_extractability_precision": 1.0,
+  "administrative_noise_recall": 1.0,
+  "source_missing_detection_rate": 1.0,
+  "results": [
+    {
+      "case_id": "gate_regulatory_decret",
+      "expected_policy": "EXTRACT_FULL",
+      "predicted_policy": "EXTRACT_FULL",
+      "policy_match": true,
+      "expected_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "predicted_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "reason_overlap": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "confidence": 0.86
+    },
+    {
+      "case_id": "gate_concours_procedural",
+      "expected_policy": "EXTRACT_LIMITED",
+      "predicted_policy": "EXTRACT_LIMITED",
+      "policy_match": true,
+      "expected_reason_codes": [
+        "DOC_CONCOURS_PROCEDURAL"
+      ],
+      "predicted_reason_codes": [
+        "DOC_CONCOURS_PROCEDURAL"
+      ],
+      "reason_overlap": [
+        "DOC_CONCOURS_PROCEDURAL"
+      ],
+      "confidence": 0.74
+    },
+    {
+      "case_id": "gate_summary_drop",
+      "expected_policy": "DROP",
+      "predicted_policy": "DROP",
+      "policy_match": true,
+      "expected_reason_codes": [
+        "DOC_SUMMARY_NOTICE"
+      ],
+      "predicted_reason_codes": [
+        "DOC_SUMMARY_NOTICE"
+      ],
+      "reason_overlap": [
+        "DOC_SUMMARY_NOTICE"
+      ],
+      "confidence": 0.99
+    },
+    {
+      "case_id": "gate_arabic_only_missing",
+      "expected_policy": "TO_VALIDATE_SOURCE_MISSING",
+      "predicted_policy": "TO_VALIDATE_SOURCE_MISSING",
+      "policy_match": true,
+      "expected_reason_codes": [
+        "DOC_SOURCE_ARABIC_ONLY"
+      ],
+      "predicted_reason_codes": [
+        "DOC_SOURCE_ARABIC_ONLY"
+      ],
+      "reason_overlap": [
+        "DOC_SOURCE_ARABIC_ONLY"
+      ],
+      "confidence": 0.99
+    },
+    {
+      "case_id": "gate_annex_data",
+      "expected_policy": "EXTRACT_LIMITED_DATA",
+      "predicted_policy": "EXTRACT_LIMITED_DATA",
+      "policy_match": true,
+      "expected_reason_codes": [
+        "DOC_ANNEX_TABLE_DATA"
+      ],
+      "predicted_reason_codes": [
+        "DOC_ANNEX_TABLE_DATA"
+      ],
+      "reason_overlap": [
+        "DOC_ANNEX_TABLE_DATA"
+      ],
+      "confidence": 0.84
+    }
+  ]
+}

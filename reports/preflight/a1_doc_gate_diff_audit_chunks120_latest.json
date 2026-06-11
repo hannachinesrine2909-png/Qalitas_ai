@@ -1,0 +1,172 @@
+{
+  "docs_executed": 5,
+  "elapsed_total_sec": 555.267,
+  "removed_total": 0,
+  "removed_noise_total": 0,
+  "removed_ambiguous_total": 0,
+  "removed_signal_lost_total": 0,
+  "removed_noise_share": 0.0,
+  "removed_ambiguous_share": 0.0,
+  "removed_signal_lost_share": 0.0,
+  "majority_noise_removed": false,
+  "reason_recalibration_table": [],
+  "documents": [
+    {
+      "doc_id": "cca58b13-44d8-46f5-84bb-3da389bcbb1a",
+      "title": "Code du travail",
+      "before_count": 267,
+      "after_count": 267,
+      "kept_count": 267,
+      "removed_count": 0,
+      "added_count": 0,
+      "forced_to_validate_count": 0,
+      "removed_noise_count": 0,
+      "removed_ambiguous_count": 0,
+      "removed_signal_lost_count": 0,
+      "removed_noise_share": 0.0,
+      "removed_ambiguous_share": 0.0,
+      "removed_signal_lost_share": 0.0,
+      "gate_policy": "EXTRACT_FULL",
+      "gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "article_policy_counts": {
+        "EXTRACT_FULL": 88,
+        "EXTRACT_LIMITED": 16
+      },
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 53,
+      "policy_forced_to_validate_total": 7,
+      "removed_noise_examples": [],
+      "removed_ambiguous_examples": [],
+      "removed_signal_lost_examples": [],
+      "removed_by_reason_code": {}
+    },
+    {
+      "doc_id": "301d9e33-cf1c-41ca-9b7b-b829dbb9553a",
+      "title": "Jo0292026",
+      "before_count": 7,
+      "after_count": 7,
+      "kept_count": 7,
+      "removed_count": 0,
+      "added_count": 0,
+      "forced_to_validate_count": 0,
+      "removed_noise_count": 0,
+      "removed_ambiguous_count": 0,
+      "removed_signal_lost_count": 0,
+      "removed_noise_share": 0.0,
+      "removed_ambiguous_share": 0.0,
+      "removed_signal_lost_share": 0.0,
+      "gate_policy": "EXTRACT_FULL",
+      "gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "article_policy_counts": {
+        "EXTRACT_FULL": 9,
+        "EXTRACT_LIMITED_DATA": 3
+      },
+      "article_dropped_by_policy_total": 3,
+      "units_dropped_limited_policy_total": 0,
+      "policy_forced_to_validate_total": 0,
+      "removed_noise_examples": [],
+      "removed_ambiguous_examples": [],
+      "removed_signal_lost_examples": [],
+      "removed_by_reason_code": {}
+    },
+    {
+      "doc_id": "280c189b-f470-4f8f-bff7-abe5456242fd",
+      "title": "Jo0292026",
+      "before_count": 110,
+      "after_count": 110,
+      "kept_count": 110,
+      "removed_count": 0,
+      "added_count": 0,
+      "forced_to_validate_count": 0,
+      "removed_noise_count": 0,
+      "removed_ambiguous_count": 0,
+      "removed_signal_lost_count": 0,
+      "removed_noise_share": 0.0,
+      "removed_ambiguous_share": 0.0,
+      "removed_signal_lost_share": 0.0,
+      "gate_policy": "EXTRACT_FULL",
+      "gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "article_policy_counts": {
+        "EXTRACT_LIMITED": 66,
+        "EXTRACT_FULL": 17,
+        "EXTRACT_LIMITED_DATA": 2
+      },
+      "article_dropped_by_policy_total": 2,
+      "units_dropped_limited_policy_total": 80,
+      "policy_forced_to_validate_total": 10,
+      "removed_noise_examples": [],
+      "removed_ambiguous_examples": [],
+      "removed_signal_lost_examples": [],
+      "removed_by_reason_code": {}
+    },
+    {
+      "doc_id": "21d0c672-04c2-470d-b857-43620d538b36",
+      "title": "Jo1212025",
+      "before_count": 97,
+      "after_count": 97,
+      "kept_count": 97,
+      "removed_count": 0,
+      "added_count": 0,
+      "forced_to_validate_count": 0,
+      "removed_noise_count": 0,
+      "removed_ambiguous_count": 0,
+      "removed_signal_lost_count": 0,
+      "removed_noise_share": 0.0,
+      "removed_ambiguous_share": 0.0,
+      "removed_signal_lost_share": 0.0,
+      "gate_policy": "EXTRACT_FULL",
+      "gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "article_policy_counts": {
+        "EXTRACT_FULL": 43,
+        "EXTRACT_LIMITED": 37,
+        "EXTRACT_LIMITED_DATA": 6
+      },
+      "article_dropped_by_policy_total": 6,
+      "units_dropped_limited_policy_total": 37,
+      "policy_forced_to_validate_total": 2,
+      "removed_noise_examples": [],
+      "removed_ambiguous_examples": [],
+      "removed_signal_lost_examples": [],
+      "removed_by_reason_code": {}
+    },
+    {
+      "doc_id": "38385ff6-634c-487d-ac99-6fed79ea494b",
+      "title": "JORT 121 2025 - Décret-loi sociétés communautaires",
+      "before_count": 68,
+      "after_count": 68,
+      "kept_count": 68,
+      "removed_count": 0,
+      "added_count": 0,
+      "forced_to_validate_count": 0,
+      "removed_noise_count": 0,
+      "removed_ambiguous_count": 0,
+      "removed_signal_lost_count": 0,
+      "removed_noise_share": 0.0,
+      "removed_ambiguous_share": 0.0,
+      "removed_signal_lost_share": 0.0,
+      "gate_policy": "EXTRACT_FULL",
+      "gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "article_policy_counts": {
+        "EXTRACT_FULL": 35,
+        "EXTRACT_LIMITED": 22
+      },
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 22,
+      "policy_forced_to_validate_total": 4,
+      "removed_noise_examples": [],
+      "removed_ambiguous_examples": [],
+      "removed_signal_lost_examples": [],
+      "removed_by_reason_code": {}
+    }
+  ]
+}

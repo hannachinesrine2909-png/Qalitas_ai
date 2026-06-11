@@ -1,0 +1,40 @@
+.env
+.env.local
+.env.*.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local caches and temp files
+.cache/
+.tmp*
+.tmp*/
+tmp/
+temp/
+
+# Logs
+*.log
+reports/api/*.log
+reports/api/run_logs/
+
+# Generated reports and historical evaluation artifacts
+reports/history/
+reports/phase1/
+reports/phase2/
+reports/phase4/
+reports/mini_jo*/
+reports/registry/history/
+reports/preflight/*_202*.json
+reports/preflight/*_202*.md
+
+# Runtime uploads and generated evidence files
+storage/uploads_api/
+storage/proofs/

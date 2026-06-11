@@ -1,0 +1,265 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QALITAS AI - Exigences</title>
+  <link rel="stylesheet" href="/ui/base.css" />
+  <link rel="stylesheet" href="/ui/layout.css?v=20260602_02" />
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_07" />
+</head>
+<body data-page="requirements">
+  <div class="app-shell">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:20px">
+        <a class="brand" href="/ui/dashboard.html"><span class="brand-qali">QALI</span><span class="brand-tas">TAS</span><span class="brand-ai">AI</span></a>
+        <nav class="topbar-nav">
+          <a class="topbar-link" data-top="dashboard" href="/ui/dashboard.html">Pilotage</a>
+          <a class="topbar-link" data-top="requirements" href="/ui/requirements.html">Exigences</a>
+          <a class="topbar-link" data-top="assistant" href="/ui/assistant.html">Assistant expert</a>
+          <a class="topbar-link" data-top="analytics" href="/ui/analytics.html">Analyses</a>
+        </nav>
+      </div>
+      <div class="topbar-right">
+        <span class="tenant-pill" data-auth-tenant>tenant</span>
+        <span class="user-chip"><span class="user-avatar" data-auth-avatar>Q</span><span data-auth-user>Utilisateur</span></span>
+        <button class="logout-link" data-action="logout">Déconnexion</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <section class="sidebar-group">
+        <div class="sidebar-title">Principal</div>
+        <a class="sidebar-link" data-nav="dashboard" href="/ui/dashboard.html">Vue globale</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Pipeline IA</div>
+        <a class="sidebar-link" data-nav="upload" href="/ui/upload.html">Upload & runs</a>
+        <a class="sidebar-link" data-nav="requirements" href="/ui/requirements.html">A1 Exigences</a>
+        <a class="sidebar-link" data-nav="applicability" href="/ui/applicability.html">A2 Applicabilité</a>
+        <a class="sidebar-link" data-nav="compliance" href="/ui/compliance.html">A3 Conformité</a>
+        <a class="sidebar-link" data-nav="assistant" href="/ui/assistant.html">Assistant expert</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Gestion</div>
+        <a class="sidebar-link" data-nav="company" href="/ui/company.html">Entreprise</a>
+        <a class="sidebar-link" data-nav="reports" href="/ui/reports.html">Rapports</a>
+        <a class="sidebar-link" data-nav="settings" href="/ui/settings.html">Paramètres</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Analyse</div>
+        <a class="sidebar-link" data-nav="analytics" href="/ui/analytics.html">Analyses</a>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Exigences réglementaires</h1>
+        </div>
+        <div>
+          <button id="btn-export-csv" class="btn btn-secondary">Exporter CSV</button>
+        </div>
+      </div>
+
+      <section id="requirements-status-cards" class="requirements-status-cards" aria-label="Raccourcis de consultation du registre">
+        <button class="requirement-status-card is-active" type="button" data-status="">
+          <span class="requirement-status-copy">
+            <strong>Vue complète</strong>
+          </span>
+          <span class="requirement-status-count" data-req-card-count="total">0</span>
+        </button>
+        <button class="requirement-status-card" type="button" data-status="PROMOTED">
+          <span class="requirement-status-copy">
+            <strong>Registre validé</strong>
+          </span>
+          <span class="requirement-status-count" data-req-card-count="promoted">0</span>
+        </button>
+        <button class="requirement-status-card" type="button" data-status="TO_VALIDATE">
+          <span class="requirement-status-copy">
+            <strong>À valider</strong>
+          </span>
+          <span class="requirement-status-count" data-req-card-count="toValidate">0</span>
+        </button>
+        <button class="requirement-status-card" type="button" data-status="DRAFT">
+          <span class="requirement-status-copy">
+            <strong>Pré-validées auto</strong>
+          </span>
+          <span class="requirement-status-count" data-req-card-count="draft">0</span>
+        </button>
+        <button class="requirement-status-card" type="button" data-status="REJECT">
+          <span class="requirement-status-copy">
+            <strong>Rejetées</strong>
+          </span>
+          <span class="requirement-status-count" data-req-card-count="reject">0</span>
+        </button>
+      </section>
+
+      <section class="card" style="margin-bottom:12px">
+        <div class="filters-row" id="requirements-filters">
+          <div class="field" style="min-width:220px">
+            <label class="field-label" for="f-search">Recherche</label>
+            <input id="f-search" class="input" placeholder="Texte, article, document..." />
+          </div>
+          <div class="field">
+            <label class="field-label" for="f-domain">Domaine</label>
+            <select id="f-domain" class="select">
+              <option value="">Tous</option>
+              <option value="HSE">HSE</option>
+              <option value="SECURITE">Sécurité</option>
+              <option value="SANTE">Santé</option>
+              <option value="ENVIRONNEMENT">Environnement</option>
+              <option value="QUALITE">Qualité</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label" for="f-type">Type</label>
+            <select id="f-type" class="select">
+              <option value="">Tous</option>
+              <option value="OBLIGATION">Obligation</option>
+              <option value="INTERDICTION">Interdiction</option>
+              <option value="EXIGENCE">Exigence</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label" for="f-severity">Sévérité</label>
+            <select id="f-severity" class="select">
+              <option value="">Toutes</option>
+              <option value="HIGH">Haute</option>
+              <option value="MEDIUM">Moyenne</option>
+              <option value="LOW">Faible</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label" for="f-status">Statut</label>
+            <select id="f-status" class="select">
+              <option value="">Tous</option>
+              <option value="TO_VALIDATE">A valider</option>
+              <option value="PROMOTED">Validee</option>
+              <option value="DRAFT">Pre-validee auto</option>
+              <option value="REJECT">Rejetee</option>
+            </select>
+          </div>
+          <button id="btn-apply-filters" class="btn btn-primary" style="margin-top:20px">Filtrer</button>
+        </div>
+      </section>
+
+      <section id="requirements-section" class="card">
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Ref</th>
+                <th>Article</th>
+                <th>Domaine</th>
+                <th>Type</th>
+                <th>Texte</th>
+                <th>Sévérité</th>
+                <th>Confiance</th>
+                <th>Statut</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="requirements-body">
+              <tr>
+                <td>REQ-001</td>
+                <td>Art. 12</td>
+                <td><span class="badge badge-blue">HSE</span></td>
+                <td>OBLIGATION</td>
+                <td>Le port des EPI est obligatoire dans les zones de production...</td>
+                <td><span class="badge badge-amber">Moyenne</span></td>
+                <td style="color:var(--green)">91%</td>
+                <td><span class="badge badge-to_validate">A valider</span></td>
+                <td><div class="actions"><button class="btn btn-primary">Ouvrir revue</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="requirements-meta" class="page-subtitle" style="margin-top:8px">0 résultats</div>
+      </section>
+    </main>
+  </div>
+
+  <aside id="requirement-drawer" class="drawer">
+    <div class="card-head">
+      <h3 class="card-title">Détail exigence</h3>
+      <button id="close-requirement-drawer" class="btn btn-ghost">Fermer</button>
+    </div>
+    <div id="requirement-drawer-content" class="page-subtitle">Aucune exigence sélectionnée.</div>
+  </aside>
+
+  <div id="validation-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal modal-lg">
+      <div class="modal-head">
+        <h3 class="card-title">Validation d'exigence</h3>
+        <button class="btn btn-ghost" id="close-validation-modal">Fermer</button>
+      </div>
+      <p class="page-subtitle" id="validation-target">Exigence: -</p>
+      <div id="validation-context-recommendation" class="banner" style="margin-top:8px">Chargement décision...</div>
+      <div class="card" style="padding:10px 12px;margin-top:8px;background:#f8fafc">
+        <div id="validation-context-meta" class="page-subtitle">Chargement du contexte...</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:8px">
+          <div>
+            <div class="field-label" style="margin-bottom:4px">Extrait source</div>
+            <div id="validation-context-snippet" style="border:0.5px solid rgba(15,23,42,0.12);border-radius:9px;padding:9px;font-size:12px;background:#fff;min-height:96px">-</div>
+          </div>
+          <div>
+            <div class="field-label" style="margin-bottom:4px">Texte registre final</div>
+            <div id="validation-context-requirement" style="border:0.5px solid rgba(15,23,42,0.12);border-radius:9px;padding:9px;font-size:12px;background:#fff;min-height:96px">-</div>
+          </div>
+        </div>
+        <div style="margin-top:10px">
+          <div class="field-label" style="margin-bottom:4px">Lecture juridique derivee</div>
+          <div id="validation-context-structure" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px">-</div>
+        </div>
+        <div style="margin-top:10px">
+          <div class="field-label" style="margin-bottom:4px">Points de controle pour le validateur</div>
+          <div id="validation-context-guidance" class="page-subtitle">Analyse en cours...</div>
+        </div>
+        <div style="margin-top:8px">
+          <div class="field-label" style="margin-bottom:4px">Doublons potentiels</div>
+          <div id="validation-context-similar" class="page-subtitle">Aucun doublon signalé.</div>
+        </div>
+      </div>
+      <div class="field" style="margin-top:10px">
+        <label class="field-label" for="validation-decision">Décision</label>
+        <select id="validation-decision" class="select">
+          <option value="EDIT">Corriger puis valider</option>
+          <option value="APPROVE">Approuver telle quelle</option>
+          <option value="REJECT">Rejeter</option>
+          <option value="FLAG">Signaler pour revue</option>
+        </select>
+      </div>
+      <div id="validation-decision-hint" class="page-subtitle" style="margin-top:6px">
+        Correction recommandée si le texte doit être clarifié.
+      </div>
+      <div class="field" style="margin-top:10px;display:none" id="validation-reason-field">
+        <label class="field-label" for="validation-reason">Raison structurée</label>
+        <select id="validation-reason" class="select">
+          <option value="">Sélectionner une raison</option>
+          <option value="TEXTE_INCORRECT">Texte incorrect</option>
+          <option value="HORS_PERIMETRE">Hors périmètre</option>
+          <option value="DOUBLON">Doublon</option>
+          <option value="FORCE_NORMATIVE_FAUSSE">Force normative fausse</option>
+          <option value="INCOMPLET">Incomplet</option>
+          <option value="AUTRE">Autre</option>
+        </select>
+      </div>
+      <div class="field" style="margin-top:10px;display:none" id="validation-corrected-field">
+        <label class="field-label" for="validation-corrected-text">Texte corrigé</label>
+        <textarea id="validation-corrected-text" class="textarea" placeholder="Saisir la formulation corrigée à promouvoir."></textarea>
+      </div>
+      <div class="field" style="margin-top:10px">
+        <label class="field-label" for="validation-comment">Commentaire</label>
+        <textarea id="validation-comment" class="textarea" placeholder="Ajouter une justification..."></textarea>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" id="validation-cancel">Annuler</button>
+        <button class="btn btn-primary" id="validation-confirm">Confirmer</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/ui/js/requirements.js?v=20260602_03"></script>
+</body>
+</html>

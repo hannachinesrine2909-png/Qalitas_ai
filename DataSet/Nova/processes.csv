@@ -1,0 +1,8 @@
+site_code,process_code,name,description
+S1,PROC-PROD,Production,Processus principal de fabrication et traitement de surface
+S1,PROC-MAINT,Maintenance,Maintenance preventive et corrective des lignes et utilites
+S1,PROC-QHSE,QHSE,Pilotage securite environnement qualite du site de production
+S2,PROC-LOG,Logistique,Reception stockage et expedition des matieres et produits
+S2,PROC-HSE-DEPOT,HSE Depot,Suivi des conditions HSE du depot de stockage
+S3,PROC-RH,Ressources Humaines,Gestion administrative et formations obligatoires
+S3,PROC-DIR,Direction et Conformite,Gouvernance revues et pilotage reglementaire

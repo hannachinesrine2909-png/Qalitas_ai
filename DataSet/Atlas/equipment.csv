@@ -1,0 +1,6 @@
+site_code,internal_code,designation,nature,equipment_type,category,location,serial_number,state,brand,model,specific_data,last_intervention,next_intervention
+AT1,EQ-CAB-01,Cabine peinture ligne 1,Equipement,Production,Cabine peinture,Atelier peinture,CAB-AT1-001,Actif,SprayTech,PX-900,Ventilation mecanique et filtration,2026-03-18,2026-09-18
+AT1,EQ-COMP-01,Compresseur principal,Equipement,Utilite,Compresseur,Local compresseur,COMP-AT1-010,Actif,Atlas Copco,GA37,Air comprime atelier peinture,2026-03-05,2027-03-05
+AT2,EQ-RET-01,Bac de retention mobile,Equipement,Securite,Retention,Depot solvants,RET-AT2-002,Actif,SafeStore,RET240,Capacite 240 litres,2026-02-11,2027-02-11
+AT2,EQ-EXT-01,Extincteurs depot solvants,Equipement,Securite,Incendie,Depot solvants,EXT-AT2-100,Actif,SecurFire,ABC9,Lot de 4 extincteurs a poudre,2026-02-08,2026-08-08
+AT1,EQ-VOC-01,Detection COV cabine peinture,Equipement,Securite,Detection,Atelier peinture,VOC-AT1-001,Projet,EnviroSense,VOC-2027,Exigence applicable a partir de 2027,,2027-01-15

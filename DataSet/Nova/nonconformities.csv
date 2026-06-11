@@ -1,0 +1,5 @@
+site_code,reference,year,nature,process_name,title,source,audit_type,responsible_service,detected_at,state,severity,nc_type,frequency,nc_category,gravity,priority,closed_at,system_scope,progress_pct,closure_rate
+S1,NOVA-NC-001,2026,Reelle,Production,Absence de procedure ecrite pour le stockage temporaire des dechets dangereux,Audit interne trimestriel,Audit Interne,QHSE,2026-02-14,EN_COURS,Majeure,Processus,Occasionnelle,Reglementaire,Critique,Haute,,QHSE,40,15
+S1,NOVA-NC-002,2026,Reelle,Maintenance,Registre de verification chaudiere non mis a jour,Inspection preventive,Inspection Technique,Maintenance,2026-03-02,EN_COURS,Mineure,Documentaire,Recurrente,Technique,Majeure,Moyenne,,SST,55,35
+S2,NOVA-NC-003,2026,Reelle,Logistique,Signalisation de zone inflammable incomplete dans le depot solvants,Audit client,Audit Client,Logistique,2026-03-18,EN_COURS,Majeure,Securite,Occasionnelle,Securite,Critique,Haute,,SST,25,10
+S3,NOVA-NC-004,2026,Potentielle,Direction et Conformite,Plan de veille reglementaire non formalise et non approuve,Revue de direction,Revue Interne,Direction,2026-01-28,EN_COURS,Mineure,Systeme,Occasionnelle,Systeme,Majeure,Moyenne,,Qualite,35,20

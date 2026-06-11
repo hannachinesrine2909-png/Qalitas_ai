@@ -1,0 +1,156 @@
+{
+  "context_version": "B0.2-1.7.0",
+  "captured_at_utc": "2026-04-18T18:06:53+00:00",
+  "prompt": {
+    "symbol": "SYSTEM_PROMPT_A1",
+    "contract_version": "B2.1-1.0.0",
+    "sha256": "d66bd35202b74d04bdd20558cce613023da5e6f25fd56eb9a1166c4ae093f0de",
+    "length_chars": 24330,
+    "line_count": 702,
+    "output_schema_symbol": "RequirementLLMResponse",
+    "output_schema_version": "B2.1-schema-1.0.0",
+    "output_schema_name": "requirement_llm_response",
+    "output_schema_sha256": "c62004c9f413ed03f79c90a481c5493ea652e5f37aaa3b3f3523c8150c64f535",
+    "strict_json_mode": true
+  },
+  "llm_settings": {
+    "primary_provider": "openai",
+    "primary_model": "gpt-4.1-mini-2025-04-14",
+    "fallback_provider": "gemini",
+    "fallback_model": "gemini-2.5-flash",
+    "temperature": 0.0,
+    "max_output_tokens": 2048,
+    "max_retries": 2,
+    "retry_policy_version": "B2.2-1.1.0",
+    "primary_max_retries": 2,
+    "fallback_max_retries": 2,
+    "failfast_primary_rate_limit": false,
+    "failfast_fallback_rate_limit": false,
+    "availability_policy_version": "B2.3-1.1.0",
+    "prompt_contract_version": "B2.1-1.0.0",
+    "output_schema_version": "B2.1-schema-1.0.0",
+    "server_json_schema_enabled": false,
+    "retry_base_seconds": 2.0,
+    "retry_max_seconds": 30.0,
+    "retry_log_every_n": 25,
+    "cooldown_enabled": true,
+    "cooldown_min_seconds": 20,
+    "cooldown_max_seconds": 600,
+    "cache_enabled": true,
+    "cache_path": ".cache/llm_cache.sqlite3",
+    "cache_ttl_seconds": 0,
+    "cache_max_entries": 50000,
+    "cache_policy_version": "B2.4-2.1.0",
+    "cache_lookup_relaxed_enabled": false,
+    "cache_lookup_relaxed_min_chars": 120,
+    "cache_write_relaxed_alias": false,
+    "cache_negative_enabled": false,
+    "cache_key_relaxed_normalizer": "legal_v1"
+  },
+  "runtime_python": {
+    "python_version": "3.13.7",
+    "implementation": "CPython",
+    "executable": "C:\\Program Files\\Python313\\python.exe"
+  },
+  "dependency_versions": {
+    "pydantic": "2.12.5",
+    "psycopg": "3.3.3",
+    "python-dotenv": "1.2.2",
+    "google-genai": "1.68.0",
+    "groq": "1.1.1",
+    "openai": "2.30.0"
+  },
+  "api_keys": {
+    "GEMINI_API_KEY": {
+      "present": true,
+      "fingerprint": "07f8f8808bb3",
+      "length": 39
+    },
+    "GROQ_API_KEY": {
+      "present": false,
+      "fingerprint": null,
+      "length": 0
+    },
+    "OPENAI_API_KEY": {
+      "present": true,
+      "fingerprint": "1cd01f45d5d9",
+      "length": 164
+    }
+  },
+  "tracked_files": [
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\prompts.py",
+      "size_bytes": 27326,
+      "last_modified_utc": "2026-04-10T17:13:57+00:00",
+      "sha256": "a44514553534e54a0c3c2c9c4efe2b48b08d24647eec76ca54f386081d04e809"
+    },
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\prompt_contract.py",
+      "size_bytes": 3897,
+      "last_modified_utc": "2026-04-10T17:14:19+00:00",
+      "sha256": "956e5edfe973ae98bea9af0705bce0636559fa4aa326b801b2d1ba055176851f"
+    },
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\schemas.py",
+      "size_bytes": 1820,
+      "last_modified_utc": "2026-03-31T22:26:56+00:00",
+      "sha256": "8154fb8107dc0c74ab9c67c6bdcbb6db45a44c4a772c645558e58ce39e2842c4"
+    },
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\llm_extractor.py",
+      "size_bytes": 69207,
+      "last_modified_utc": "2026-04-14T14:10:44+00:00",
+      "sha256": "fdcd398288b4a98e8747e7c7cbb20a09abe8d7967971de908105462b5434d343"
+    },
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\precall_nlp.py",
+      "size_bytes": 35839,
+      "last_modified_utc": "2026-04-10T01:02:09+00:00",
+      "sha256": "0cc536ef047f02100facc94edcdc030a40078857289a2de7730207bcdb835b01"
+    },
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\postcall_quality.py",
+      "size_bytes": 75813,
+      "last_modified_utc": "2026-04-10T00:53:46+00:00",
+      "sha256": "71a2906757034acc668d2d859e1553547b7de7989b68de40633c81e8647a4529"
+    },
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\phase1_calibration.py",
+      "size_bytes": 10847,
+      "last_modified_utc": "2026-03-31T17:31:05+00:00",
+      "sha256": "f7d6ba27a146b8d63d1a08694699d4806782c8c6d89354122f72ad860ae09034"
+    },
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\phase2_runtime.py",
+      "size_bytes": 13814,
+      "last_modified_utc": "2026-03-31T22:46:50+00:00",
+      "sha256": "5d4c4037386c2d67c3956435163de1dff3cca4db799573a0e705b9b6882839b4"
+    },
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\a1_shared_helpers.py",
+      "size_bytes": 78214,
+      "last_modified_utc": "2026-04-10T00:50:53+00:00",
+      "sha256": "ad2be237e65b0b2e3b3a8dc5671e6566231d1a8d9b742ce304285b1d2abd4083"
+    },
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\a1_extract_requirements_llm.py",
+      "size_bytes": 60997,
+      "last_modified_utc": "2026-04-14T14:10:50+00:00",
+      "sha256": "33b7a7da180356b03d9d850bb705e95fda09dfe890a5eb827289fc6e079d9685"
+    },
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\a1_segment_articles_chunks.py",
+      "size_bytes": 40199,
+      "last_modified_utc": "2026-04-05T13:37:33+00:00",
+      "sha256": "fdd9b4b481ddba8f77816f18234b33d6acab58cdacd348a7c4d426096cfa3c28"
+    },
+    {
+      "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\evaluation.py",
+      "size_bytes": 233140,
+      "last_modified_utc": "2026-04-05T20:43:37+00:00",
+      "sha256": "9ccfda05001e041cedad4b068f6f08e91e69dc5c1b4fbd920253caec1b0bfeff"
+    }
+  ],
+  "parse_warnings": [],
+  "context_fingerprint": "712fbac41aabc8bb54da5410c2527bbd0ae7780c28b37cd4df5683a12f7a315a"
+}

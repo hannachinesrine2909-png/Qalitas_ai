@@ -1,0 +1,28 @@
+{
+  "contract_version": "B0.1-1.0.0",
+  "run_id": "run_20260418T180653Z",
+  "created_at_utc": "2026-04-18T18:06:53+00:00",
+  "inputs": {
+    "run_profile": "baseline_full",
+    "dataset_path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\golden_dataset.json",
+    "dataset_sha256": "51913111e8b880d7b0a9a98f9eaa8bfd1a761608c49b8edb5e95f08cdb817042",
+    "dataset_size_bytes": 23115,
+    "outdir": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\reports",
+    "case_id": null,
+    "limit": null,
+    "max_chars": 1200
+  },
+  "dataset": {
+    "path": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai\\golden_dataset.json",
+    "size_bytes": 23115,
+    "last_modified_utc": "2026-03-24T16:16:59+00:00",
+    "sha256": "51913111e8b880d7b0a9a98f9eaa8bfd1a761608c49b8edb5e95f08cdb817042"
+  },
+  "runtime": {
+    "hostname": "DESKTOP-STT4535",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.13.7",
+    "cwd": "C:\\Users\\MEGA-PC\\Desktop\\Qalitas_ai"
+  },
+  "reproducibility_fingerprint": "4f835aab63e9b3ab5a41608ff84f2f18e1803e71cd4bd4b72c1db105da84e671"
+}

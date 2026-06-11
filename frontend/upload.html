@@ -1,0 +1,241 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QALITAS AI - Documents & traitements</title>
+  <link rel="stylesheet" href="/ui/base.css" />
+  <link rel="stylesheet" href="/ui/layout.css?v=20260602_02" />
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_07" />
+</head>
+<body data-page="upload">
+  <div class="app-shell">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:20px">
+        <a class="brand" href="/ui/dashboard.html"><span class="brand-qali">QALI</span><span class="brand-tas">TAS</span><span class="brand-ai">AI</span></a>
+        <nav class="topbar-nav">
+          <a class="topbar-link" data-top="dashboard" href="/ui/dashboard.html">Pilotage</a>
+          <a class="topbar-link" data-top="requirements" href="/ui/requirements.html">Exigences</a>
+          <a class="topbar-link" data-top="assistant" href="/ui/assistant.html">Assistant expert</a>
+          <a class="topbar-link" data-top="analytics" href="/ui/analytics.html">Analyses</a>
+        </nav>
+      </div>
+      <div class="topbar-right">
+        <span class="tenant-pill" data-auth-tenant>tenant</span>
+        <span class="user-chip"><span class="user-avatar" data-auth-avatar>Q</span><span data-auth-user>Utilisateur</span></span>
+        <button class="logout-link" data-action="logout">Déconnexion</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <section class="sidebar-group">
+        <div class="sidebar-title">Principal</div>
+        <a class="sidebar-link" data-nav="dashboard" href="/ui/dashboard.html">Vue globale</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Pipeline IA</div>
+        <a class="sidebar-link" data-nav="upload" href="/ui/upload.html">Upload & runs</a>
+        <a class="sidebar-link" data-nav="requirements" href="/ui/requirements.html">A1 Exigences</a>
+        <a class="sidebar-link" data-nav="applicability" href="/ui/applicability.html">A2 Applicabilité</a>
+        <a class="sidebar-link" data-nav="compliance" href="/ui/compliance.html">A3 Conformité</a>
+        <a class="sidebar-link" data-nav="assistant" href="/ui/assistant.html">Assistant expert</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Gestion</div>
+        <a class="sidebar-link" data-nav="company" href="/ui/company.html">Entreprise</a>
+        <a class="sidebar-link" data-nav="reports" href="/ui/reports.html">Rapports</a>
+        <a class="sidebar-link" data-nav="settings" href="/ui/settings.html">Paramètres</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Analyse</div>
+        <a class="sidebar-link" data-nav="analytics" href="/ui/analytics.html">Analyses</a>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Documents & traitements</h1>
+        </div>
+      </div>
+
+      <section id="upload-reset-guidance" class="banner" style="margin-bottom:12px">
+        Vérification du corpus en cours...
+      </section>
+
+      <section class="card workflow-guide-card" data-role="WRITE" style="margin-bottom:12px">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title">Cycle de traitement</h2>
+          </div>
+          <span id="workflow-stage-badge" class="badge badge-blue">Chargement</span>
+        </div>
+
+        <div class="workflow-stepper">
+          <article class="workflow-step" data-workflow-step="A1">
+            <span class="workflow-step-num">1</span>
+            <div>
+              <div class="workflow-step-label">Extraction</div>
+            </div>
+          </article>
+          <article class="workflow-step" data-workflow-step="REVIEW">
+            <span class="workflow-step-num">2</span>
+            <div>
+              <div class="workflow-step-label">Validation A1</div>
+            </div>
+          </article>
+          <article class="workflow-step" data-workflow-step="A2">
+            <span class="workflow-step-num">3</span>
+            <div>
+              <div class="workflow-step-label">Applicabilité</div>
+            </div>
+          </article>
+          <article class="workflow-step" data-workflow-step="A3">
+            <span class="workflow-step-num">4</span>
+            <div>
+              <div class="workflow-step-label">Conformité</div>
+            </div>
+          </article>
+          <article class="workflow-step" data-workflow-step="A4">
+            <span class="workflow-step-num">5</span>
+            <div>
+              <div class="workflow-step-label">Assistant expert</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="workflow-state-card">
+          <div class="workflow-state-body">
+            <div id="workflow-state-title" class="workflow-state-title">Chargement</div>
+            <div id="workflow-state-copy" class="page-subtitle">Chargement</div>
+            <div id="workflow-state-meta" class="workflow-meta"></div>
+          </div>
+          <div class="workflow-actions">
+            <button id="workflow-open-review" type="button" class="btn btn-primary hidden">Ouvrir la validation</button>
+            <button id="workflow-run-a2" type="button" class="btn btn-primary hidden">Lancer l'applicabilité</button>
+            <button id="workflow-run-a3" type="button" class="btn btn-secondary hidden">Lancer la conformité</button>
+            <button id="workflow-run-a2a3" type="button" class="btn btn-primary hidden">Enchaîner applicabilité + conformité</button>
+            <button id="workflow-run-a4" type="button" class="btn btn-secondary hidden">Préparer l'assistant</button>
+            <button id="workflow-open-assistant" type="button" class="btn btn-secondary hidden">Ouvrir l'assistant</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid upload-page-grid">
+        <article class="card upload-entry-card" data-role="WRITE">
+          <div class="card-head"><h2 class="card-title">Nouveau document</h2></div>
+
+          <form id="upload-form">
+            <label id="dropzone" class="dropzone" for="pdf-file">
+              <strong id="dropzone-title">Glisser-déposer un PDF juridique ici</strong>
+              <span id="dropzone-file" class="dropzone-filename hidden">Aucun fichier</span>
+              <div class="dropzone-hint">Sélectionner un fichier</div>
+            </label>
+            <input id="pdf-file" type="file" accept="application/pdf" class="hidden" required />
+
+            <div style="margin-top:10px">
+              <div class="field-label" style="margin-bottom:6px">Informations du document</div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="field"><label class="field-label">Nom affiché</label><input id="doc-name" class="input" placeholder="Arrêté 2026..." /></div>
+              <div class="field"><label class="field-label">Type de document</label><input id="doc-type" class="input" value="REGLEMENTAIRE" /></div>
+              <div class="field"><label class="field-label">Domaine</label><input id="doc-domain" class="input" placeholder="HSE" /></div>
+              <div class="field"><label class="field-label">Référence interne</label><input id="doc-reference" class="input" placeholder="JORT-2026-..." /></div>
+            </div>
+
+            <details class="upload-expert-details" style="margin-top:10px">
+              <summary class="upload-expert-toggle">Options expert</summary>
+              <div class="grid grid-2" style="margin-top:10px">
+                <div class="field">
+                  <label class="field-label" for="extract-limit">Limite d'analyse (articles)</label>
+                  <input id="extract-limit" class="input" type="number" min="0" step="1" placeholder="0 = complet" />
+                </div>
+                <div class="field">
+                  <label class="field-label" for="duplicate-mode">Mode de réimport</label>
+                  <select id="duplicate-mode" class="select">
+                    <option value="reinject">Reconstruire le document</option>
+                    <option value="reuse">Réutiliser le document existant</option>
+                    <option value="fail">Stopper si déjà présent</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="timeout-segment-sec">Délai max segmentation (secondes)</label>
+                  <input id="timeout-segment-sec" class="input" type="number" min="300" step="60" value="7200" />
+                </div>
+                <div class="field">
+                  <label class="field-label" for="timeout-extract-sec">Délai max extraction (secondes)</label>
+                  <input id="timeout-extract-sec" class="input" type="number" min="600" step="60" value="10800" />
+                </div>
+              </div>
+              <div class="field-label" style="margin-top:12px;margin-bottom:6px">Orchestration avancée</div>
+              <div class="upload-step-grid">
+                <label class="upload-step-option"><input type="checkbox" id="step-a1" checked disabled /> <span>Extraction</span></label>
+                <label class="upload-step-option"><input type="checkbox" id="step-a2" /> <span>Préparer A2 si le registre final est déjà prêt</span></label>
+                <label class="upload-step-option"><input type="checkbox" id="step-a3" /> <span>Préparer A3 si A2 est déjà exploitable</span></label>
+                <label class="upload-step-option"><input type="checkbox" id="step-embed" /> <span>Tenter une indexation assistant en fin de traitement</span></label>
+              </div>
+            </details>
+
+            <div style="display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap">
+              <button id="submit-run" type="submit" class="btn btn-primary">Préparer le registre A1</button>
+              <button id="stop-run" type="button" class="btn btn-danger" data-role="WRITE">Arrêter le traitement</button>
+              <button id="resume-run" type="button" class="btn btn-secondary" data-role="WRITE">Reprendre</button>
+            </div>
+            <div class="upload-meta">
+              <span>Entreprise courante: <strong data-auth-tenant></strong></span>
+              <span id="run-status-text">Prêt</span>
+            </div>
+          </form>
+        </article>
+
+        <article class="card upload-monitor-card">
+          <div class="card-head"><h2 class="card-title">Suivi</h2></div>
+
+          <div class="upload-monitor-section">
+            <div class="step-list" id="live-steps">
+              <div class="step-item"><span class="pipeline-left"><span class="dot dot-gray"></span>Extraction</span><span class="badge badge-pending">En attente</span></div>
+              <div class="step-item"><span class="pipeline-left"><span class="dot dot-gray"></span>Validation A1</span><span class="badge badge-pending">En attente</span></div>
+              <div class="step-item"><span class="pipeline-left"><span class="dot dot-gray"></span>Applicabilite</span><span class="badge badge-pending">En attente</span></div>
+              <div class="step-item"><span class="pipeline-left"><span class="dot dot-gray"></span>Conformite</span><span class="badge badge-pending">En attente</span></div>
+              <div class="step-item"><span class="pipeline-left"><span class="dot dot-gray"></span>Indexation</span><span class="badge badge-pending">En attente</span></div>
+            </div>
+
+            <div style="margin-top:10px">
+              <div style="display:flex;justify-content:space-between;font-size:12px"><span>Progression</span><span id="progress-text">0%</span></div>
+              <div class="progress-track"><div id="progress-bar" class="progress-bar" style="width:0%"></div></div>
+            </div>
+          </div>
+
+          <details class="upload-technical-details">
+            <summary class="upload-technical-toggle">Journal</summary>
+            <div id="live-log" class="log-box">Aucun run actif.</div>
+          </details>
+          <div id="run-error-box" class="run-error-box hidden"></div>
+
+            <div class="upload-monitor-section" style="margin-top:10px">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px">
+                <div class="card-title" style="font-size:12px;margin-bottom:0">Documents récents</div>
+              <button
+                id="clear-runs-history"
+                type="button"
+                class="btn btn-secondary btn-sm"
+                data-role="WRITE"
+                title="Supprimer l'historique des runs récents"
+                aria-label="Supprimer l'historique des runs récents"
+              >Vider</button>
+            </div>
+            <div id="recent-runs" class="run-history-list"></div>
+          </div>
+        </article>
+      </section>
+
+      <div class="state hidden" data-role="AUDITEUR" style="margin-top:12px">
+        Mode AUDITEUR: chargement désactivé, consultation uniquement.
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/ui/js/upload.js?v=20260602_04"></script>
+</body>
+</html>

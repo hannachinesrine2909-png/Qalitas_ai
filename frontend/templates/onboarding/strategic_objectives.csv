@@ -1,0 +1,2 @@
+objective_text,process_name,indicator,indicator_type,frequency,calculation_method,system_scope,unit,strategic_axis
+Reduire les non-conformites critiques,Production,Taux de NC critiques,Operationnel,Mensuelle,(nc_critiques / nc_total) * 100,QHSE,%,Amelioration continue

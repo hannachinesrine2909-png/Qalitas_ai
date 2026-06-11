@@ -1,0 +1,481 @@
+{
+  "docs_executed": 5,
+  "elapsed_total_sec": 608.029,
+  "force_full_rebuild": "on",
+  "removed_total": 39,
+  "removed_noise_total": 24,
+  "removed_ambiguous_total": 15,
+  "removed_signal_lost_total": 0,
+  "removed_noise_share": 0.6154,
+  "removed_ambiguous_share": 0.3846,
+  "removed_signal_lost_share": 0.0,
+  "majority_noise_removed": true,
+  "reason_recalibration_table": [
+    {
+      "reason_code": "ARTICLE_ANNEX_MIXED_NORMATIVE",
+      "removed_count": 13,
+      "noise_share": 0.7692,
+      "ambiguous_share": 0.2308,
+      "signal_lost_share": 0.0,
+      "current_policy": "EXTRACT_LIMITED",
+      "proposed_new_policy": "EXTRACT_LIMITED",
+      "current_policy_counts": {
+        "EXTRACT_LIMITED": 13
+      }
+    },
+    {
+      "reason_code": "ARTICLE_ANNEX_TABLE_DATA",
+      "removed_count": 13,
+      "noise_share": 0.7692,
+      "ambiguous_share": 0.2308,
+      "signal_lost_share": 0.0,
+      "current_policy": "EXTRACT_LIMITED_DATA",
+      "proposed_new_policy": "EXTRACT_LIMITED_DATA",
+      "current_policy_counts": {
+        "EXTRACT_LIMITED_DATA": 13
+      }
+    },
+    {
+      "reason_code": "ARTICLE_DEFAULT_FULL",
+      "removed_count": 6,
+      "noise_share": 0.5,
+      "ambiguous_share": 0.5,
+      "signal_lost_share": 0.0,
+      "current_policy": "EXTRACT_FULL",
+      "proposed_new_policy": "EXTRACT_LIMITED (SOFT)",
+      "current_policy_counts": {
+        "EXTRACT_FULL": 6
+      }
+    },
+    {
+      "reason_code": "ARTICLE_COMMISSION_GOVERNANCE",
+      "removed_count": 5,
+      "noise_share": 0.2,
+      "ambiguous_share": 0.8,
+      "signal_lost_share": 0.0,
+      "current_policy": "EXTRACT_LIMITED",
+      "proposed_new_policy": "EXTRACT_LIMITED (SOFT)",
+      "current_policy_counts": {
+        "EXTRACT_LIMITED": 5
+      }
+    },
+    {
+      "reason_code": "ARTICLE_CONCOURS_PROCEDURAL",
+      "removed_count": 2,
+      "noise_share": 0.0,
+      "ambiguous_share": 1.0,
+      "signal_lost_share": 0.0,
+      "current_policy": "EXTRACT_LIMITED",
+      "proposed_new_policy": "EXTRACT_LIMITED (SOFT)",
+      "current_policy_counts": {
+        "EXTRACT_LIMITED": 2
+      }
+    }
+  ],
+  "documents": [
+    {
+      "doc_id": "0dcb52e4-e338-4b11-b629-ea98df76d45b",
+      "title": "Jo0282016",
+      "before_count": 6,
+      "after_count": 0,
+      "kept_count": 0,
+      "removed_count": 6,
+      "added_count": 0,
+      "forced_to_validate_count": 0,
+      "removed_noise_count": 3,
+      "removed_ambiguous_count": 3,
+      "removed_signal_lost_count": 0,
+      "removed_noise_share": 0.5,
+      "removed_ambiguous_share": 0.5,
+      "removed_signal_lost_share": 0.0,
+      "gate_policy": "DROP",
+      "gate_reason_codes": [
+        "DOC_SUMMARY_NOTICE"
+      ],
+      "article_policy_counts": {},
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "policy_forced_to_validate_total": 0,
+      "removed_noise_examples": [
+        {
+          "requirement_text": "Les personnes dont les noms suivent et qui ont le même prénom qu'un de leurs frères ou sœurs sont autorisées à substituer à leur prénom un autre prénom.",
+          "req_type": "AUTRE",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Article premier (p.3-3)"
+        },
+        {
+          "requirement_text": "Les personnes dont les noms suivent et dont le prénom peut prêter à équivoque sont autorisées à substituer à leur prénom celui indiqué entre parenthèses.",
+          "req_type": "AUTRE",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 07 (p.3-3)"
+        },
+        {
+          "requirement_text": "Les personnes dont les noms suivent et dont le prénom peut prêter à équivoque sont autorisées à substituer à leur prénom.",
+          "req_type": "AUTRE",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 43 (p.4-4)"
+        }
+      ],
+      "removed_ambiguous_examples": [
+        {
+          "requirement_text": "07- 2 - Les personnes dont les noms suivent ayant un prénom qui peut prêter à équivoque sont autorisées à substituer à leur prénom : 44- Rayene Bent Rchid HAMMAMI née à Ariana le 13-09-2001 celui de (Rania) 45- Rayene Bent Samir RIAHI née à Menzel Bourguiba le 11-01-1998 celui de",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 07 (p.3-3)"
+        },
+        {
+          "requirement_text": "17- 2 - Les personnes dont les noms suivent ayant un prénom qui peut prêter à équivoque sont autorisées à substituer à leur prénom : 44- Rayene Bent Rchid HAMMAMI née à Ariana le 13-09-2001 celui de (Rani a) 45- Rayene Bent Samir RIAHI née à Menzel Bourguiba le 11-01-1998 celui d",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 17 (p.3-3)"
+        },
+        {
+          "requirement_text": "14- 2 - Les personnes dont les noms suivent ayant un prénom qui peut prêter à équivoque sont autorisées à substituer à leur prénom : 44- Rayene Bent Rchid HAMMAMI née à Ariana le 13-09-2001 celui de (Rania) 45- Rayene Bent Samir RIAHI née à Menzel Bourguiba le 11-01-1998 celui de",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 14 (p.3-3)"
+        }
+      ],
+      "removed_signal_lost_examples": [],
+      "removed_by_reason_code": {
+        "ARTICLE_DEFAULT_FULL": {
+          "removed_count": 6,
+          "noise_count": 3,
+          "ambiguous_count": 3,
+          "signal_lost_count": 0,
+          "current_policy_counts": {
+            "EXTRACT_FULL": 6
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "cca58b13-44d8-46f5-84bb-3da389bcbb1a",
+      "title": "Code du travail",
+      "before_count": 98,
+      "after_count": 93,
+      "kept_count": 93,
+      "removed_count": 5,
+      "added_count": 0,
+      "forced_to_validate_count": 0,
+      "removed_noise_count": 1,
+      "removed_ambiguous_count": 4,
+      "removed_signal_lost_count": 0,
+      "removed_noise_share": 0.2,
+      "removed_ambiguous_share": 0.8,
+      "removed_signal_lost_share": 0.0,
+      "gate_policy": "EXTRACT_FULL",
+      "gate_reason_codes": [
+        "DOC_LONG_NORMATIVE_ACT"
+      ],
+      "article_policy_counts": {
+        "EXTRACT_FULL": 33,
+        "EXTRACT_LIMITED": 2
+      },
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 10,
+      "policy_forced_to_validate_total": 0,
+      "removed_noise_examples": [
+        {
+          "requirement_text": "À la demande de son président, la commission peut inviter toute personne dont elle juge la présence utile.",
+          "req_type": "AUTRE",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 21-4 (p.8-8)"
+        }
+      ],
+      "removed_ambiguous_examples": [
+        {
+          "requirement_text": "La commission régionale de contrôle du licenciement est présidée par le chef de l'inspection du travail territorialement compétente.",
+          "req_type": "CONTROLE",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 21-4 (p.8-8)"
+        },
+        {
+          "requirement_text": "Lorsqu'il s'agit d'une entreprise publique, le représentant de l'organisation professionnelle des employeurs est remplacé par un représentant du ministère qui exerce la tutelle sur l'entreprise.",
+          "req_type": "EXCEPTION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 21-4 (p.8-8)"
+        },
+        {
+          "requirement_text": "La commission centrale de contrôle du licenciement est présidée par le directeur général de l'inspection du travail.",
+          "req_type": "CONTROLE",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 21-5 (p.8-9)"
+        },
+        {
+          "requirement_text": "Lorsqu'il s'agit d'une entreprise publique, le représentant de l'organisation professionnelle des employeurs est remplacé par un représentant du ministère exerçant la tutelle sur l'entreprise.",
+          "req_type": "EXCEPTION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 21-5 (p.8-9)"
+        }
+      ],
+      "removed_signal_lost_examples": [],
+      "removed_by_reason_code": {
+        "ARTICLE_COMMISSION_GOVERNANCE": {
+          "removed_count": 5,
+          "noise_count": 1,
+          "ambiguous_count": 4,
+          "signal_lost_count": 0,
+          "current_policy_counts": {
+            "EXTRACT_LIMITED": 5
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "f5c53036-0eff-437c-82a5-b5bd10490b68",
+      "title": "Jo0612008",
+      "before_count": 46,
+      "after_count": 34,
+      "kept_count": 27,
+      "removed_count": 19,
+      "added_count": 7,
+      "forced_to_validate_count": 2,
+      "removed_noise_count": 14,
+      "removed_ambiguous_count": 5,
+      "removed_signal_lost_count": 0,
+      "removed_noise_share": 0.7368,
+      "removed_ambiguous_share": 0.2632,
+      "removed_signal_lost_share": 0.0,
+      "gate_policy": "EXTRACT_FULL",
+      "gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "article_policy_counts": {
+        "EXTRACT_FULL": 27,
+        "EXTRACT_LIMITED": 6,
+        "EXTRACT_LIMITED_DATA": 2
+      },
+      "article_dropped_by_policy_total": 2,
+      "units_dropped_limited_policy_total": 17,
+      "policy_forced_to_validate_total": 4,
+      "removed_noise_examples": [
+        {
+          "requirement_text": "Cette exonération ne s’applique pas aux redevances en contrepartie des services douaniers.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 12 (p.7-7)"
+        },
+        {
+          "requirement_text": "Les dirigeants et agents de l'organisation du patrimoine et des villes historiques arabes sont soumis à la législation tunisienne en ce qui concerne leurs conditions de séjour et de travail.",
+          "req_type": "AUTRE",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 12 (p.7-7)"
+        },
+        {
+          "requirement_text": "L’organisation du patrimoine et des villes historiques arabes bénéficie de l’exonération des taxes et impôts à l’importation pour les biens, les équipements et les produits devant être acquis localement ou importés au titre de ses activités, énumérés à l’annexe du présent décret.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 12 (p.7-7)"
+        },
+        {
+          "requirement_text": "L’organisation du patrimoine et des villes historiques arabes est autorisée à détenir des fonds en devises, à ouvrir des comptes en n’importe quelle monnaie, à convertir toute devise en toute autre monnaie et à transférer ses avoirs à un autre pays, dans le cadre de la législatio",
+          "req_type": "AUTRE",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 12 (p.7-7)"
+        },
+        {
+          "requirement_text": "Cette exonération ne s’applique pas aux redevances en contrepartie des services douaniers.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 8 (p.6-6)"
+        },
+        {
+          "requirement_text": "Le bureau de l’organisation mondiale pour l’égalité numérique bénéficie de l’exonération des taxes et impôts à l’importation pour les biens, les équipements et les produits devant être acquis localement ou importés au titre de ses activités, énumérés à l’annexe du présent décret.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 8 (p.6-6)"
+        }
+      ],
+      "removed_ambiguous_examples": [
+        {
+          "requirement_text": "L’organisation du patrimoine et des villes historiques arabes bénéficie des services de télécommunications conformément aux lois et règlements en vigueur.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 12 (p.7-7)"
+        },
+        {
+          "requirement_text": "2 – Des dispositions dérogatoires sont insérées au troisième alinéa de l’article 40 de la constitution ainsi qu’il suit : A défaut de remplir la condition de présentation du candidat prévue au troisième alinéa de l’article 40 de la constitution, peut se porter candidat à la Prési",
+          "req_type": "RESPONSABILITE",
+          "status": "DRAFT",
+          "citation_ref": "Article 20 nouveau (p.4-4)"
+        },
+        {
+          "requirement_text": "Est électeur tout citoyen possédant la nationalité tunisienne depuis au moins cinq ans, âgé de dix-huit ans accomplis et remplissant les conditions prévues par la loi électorale.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Article 20 nouveau (p.4-4)"
+        },
+        {
+          "requirement_text": "7 - Les biens de « l’organisation du patrimoine et des villes historiques arabes » ainsi que ses revenus et ses avoirs sont exonérés de [...] tout impôt direct ou indirect, à l’exception des redevances en rémunération de services particuliers rendus.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 12 (p.6-6)"
+        },
+        {
+          "requirement_text": "Le bureau de l’organisation mondiale pour l’égalité numérique bénéficie, au titre de sa mission officielle, des services de télécommunications conformément aux lois et règlements en vigueur.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 12 (p.6-6)"
+        }
+      ],
+      "removed_signal_lost_examples": [],
+      "removed_by_reason_code": {
+        "ARTICLE_ANNEX_MIXED_NORMATIVE": {
+          "removed_count": 13,
+          "noise_count": 10,
+          "ambiguous_count": 3,
+          "signal_lost_count": 0,
+          "current_policy_counts": {
+            "EXTRACT_LIMITED": 13
+          }
+        },
+        "ARTICLE_ANNEX_TABLE_DATA": {
+          "removed_count": 4,
+          "noise_count": 4,
+          "ambiguous_count": 0,
+          "signal_lost_count": 0,
+          "current_policy_counts": {
+            "EXTRACT_LIMITED_DATA": 4
+          }
+        },
+        "ARTICLE_CONCOURS_PROCEDURAL": {
+          "removed_count": 2,
+          "noise_count": 0,
+          "ambiguous_count": 2,
+          "signal_lost_count": 0,
+          "current_policy_counts": {
+            "EXTRACT_LIMITED": 2
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "506e45e1-288d-408b-815b-f4e20e29c991",
+      "title": "Jo0282026",
+      "before_count": 10,
+      "after_count": 10,
+      "kept_count": 10,
+      "removed_count": 0,
+      "added_count": 0,
+      "forced_to_validate_count": 0,
+      "removed_noise_count": 0,
+      "removed_ambiguous_count": 0,
+      "removed_signal_lost_count": 0,
+      "removed_noise_share": 0.0,
+      "removed_ambiguous_share": 0.0,
+      "removed_signal_lost_share": 0.0,
+      "gate_policy": "EXTRACT_FULL",
+      "gate_reason_codes": [
+        "DOC_REGULATORY_TITLE"
+      ],
+      "article_policy_counts": {
+        "EXTRACT_FULL": 38
+      },
+      "article_dropped_by_policy_total": 0,
+      "units_dropped_limited_policy_total": 0,
+      "policy_forced_to_validate_total": 0,
+      "removed_noise_examples": [],
+      "removed_ambiguous_examples": [],
+      "removed_signal_lost_examples": [],
+      "removed_by_reason_code": {}
+    },
+    {
+      "doc_id": "8a59d063-2cf9-4ac9-8eae-74ed3977cf05",
+      "title": "Jo0602021",
+      "before_count": 13,
+      "after_count": 6,
+      "kept_count": 4,
+      "removed_count": 9,
+      "added_count": 2,
+      "forced_to_validate_count": 0,
+      "removed_noise_count": 6,
+      "removed_ambiguous_count": 3,
+      "removed_signal_lost_count": 0,
+      "removed_noise_share": 0.6667,
+      "removed_ambiguous_share": 0.3333,
+      "removed_signal_lost_share": 0.0,
+      "gate_policy": "EXTRACT_FULL",
+      "gate_reason_codes": [
+        "DOC_DEFAULT_CONSERVATIVE"
+      ],
+      "article_policy_counts": {
+        "EXTRACT_FULL": 34,
+        "EXTRACT_LIMITED_DATA": 6
+      },
+      "article_dropped_by_policy_total": 6,
+      "units_dropped_limited_policy_total": 0,
+      "policy_forced_to_validate_total": 0,
+      "removed_noise_examples": [
+        {
+          "requirement_text": "Les surveillants exerçant dans les écoles préparatoires et les lycées relevant du ministère de l'éducation bénéficient de l'indemnité de la base d'effectif et d'horaire scolaire, égale à 75 % des éléments fixes du salaire mensuel, servie sur trois tranches conformément au tableau",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 2 (p.13-13)"
+        },
+        {
+          "requirement_text": "Les surveillants exerçant dans les écoles préparatoires et les lycées relevant du ministère de l’éducation bénéficient de l’indemnité de la base d’effectif et d’horaire scolaire, fixée à 75 % en tenant compte des éléments fixes du salaire mensuel et servie sur trois tranches conf",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Article 2 bis (p.13-13)"
+        },
+        {
+          "requirement_text": "Les surveillants généraux relevant du ministère de l’éducation bénéficient de l’indemnité de la base d'effectif et d’horaire scolaire, équivalant à 75 % des éléments fixes du salaire mensuel et servie sur trois tranches conformément au tableau ci-après.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 2 (p.14-14)"
+        },
+        {
+          "requirement_text": "Les surveillants généraux relevant du ministère de l’éducation bénéficient de l’indemnité de la base d'effectif et d’horaire scolaire équivalant à 75 % des éléments fixes du salaire mensuel, servie sur trois tranches conformément au tableau ci-après.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Article 2 nouveau (p.13-14)"
+        },
+        {
+          "requirement_text": "Les surveillants généraux relevant du ministère de l’éducation bénéficient de l’indemnité de la base d'effectif et d’horaire scolaire, équivalente à 75 % des éléments fixes du salaire mensuel et servie sur trois tranches conformément au tableau ci-après.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 3 (p.14-19)"
+        },
+        {
+          "requirement_text": "Les surveillants généraux relevant du ministère de l’éducation bénéficient de l’indemnité de la base d'effectif et d’horaire scolaire, équivalente à 75 % des éléments fixes du salaire mensuel et servie sur trois tranches conformément au tableau ci-après.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Article 2 bis (p.14-14)"
+        }
+      ],
+      "removed_ambiguous_examples": [
+        {
+          "requirement_text": "L'intéressé bénéficie des indemnités et avantages accordés à un directeur d'administration centrale.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 2 (p.14-14)"
+        },
+        {
+          "requirement_text": "L'intéressé bénéficie des indemnités et avantages accordés à un directeur d'administration centrale.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 3 (p.14-19)"
+        },
+        {
+          "requirement_text": "L'intéressé bénéficie des indemnités et avantages accordés à un sous-directeur d'administration centrale.",
+          "req_type": "CONDITION",
+          "status": "TO_VALIDATE",
+          "citation_ref": "Art. 3 (p.14-19)"
+        }
+      ],
+      "removed_signal_lost_examples": [],
+      "removed_by_reason_code": {
+        "ARTICLE_ANNEX_TABLE_DATA": {
+          "removed_count": 9,
+          "noise_count": 6,
+          "ambiguous_count": 3,
+          "signal_lost_count": 0,
+          "current_policy_counts": {
+            "EXTRACT_LIMITED_DATA": 9
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QALITAS AI - Entreprise</title>
+  <link rel="stylesheet" href="/ui/base.css" />
+  <link rel="stylesheet" href="/ui/layout.css?v=20260602_02" />
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_06" />
+  <style>
+    .company-hero {
+      display:grid;
+      grid-template-columns:minmax(0, 1.2fr) minmax(260px, .8fr);
+      gap:18px;
+    }
+    .hero-card,
+    .stats-card,
+    .panel-card {
+      border:0.5px solid var(--border);
+      border-radius:16px;
+      background:var(--bg-card);
+      box-shadow:var(--shadow-soft);
+    }
+    .hero-card {
+      padding:22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.97), rgba(248,250,252,.98)),
+        linear-gradient(135deg, rgba(0,151,167,.12), transparent 38%),
+        linear-gradient(315deg, rgba(21,101,192,.08), transparent 34%);
+      border-top:3px solid rgba(0,151,167,.62);
+    }
+    .hero-kicker {
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--text-secondary);
+      margin-bottom:8px;
+    }
+    .hero-title {
+      margin:0;
+      font-size:34px;
+      line-height:1.08;
+      letter-spacing:-.03em;
+    }
+    .hero-subtitle {
+      margin:12px 0 0;
+      color:var(--text-secondary);
+      line-height:1.6;
+      max-width:72ch;
+      font-size:14px;
+    }
+    .hero-meta {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+    .hero-meta span {
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(21,101,192,.08);
+      border:0.5px solid rgba(21,101,192,.18);
+      font-size:11px;
+      color:var(--text-secondary);
+    }
+    .hero-meta span:nth-child(2) {
+      background:rgba(0,151,167,.08);
+      border-color:rgba(0,151,167,.2);
+    }
+    .hero-meta span:nth-child(3) {
+      background:rgba(245,158,11,.1);
+      border-color:rgba(245,158,11,.22);
+    }
+    .hero-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+    .stats-card {
+      padding:18px;
+      display:grid;
+      gap:12px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.97), rgba(248,250,252,.98)),
+        linear-gradient(135deg, rgba(21,101,192,.08), transparent 48%);
+      border-top:3px solid rgba(21,101,192,.46);
+    }
+    .stats-card h2 {
+      margin:0;
+      font-size:14px;
+    }
+    .stats-grid {
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:10px;
+    }
+    .stat-box {
+      position:relative;
+      padding:12px;
+      border-radius:12px;
+      background:#fff;
+      border:0.5px solid var(--border);
+      overflow:hidden;
+    }
+    .stat-box::before {
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:3px;
+      background:var(--blue-primary);
+      opacity:.76;
+    }
+    .stat-box:nth-child(2)::before,
+    .stat-box:nth-child(5)::before { background:var(--cyan-primary); }
+    .stat-box:nth-child(3)::before { background:var(--amber); }
+    .stat-box:nth-child(4)::before { background:var(--green); }
+    .stat-box:nth-child(6)::before { background:var(--purple); }
+    .stat-box:nth-child(2),
+    .stat-box:nth-child(5) { background:rgba(236,254,255,.58); }
+    .stat-box:nth-child(3) { background:rgba(255,251,235,.64); }
+    .stat-box:nth-child(4) { background:rgba(240,253,244,.58); }
+    .stat-box:nth-child(6) { background:rgba(250,245,255,.58); }
+    .stat-box:first-child { background:rgba(239,246,255,.64); }
+    .stat-box strong,
+    .stat-box span {
+      position:relative;
+    }
+    .stat-box strong {
+      display:block;
+      font-size:20px;
+      margin-bottom:4px;
+    }
+    .stat-box span {
+      font-size:11px;
+      color:var(--text-secondary);
+    }
+    .company-tabs {
+      display:flex;
+      gap:6px;
+      margin-bottom:16px;
+      padding-bottom:6px;
+      border-bottom:1px solid var(--border);
+      overflow:auto;
+      scrollbar-width:none;
+    }
+    .company-tabs::-webkit-scrollbar { display:none; }
+    .company-tab {
+      border:0;
+      background:transparent;
+      color:var(--text-secondary);
+      font-size:13px;
+      font-weight:600;
+      padding:10px 14px;
+      border-radius:12px;
+      cursor:pointer;
+      white-space:nowrap;
+      transition:background .18s ease, color .18s ease, box-shadow .18s ease, transform .18s ease;
+    }
+    .company-tab:hover { transform:translateY(-1px); }
+    .company-tab.is-active {
+      color:var(--status-applicable-text);
+      background:linear-gradient(180deg, #eff6ff, #e0f2fe);
+      box-shadow:inset 0 0 0 1px rgba(21,101,192,.22);
+    }
+    .company-panel { display:none; }
+    .company-panel.is-active { display:block; }
+    .panel-grid {
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+    }
+    .panel-card { padding:18px; }
+    .panel-card {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,250,252,.98)),
+        linear-gradient(135deg, rgba(0,151,167,.05), transparent 48%);
+    }
+    .panel-card h2 {
+      margin:0 0 6px;
+      font-size:15px;
+    }
+    .panel-card p {
+      margin:0 0 12px;
+      color:var(--text-secondary);
+      font-size:12px;
+      line-height:1.55;
+    }
+    .section-form {
+      display:grid;
+      gap:10px;
+      padding:16px;
+      border-radius:16px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.94), #f8fafc),
+        linear-gradient(135deg, rgba(21,101,192,.05), transparent 54%);
+      border:0.5px solid var(--border);
+      margin-bottom:12px;
+    }
+    .section-form-row {
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:10px;
+    }
+    .section-actions {
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .item-list { display:grid; gap:8px; }
+    .item-row {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      padding:12px;
+      border:0.5px solid var(--border);
+      border-radius:12px;
+      background:var(--bg-card);
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .item-row:hover {
+      transform:translateY(-1px);
+      border-color:rgba(0,151,167,.24);
+      box-shadow:0 10px 22px rgba(15,23,42,.05);
+      background:linear-gradient(180deg, #fff, #f8fbff);
+    }
+    .item-title {
+      font-size:13px;
+      font-weight:600;
+    }
+    .item-meta {
+      margin-top:4px;
+      color:var(--text-secondary);
+      font-size:11px;
+      line-height:1.5;
+    }
+    .template-grid {
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+    }
+    .template-card {
+      padding:16px;
+      border-radius:16px;
+      border:0.5px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.95), #f8fafc),
+        linear-gradient(135deg, rgba(0,151,167,.06), transparent 48%);
+    }
+    .template-card h3 {
+      margin:0 0 8px;
+      font-size:14px;
+    }
+    .template-card p {
+      margin:0 0 8px;
+      font-size:12px;
+      color:var(--text-secondary);
+      line-height:1.55;
+    }
+    .template-card ul {
+      margin:0;
+      padding-left:18px;
+      font-size:12px;
+      color:var(--text-secondary);
+    }
+    .result-box {
+      margin-top:12px;
+      padding:14px;
+      border-radius:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,.94), #f8fafc);
+      border:0.5px solid var(--border);
+      font-size:12px;
+      color:var(--text-secondary);
+      line-height:1.6;
+    }
+    .proof-table {
+      width:100%;
+      border-collapse:collapse;
+      font-size:12px;
+    }
+    .proof-table th,
+    .proof-table td {
+      text-align:left;
+      padding:10px;
+      border-bottom:1px solid var(--border);
+      vertical-align:top;
+    }
+    .proof-table th {
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      color:var(--text-secondary);
+    }
+    @media (max-width: 1080px) {
+      .company-hero,
+      .panel-grid,
+      .template-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width: 720px) {
+      .section-form-row,
+      .stats-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body data-page="company">
+  <div class="app-shell">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:20px">
+        <a class="brand" href="/ui/dashboard.html"><span class="brand-qali">QALI</span><span class="brand-tas">TAS</span><span class="brand-ai">AI</span></a>
+        <nav class="topbar-nav">
+          <a class="topbar-link" data-top="dashboard" href="/ui/dashboard.html">Pilotage</a>
+          <a class="topbar-link" data-top="requirements" href="/ui/requirements.html">Exigences</a>
+          <a class="topbar-link" data-top="assistant" href="/ui/assistant.html">Assistant expert</a>
+          <a class="topbar-link" data-top="analytics" href="/ui/analytics.html">Analyses</a>
+        </nav>
+      </div>
+      <div class="topbar-right">
+        <span class="tenant-pill" data-auth-tenant>tenant</span>
+        <span class="user-chip"><span class="user-avatar" data-auth-avatar>Q</span><span data-auth-user>Utilisateur</span></span>
+        <button class="logout-link" data-action="logout">Deconnexion</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <section class="sidebar-group">
+        <div class="sidebar-title">Principal</div>
+        <a class="sidebar-link" data-nav="dashboard" href="/ui/dashboard.html">Vue globale</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Pipeline IA</div>
+        <a class="sidebar-link" data-nav="upload" href="/ui/upload.html">Upload & runs</a>
+        <a class="sidebar-link" data-nav="requirements" href="/ui/requirements.html">A1 Exigences</a>
+        <a class="sidebar-link" data-nav="applicability" href="/ui/applicability.html">A2 Applicabilite</a>
+        <a class="sidebar-link" data-nav="compliance" href="/ui/compliance.html">A3 Conformite</a>
+        <a class="sidebar-link" data-nav="assistant" href="/ui/assistant.html">Assistant expert</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Gestion</div>
+        <a class="sidebar-link" data-nav="company" href="/ui/company.html">Entreprise</a>
+        <a class="sidebar-link" data-nav="reports" href="/ui/reports.html">Rapports</a>
+        <a class="sidebar-link" data-nav="settings" href="/ui/settings.html">Parametres</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Analyse</div>
+        <a class="sidebar-link" data-nav="analytics" href="/ui/analytics.html">Analyses</a>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <div class="company-hero">
+        <section class="hero-card">
+          <div class="hero-kicker">Entreprise active</div>
+          <h1 class="hero-title" id="company-title">Entreprise active</h1>
+          <p class="hero-subtitle" id="company-subtitle">Contexte tenant</p>
+          <div class="hero-meta" id="company-meta">
+            <span id="company-meta-tenant">tenant</span>
+            <span id="company-meta-role">role</span>
+            <span id="company-meta-country">pays</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-secondary" href="/ui/templates/onboarding/index.html" target="_blank" rel="noopener">Pack templates</a>
+            <a class="btn btn-secondary" href="/ui/upload.html">Documents reglementaires</a>
+            <a class="btn btn-secondary" data-role="SUPER_ADMIN" href="/ui/onboarding.html">Onboarding nouvelle entreprise</a>
+          </div>
+        </section>
+
+        <section class="stats-card">
+          <h2>Vue rapide du tenant</h2>
+          <div class="stats-grid">
+            <div class="stat-box"><strong id="stat-sites">0</strong><span>Sites</span></div>
+            <div class="stat-box"><strong id="stat-processes">0</strong><span>Processus</span></div>
+            <div class="stat-box"><strong id="stat-activities">0</strong><span>Activites</span></div>
+            <div class="stat-box"><strong id="stat-products">0</strong><span>Produits</span></div>
+            <div class="stat-box"><strong id="stat-proofs">0</strong><span>Preuves</span></div>
+            <div class="stat-box"><strong id="stat-chemicals">0</strong><span>Substances</span></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="company-tabs">
+        <button type="button" class="company-tab is-active" data-tab="overview">Vue d'ensemble</button>
+        <button type="button" class="company-tab" data-tab="structure">Structure</button>
+        <button type="button" class="company-tab" data-tab="products">Produits</button>
+        <button type="button" class="company-tab" data-tab="imports">Templates & imports</button>
+        <button type="button" class="company-tab" data-tab="proofs">Preuves</button>
+      </div>
+
+      <section class="company-panel is-active" data-panel="overview">
+        <div class="panel-grid">
+          <article class="panel-card">
+            <h2>Profil entreprise</h2>
+            <form id="company-form" data-role="WRITE">
+              <div class="section-form">
+                <div class="section-form-row">
+                  <div class="field"><label class="field-label">Nom entreprise *</label><input id="company-name" class="input" required /></div>
+                  <div class="field"><label class="field-label">Secteur</label><input id="company-sector" class="input" /></div>
+                </div>
+                <div class="section-form-row">
+                  <div class="field"><label class="field-label">Sous-secteur</label><input id="company-subsector" class="input" /></div>
+                  <div class="field"><label class="field-label">Effectif</label><input id="company-headcount" type="number" min="0" class="input" /></div>
+                </div>
+                <div class="field"><label class="field-label">Activites principales</label><textarea id="company-activities" class="textarea" rows="3"></textarea></div>
+                <div class="field"><label class="field-label">Certifications (separees par virgule)</label><input id="company-certs" class="input" placeholder="ISO 9001, ISO 14001, ISO 45001" /></div>
+                <div class="field"><label class="field-label">Substances chimiques (une par ligne ou separees par virgule)</label><textarea id="company-chemicals" class="textarea" rows="4"></textarea></div>
+                <div class="section-actions">
+                  <button id="save-company" class="btn btn-primary" type="submit">Enregistrer le profil</button>
+                </div>
+              </div>
+            </form>
+            <div class="state hidden" id="company-readonly">
+              <strong>Lecture seule</strong>
+              <div style="margin-top:6px">Le role <code>AUDITEUR</code> peut consulter, mais pas modifier le contexte entreprise.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="company-panel" data-panel="structure">
+        <div class="panel-grid">
+          <article class="panel-card">
+            <h2>Sites</h2>
+            <p>Organisation multi-site du tenant actif.</p>
+            <div class="section-form" data-role="WRITE">
+              <div class="section-form-row">
+                <div class="field"><label class="field-label">Code site</label><input id="site-code" class="input" /></div>
+                <div class="field"><label class="field-label">Nom site *</label><input id="site-name" class="input" /></div>
+              </div>
+              <div class="section-form-row">
+                <div class="field"><label class="field-label">Ville</label><input id="site-city" class="input" /></div>
+                <div class="field"><label class="field-label">Region</label><input id="site-region" class="input" /></div>
+              </div>
+              <div class="section-form-row">
+                <div class="field"><label class="field-label">Type</label><input id="site-type" class="input" /></div>
+                <div class="field"><label class="field-label">Effectif</label><input id="site-employees" type="number" min="0" class="input" /></div>
+              </div>
+              <div class="field"><label class="field-label">Activites principales</label><textarea id="site-main-activities" class="textarea" rows="2"></textarea></div>
+              <div class="section-actions">
+                <button type="button" class="btn btn-primary" id="site-save">Enregistrer le site</button>
+                <button type="button" class="btn btn-secondary" id="site-cancel">Annuler</button>
+              </div>
+            </div>
+            <div class="item-list" id="sites-list"></div>
+          </article>
+
+          <article class="panel-card">
+            <h2>Processus</h2>
+            <p>Grandes briques organisationnelles qui servent de scope a l'applicabilite.</p>
+            <div class="section-form" data-role="WRITE">
+              <div class="section-form-row">
+                <div class="field"><label class="field-label">Site parent</label><select id="process-site" class="input"></select></div>
+                <div class="field"><label class="field-label">Nom processus *</label><input id="process-name" class="input" /></div>
+              </div>
+              <div class="section-form-row">
+                <div class="field"><label class="field-label">Code</label><input id="process-code" class="input" /></div>
+                <div class="field"><label class="field-label">Description</label><input id="process-description" class="input" /></div>
+              </div>
+              <div class="section-actions">
+                <button type="button" class="btn btn-primary" id="process-save">Enregistrer le processus</button>
+                <button type="button" class="btn btn-secondary" id="process-cancel">Annuler</button>
+              </div>
+            </div>
+            <div class="item-list" id="processes-list"></div>
+          </article>
+        </div>
+
+        <article class="panel-card" style="margin-top:14px">
+          <h2>Activites</h2>
+          <p>Scopes operationnels plus fins relies a un processus et potentiellement a un site.</p>
+          <div class="section-form" data-role="WRITE">
+            <div class="section-form-row">
+              <div class="field"><label class="field-label">Site</label><select id="activity-site" class="input"></select></div>
+              <div class="field"><label class="field-label">Processus parent</label><select id="activity-process" class="input"></select></div>
+            </div>
+            <div class="section-form-row">
+              <div class="field"><label class="field-label">Nom activite *</label><input id="activity-name" class="input" /></div>
+              <div class="field"><label class="field-label">Code</label><input id="activity-code" class="input" /></div>
+            </div>
+            <div class="field"><label class="field-label">Description</label><input id="activity-description" class="input" /></div>
+            <div class="section-actions">
+              <button type="button" class="btn btn-primary" id="activity-save">Enregistrer l'activite</button>
+              <button type="button" class="btn btn-secondary" id="activity-cancel">Annuler</button>
+            </div>
+          </div>
+          <div class="item-list" id="activities-list"></div>
+        </article>
+      </section>
+
+      <section class="company-panel" data-panel="products">
+        <div class="panel-grid">
+          <article class="panel-card">
+            <h2>Produits et matieres</h2>
+            <p>Contexte produit utilise pour les exigences chimiques, de stockage et de maitrise operationnelle.</p>
+            <div class="section-form" data-role="WRITE">
+              <div class="section-form-row">
+                <div class="field"><label class="field-label">Site</label><select id="product-site" class="input"></select></div>
+                <div class="field"><label class="field-label">Designation *</label><input id="product-designation" class="input" /></div>
+              </div>
+              <div class="section-form-row">
+                <div class="field"><label class="field-label">Reference</label><input id="product-reference" class="input" /></div>
+                <div class="field"><label class="field-label">Famille</label><input id="product-family" class="input" /></div>
+              </div>
+              <div class="section-form-row">
+                <div class="field"><label class="field-label">Categorie</label><input id="product-category" class="input" /></div>
+                <div class="field"><label class="field-label">Type</label><input id="product-type" class="input" /></div>
+              </div>
+              <div class="section-form-row">
+                <div class="field"><label class="field-label">Nature</label><input id="product-nature" class="input" /></div>
+                <div class="field"><label class="field-label">Unite</label><input id="product-unit" class="input" /></div>
+              </div>
+              <div class="section-actions">
+                <button type="button" class="btn btn-primary" id="product-save">Enregistrer le produit</button>
+                <button type="button" class="btn btn-secondary" id="product-cancel">Annuler</button>
+              </div>
+            </div>
+            <div class="item-list" id="products-list"></div>
+          </article>
+
+          <article class="panel-card">
+            <h2>Substances chimiques</h2>
+            <p>Vue compacte du registre chimique saisi dans le profil entreprise ou importe via templates.</p>
+            <div id="chemicals-summary" class="template-card">
+              <p>Aucune substance declaree.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="company-panel" data-panel="imports">
+        <div class="template-grid">
+          <article class="panel-card">
+            <h2>Templates disponibles</h2>
+            <p>Les templates correspondent a la logique cible du cahier : entrees structurees pour l'applicabilite et la conformite, pas des sorties d'analyse.</p>
+            <div class="template-card">
+              <h3>Contexte entreprise</h3>
+              <ul>
+                <li><code>company_profile.csv</code>, <code>sites.csv</code>, <code>processes.csv</code>, <code>activities.csv</code></li>
+                <li><code>products.csv</code>, <code>chemicals.csv</code>, <code>equipment.csv</code></li>
+                <li><code>environmental_aspects.csv</code>, <code>sst_risks.csv</code>, <code>sst_significant_risks.csv</code>, <code>strategic_objectives.csv</code></li>
+              </ul>
+            </div>
+            <div class="template-card" style="margin-top:12px">
+              <h3>Preuves, audits et NC</h3>
+              <ul>
+                <li><code>nonconformities.csv</code></li>
+                <li><code>audit_reports_metadata.csv</code></li>
+                <li><code>compliance_evidence_manifest.csv</code></li>
+              </ul>
+            </div>
+            <div class="hero-actions" style="margin-top:14px">
+              <a class="btn btn-primary" href="/ui/templates/onboarding/index.html" target="_blank" rel="noopener">Ouvrir le pack templates</a>
+            </div>
+          </article>
+
+          <article class="panel-card">
+            <h2>Importer un fichier</h2>
+            <p>Import additif et idempotent dans l'entreprise active. Les donnees restent des entrees de pipeline ; l'applicabilite et la conformite gardent leurs propres sorties.</p>
+            <div class="section-form" data-role="WRITE">
+              <div class="field">
+                <label class="field-label">Type de donnees</label>
+                <select id="import-dataset-type" class="input"></select>
+              </div>
+              <div class="field">
+                <label class="field-label">Fichier CSV / XLSX</label>
+                <input id="import-file" type="file" accept=".csv,.xlsx,.xls" class="input" />
+              </div>
+              <div class="section-actions">
+                <button type="button" class="btn btn-primary" id="import-submit">Importer dans l'entreprise active</button>
+              </div>
+            </div>
+            <div id="import-result" class="result-box">Aucun import lance pour l'instant.</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="company-panel" data-panel="proofs">
+        <div class="panel-grid">
+          <article class="panel-card">
+            <h2>Uploader une preuve</h2>
+            <p>Les preuves PDF sont stockees comme documents reels du tenant. Elles pourront etre relues ensuite par l'analyse de conformite.</p>
+            <form id="proof-form" data-role="WRITE">
+              <div class="section-form">
+                <div class="field"><label class="field-label">PDF</label><input id="proof-pdf" type="file" accept="application/pdf" class="input" /></div>
+                <div class="section-form-row">
+                  <div class="field"><label class="field-label">Reference</label><input id="proof-ref" class="input" placeholder="Audit SST 2026" /></div>
+                  <div class="field"><label class="field-label">Type</label><input id="proof-type" class="input" value="audit" /></div>
+                </div>
+                <div class="section-actions">
+                  <button type="submit" class="btn btn-primary">Uploader la preuve</button>
+                </div>
+              </div>
+            </form>
+            <div class="state hidden" id="proof-readonly">
+              <strong>Lecture seule</strong>
+              <div style="margin-top:6px">Le role <code>AUDITEUR</code> ne peut pas uploader de preuves.</div>
+            </div>
+          </article>
+
+          <article class="panel-card">
+            <h2>Bibliotheque de preuves</h2>
+            <p>Vue rapide des preuves et audits deja rattaches a l'entreprise active.</p>
+            <div id="proof-list"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/ui/js/company.js"></script>
+</body>
+</html>

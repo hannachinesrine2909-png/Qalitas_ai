@@ -1,0 +1,454 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QALITAS AI - Rapports</title>
+  <link rel="stylesheet" href="/ui/base.css" />
+  <link rel="stylesheet" href="/ui/layout.css?v=20260602_02" />
+  <link rel="stylesheet" href="/ui/components.css?v=20260602_06" />
+</head>
+<body data-page="reports">
+  <div class="app-shell">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:20px">
+        <a class="brand" href="/ui/dashboard.html"><span class="brand-qali">QALI</span><span class="brand-tas">TAS</span><span class="brand-ai">AI</span></a>
+        <nav class="topbar-nav">
+          <a class="topbar-link" data-top="dashboard" href="/ui/dashboard.html">Pilotage</a>
+          <a class="topbar-link" data-top="requirements" href="/ui/requirements.html">Exigences</a>
+          <a class="topbar-link" data-top="assistant" href="/ui/assistant.html">Assistant expert</a>
+          <a class="topbar-link" data-top="analytics" href="/ui/analytics.html">Analyses</a>
+        </nav>
+      </div>
+      <div class="topbar-right">
+        <span class="tenant-pill" data-auth-tenant>tenant</span>
+        <span class="user-chip"><span class="user-avatar" data-auth-avatar>Q</span><span data-auth-user>Utilisateur</span></span>
+        <button class="logout-link" data-action="logout">Déconnexion</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <section class="sidebar-group">
+        <div class="sidebar-title">Principal</div>
+        <a class="sidebar-link" data-nav="dashboard" href="/ui/dashboard.html">Vue globale</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Pipeline IA</div>
+        <a class="sidebar-link" data-nav="upload" href="/ui/upload.html">Upload & runs</a>
+        <a class="sidebar-link" data-nav="requirements" href="/ui/requirements.html">A1 Exigences</a>
+        <a class="sidebar-link" data-nav="applicability" href="/ui/applicability.html">A2 Applicabilité</a>
+        <a class="sidebar-link" data-nav="compliance" href="/ui/compliance.html">A3 Conformité</a>
+        <a class="sidebar-link" data-nav="assistant" href="/ui/assistant.html">Assistant expert</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Gestion</div>
+        <a class="sidebar-link" data-nav="company" href="/ui/company.html">Entreprise</a>
+        <a class="sidebar-link" data-nav="reports" href="/ui/reports.html">Rapports</a>
+        <a class="sidebar-link" data-nav="settings" href="/ui/settings.html">Paramètres</a>
+      </section>
+      <section class="sidebar-group">
+        <div class="sidebar-title">Analyse</div>
+        <a class="sidebar-link" data-nav="analytics" href="/ui/analytics.html">Analyses</a>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-head">
+        <div>
+          <h1 class="page-title">Rapports</h1>
+        </div>
+      </div>
+
+      <section class="report-grid" id="report-grid">
+        <article class="report-card" data-card="a2">
+          <h3 class="card-title">Rapport d'applicabilite</h3>
+          <div style="display:flex;gap:8px"><button class="btn btn-primary" data-generate="a2" data-role="WRITE">Generer</button><button class="btn btn-secondary" data-download="a2">Telecharger le dernier</button></div>
+          <div class="page-subtitle" style="margin-top:8px" data-progress="a2">Pret</div>
+        </article>
+
+        <article class="report-card" data-card="a3">
+          <h3 class="card-title">Rapport de conformite</h3>
+          <div style="display:flex;gap:8px"><button class="btn btn-primary" data-generate="a3" data-role="WRITE">Generer</button><button class="btn btn-secondary" data-download="a3">Telecharger le dernier</button></div>
+          <div class="page-subtitle" style="margin-top:8px" data-progress="a3">Pret</div>
+        </article>
+
+        <article class="report-card" data-card="exec">
+          <h3 class="card-title">Synthese de direction</h3>
+          <div style="display:flex;gap:8px"><button class="btn btn-primary" data-generate="exec" data-role="WRITE">Generer</button><button class="btn btn-secondary" data-download="exec">Telecharger le dernier</button></div>
+          <div class="page-subtitle" style="margin-top:8px" data-progress="exec">Pret</div>
+        </article>
+
+        <article class="report-card" data-card="plan">
+          <h3 class="card-title">Plan d'actions</h3>
+          <div style="display:flex;gap:8px"><button class="btn btn-primary" data-generate="plan" data-role="WRITE">Generer</button><button class="btn btn-secondary" data-download="plan">Telecharger le dernier</button></div>
+          <div class="page-subtitle" style="margin-top:8px" data-progress="plan">Pret</div>
+        </article>
+      </section>
+
+      <section class="card" style="margin-top:12px">
+        <div class="card-head"><h2 class="card-title">Historique des fichiers générés</h2></div>
+        <div id="reports-history"></div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module">
+    import { getAuth, initShell, isReadOnlyRole, requireRole } from '/ui/js/auth.js';
+    import { api } from '/ui/js/api.js';
+    import { escapeHtml, formatDate, openBlob, renderEmpty, renderError } from '/ui/js/utils.js';
+
+    const session = initShell('reports');
+    if (!session) throw new Error('Session absente');
+
+    const tenant = getAuth().tenant_id;
+    const historyEl = document.getElementById('reports-history');
+    const GENERATED_PREFIX = `qalitas.reports.generated.${tenant}.`;
+
+    function setProgress(key, text, cls = '') {
+      const node = document.querySelector(`[data-progress="${key}"]`);
+      if (!node) return;
+      node.textContent = text;
+      node.className = `page-subtitle ${cls}`;
+    }
+
+    function stampNow() {
+      return new Date().toISOString();
+    }
+
+    function truncate(text, max = 180) {
+      const v = String(text || '');
+      if (v.length <= max) return v;
+      return `${v.slice(0, Math.max(0, max - 3))}...`;
+    }
+
+    function pct(value01) {
+      const v = Number(value01 || 0);
+      return `${Math.round(Math.max(0, Math.min(1, v)) * 1000) / 10}%`;
+    }
+
+    function saveGenerated(kind, payload) {
+      localStorage.setItem(`${GENERATED_PREFIX}${kind}`, JSON.stringify(payload));
+    }
+
+    function loadGenerated(kind) {
+      try {
+        const raw = localStorage.getItem(`${GENERATED_PREFIX}${kind}`);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch {
+        return null;
+      }
+    }
+
+    function htmlTable(headers, rows) {
+      return `
+        <table>
+          <thead>
+            <tr>${headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('')}</tr>
+          </thead>
+          <tbody>
+            ${rows.map((row) => `<tr>${row.map((c) => `<td>${escapeHtml(String(c ?? '-'))}</td>`).join('')}</tr>`).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+
+    function reportShell(title, subtitle, bodyHtml) {
+      return `<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${escapeHtml(title)}</title>
+  <style>
+    :root { --ink:#0f172a; --muted:#475569; --brand:#1f3ea6; --line:#cbd5e1; --bg:#f8fafc; }
+    body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width: 1024px; margin: 24px auto; background:white; border:1px solid var(--line); border-radius:12px; padding:22px; }
+    h1 { margin:0 0 6px; color:var(--brand); font-size:28px; }
+    h2 { margin:20px 0 8px; font-size:20px; color:#0f172a; }
+    h3 { margin:14px 0 6px; font-size:16px; color:#1e293b; }
+    p.meta { margin:0; color:var(--muted); font-size:13px; }
+    ul { margin:8px 0 0 18px; padding:0; }
+    li { margin:4px 0; }
+    table { width:100%; border-collapse: collapse; margin-top:8px; font-size:13px; }
+    th, td { border:1px solid var(--line); padding:7px; vertical-align: top; text-align:left; }
+    th { background:#e2e8f0; font-weight:700; }
+    .kpis { display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:10px; margin-top:10px; }
+    .kpi { border:1px solid var(--line); border-radius:10px; padding:10px; background:#f8fafc; }
+    .kpi .label { color:var(--muted); font-size:12px; }
+    .kpi .value { font-weight:700; font-size:22px; margin-top:3px; }
+    .foot { margin-top:16px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:10px; }
+    @media (max-width: 900px) { .kpis { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>${escapeHtml(title)}</h1>
+    <p class="meta">${escapeHtml(subtitle)}</p>
+    ${bodyHtml}
+    <div class="foot">Document auto-genere par QALITAS AI</div>
+  </div>
+</body>
+</html>`;
+    }
+
+    function aggregateApplicableByDomain(a2) {
+      const map = new Map();
+      const rows = a2.decisions || [];
+      rows.forEach((row) => {
+        const status = String(row.status || '').toUpperCase();
+        if (!['APPLICABLE', 'APPLICABLE_SOUS_CONDITIONS'].includes(status)) return;
+        const domain = String(row.qse_domain || 'N/A');
+        map.set(domain, (map.get(domain) || 0) + 1);
+      });
+      return [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8);
+    }
+
+    function buildExecutiveSummary({ overview, a2, a3 }) {
+      const countsA2 = a2.counts || {};
+      const breakdown = a3.status_breakdown || {};
+      const nc = a3.nc_reglementaire || {};
+      const criticalChecks = (a3.worst_items || []).slice(0, 10);
+      const domainTop = aggregateApplicableByDomain(a2);
+      const actionsOpen = Object.entries(a3.actions_breakdown || {})
+        .filter(([state]) => !['REALISEE', 'CLOTUREE', 'ANNULEE'].includes(String(state || '').toUpperCase()))
+        .reduce((acc, [, count]) => acc + Number(count || 0), 0);
+
+      const criticalTable = criticalChecks.length
+        ? htmlTable(
+          ['Domaine', 'Statut', 'Exigence', 'Preuves manquantes'],
+          criticalChecks.map((row) => [
+            row.qse_domain || row.domain || '-',
+            String(row.status || '-').replace(/_/g, ' '),
+            truncate(row.requirement_text || row.requirement || '-', 110),
+            truncate(row.missing_proofs || '-', 120),
+          ]),
+        )
+        : '<p>Aucune verification critique disponible.</p>';
+
+      const topDomains = domainTop.length
+        ? `<ul>${domainTop.map(([domain, count]) => `<li>${escapeHtml(domain)}: ${count}</li>`).join('')}</ul>`
+        : '<p>Aucun domaine applicable detecte.</p>';
+
+      const body = `
+        <section>
+          <h2>Synthese globale</h2>
+          <div class="kpis">
+            <div class="kpi"><div class="label">Documents suivis</div><div class="value">${overview.documents_total || 0}</div></div>
+            <div class="kpi"><div class="label">Exigences total</div><div class="value">${overview.requirements_total || 0}</div></div>
+            <div class="kpi"><div class="label">A valider</div><div class="value">${overview.to_validate_total || 0}</div></div>
+            <div class="kpi"><div class="label">Rejetees</div><div class="value">${overview.reject_total || 0}</div></div>
+          </div>
+        </section>
+        <section>
+          <h2>Applicabilite reglementaire</h2>
+          <ul>
+            <li>Total des decisions: ${a2.total || 0}</li>
+            <li>Applicables: ${(countsA2.APPLICABLE || 0) + (countsA2.APPLICABLE_SOUS_CONDITIONS || 0)}</li>
+            <li>Non applicables: ${countsA2.NON_APPLICABLE || 0}</li>
+            <li>Incertaines: ${countsA2.INCERTAIN || 0}</li>
+          </ul>
+          <h3>Domaines les plus impactes</h3>
+          ${topDomains}
+        </section>
+        <section>
+          <h2>Conformite operationnelle</h2>
+          <ul>
+            <li>Total checks: ${a3.total_checks || 0}</li>
+            <li>Taux de conformite: ${pct(a3.compliance_rate || 0)}</li>
+            <li>Conforme: ${breakdown.CONFORME?.count || 0}</li>
+            <li>Partiel: ${(breakdown.PARTIELLEMENT_CONFORME?.count || breakdown.PARTIEL?.count || 0)}</li>
+            <li>Non conforme: ${breakdown.NON_CONFORME?.count || 0}</li>
+            <li>Absence de preuve: ${breakdown.ABSENCE_DE_PREUVE?.count || 0}</li>
+            <li>NC reglementaires: ${nc.total || 0} (majeures ${nc.major || 0}, mineures ${nc.minor || 0}, critiques ${nc.critical || 0})</li>
+            <li>Actions ouvertes: ${actionsOpen}</li>
+          </ul>
+          <h3>Top verifications critiques</h3>
+          ${criticalTable}
+        </section>
+        <section>
+          <h2>Recommandations direction</h2>
+          <ol>
+            <li>Prioriser la fermeture des NC reglementaires critiques et majeures (${(nc.critical || 0) + (nc.major || 0)} cas).</li>
+            <li>Traiter en premier les exigences avec absence de preuve pour limiter le risque d'inspection defavorable.</li>
+            <li>Planifier un point hebdomadaire de suivi des actions ouvertes jusqu'a reduction du backlog.</li>
+          </ol>
+        </section>
+      `;
+
+      return reportShell(
+        `Executive Summary - ${tenant}`,
+        `Date generation: ${stampNow()} | Source: exigences, applicabilite, conformite`,
+        body,
+      );
+    }
+
+    function buildActionPlan({ a3 }) {
+      const actions = (a3.recent_actions || []).filter((a) => !['REALISEE', 'CLOTUREE', 'ANNULEE'].includes(String(a.state || '').toUpperCase()));
+      const gaps = (a3.recent_gaps || []).filter((g) => String(g.gap_type || '').toUpperCase() === 'NC_REGLEMENTAIRE');
+
+      const actionsTable = actions.length
+        ? htmlTable(
+          ['Priorite', 'Etat', 'Action', 'Responsable', 'Echeance', 'Preuve attendue'],
+          actions.slice(0, 25).map((a) => [
+            String(a.gap_severity || 'MINEURE').toUpperCase(),
+            String(a.state || 'PLANIFIEE').replace(/_/g, ' '),
+            truncate(a.action_title || '-', 100),
+            a.responsible || '-',
+            a.due_date || '-',
+            truncate(a.expected_proof || '-', 110),
+          ]),
+        )
+        : '<p>Aucune action corrective ouverte.</p>';
+
+      const gapsTable = gaps.length
+        ? htmlTable(
+          ['Severite', 'Domaine', 'Description', 'Preuve manquante'],
+          gaps.slice(0, 20).map((g) => [
+            g.severity || '-',
+            g.qse_domain || '-',
+            truncate(g.description || '-', 120),
+            truncate(g.missing_proof || '-', 120),
+          ]),
+        )
+        : '<p>Aucun ecart NC reglementaire recent.</p>';
+
+      const body = `
+        <section>
+          <h2>Priorites</h2>
+          <div class="kpis">
+            <div class="kpi"><div class="label">Actions ouvertes</div><div class="value">${actions.length}</div></div>
+            <div class="kpi"><div class="label">Ecarts NC analyses</div><div class="value">${gaps.length}</div></div>
+            <div class="kpi"><div class="label">Critiques</div><div class="value">${gaps.filter((g) => String(g.severity || '').toUpperCase() === 'CRITIQUE').length}</div></div>
+            <div class="kpi"><div class="label">Majeures</div><div class="value">${gaps.filter((g) => String(g.severity || '').toUpperCase() === 'MAJEURE').length}</div></div>
+          </div>
+        </section>
+        <section>
+          <h2>Actions correctives priorisees</h2>
+          ${actionsTable}
+        </section>
+        <section>
+          <h2>Ecarts de reference</h2>
+          ${gapsTable}
+        </section>
+        <section>
+          <h2>Cadence recommandee</h2>
+          <ol>
+            <li>Revue hebdomadaire des actions critiques/majeures</li>
+            <li>Verification mensuelle des preuves manquantes par domaine</li>
+            <li>Reevaluation de la conformite apres cloture des actions prioritaires</li>
+          </ol>
+        </section>
+      `;
+
+      return reportShell(
+        `Action Plan - ${tenant}`,
+        `Date generation: ${stampNow()} | Source: conformite`,
+        body,
+      );
+    }
+
+    async function buildNarrativeReport(kind) {
+      const [overview, a2, a3] = await Promise.all([
+        api.dashboardOverview(tenant),
+        api.applicabilitySummary(tenant),
+        api.complianceSummary(tenant),
+      ]);
+      if (kind === 'exec') {
+        return buildExecutiveSummary({ overview, a2, a3 });
+      }
+      return buildActionPlan({ overview, a2, a3 });
+    }
+
+    async function refreshHistory() {
+      historyEl.innerHTML = '<div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div>';
+      try {
+        const payload = await api.reportsList('', 100);
+        const rows = payload.items || [];
+        if (!rows.length) {
+          renderEmpty(historyEl, 'Aucun rapport genere pour le moment.', 'Actualiser', refreshHistory);
+          return;
+        }
+        historyEl.innerHTML = `
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Nom</th><th>Catégorie</th><th>Taille</th><th>Maj</th></tr></thead>
+              <tbody>
+                ${rows.slice(0, 25).map((row) => `<tr><td>${escapeHtml(row.name || '-')}</td><td>${escapeHtml(row.category || '-')}</td><td>${escapeHtml(String(row.size_bytes || 0))}</td><td>${escapeHtml(formatDate(row.updated_at))}</td></tr>`).join('')}
+              </tbody>
+            </table>
+          </div>
+        `;
+      } catch (error) {
+        renderError(historyEl, error, 'Réessayer', refreshHistory);
+      }
+    }
+
+    async function generate(kind) {
+      setProgress(kind, 'Generation en cours...');
+      try {
+        if (kind === 'a2') {
+          const blob = await api.downloadApplicabilityPdf(tenant);
+          openBlob(blob, `a2_report_${tenant}.pdf`);
+        } else if (kind === 'a3') {
+          const blob = await api.downloadCompliancePdf(tenant);
+          openBlob(blob, `a3_report_${tenant}.pdf`);
+        } else if (kind === 'exec') {
+          const blob = await api.downloadExecutivePdf(tenant);
+          openBlob(blob, `executive_summary_${tenant}.pdf`);
+        } else if (kind === 'plan') {
+          const blob = await api.downloadActionPlanPdf(tenant);
+          openBlob(blob, `action_plan_${tenant}.pdf`);
+        }
+        setProgress(kind, 'Pret');
+        await refreshHistory();
+      } catch (error) {
+        setProgress(kind, `Erreur : ${error.message}`);
+      }
+    }
+
+    async function download(kind) {
+      if (kind === 'a2') {
+        const blob = await api.downloadApplicabilityPdf(tenant);
+        openBlob(blob, `a2_report_${tenant}.pdf`);
+        return;
+      }
+      if (kind === 'a3') {
+        const blob = await api.downloadCompliancePdf(tenant);
+        openBlob(blob, `a3_report_${tenant}.pdf`);
+        return;
+      }
+      if (kind === 'exec') {
+        const blob = await api.downloadExecutivePdf(tenant);
+        openBlob(blob, `executive_summary_${tenant}.pdf`);
+        return;
+      }
+      if (kind === 'plan') {
+        const blob = await api.downloadActionPlanPdf(tenant);
+        openBlob(blob, `action_plan_${tenant}.pdf`);
+      }
+    }
+
+    document.querySelectorAll('[data-generate]').forEach((btn) => {
+      btn.addEventListener('click', () => generate(btn.dataset.generate));
+    });
+
+    document.querySelectorAll('[data-download]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        try {
+          await download(btn.dataset.download);
+        } catch (error) {
+          alert(error.message || 'Telechargement impossible');
+        }
+      });
+    });
+
+    requireRole(session.role);
+    if (isReadOnlyRole(session.role)) {
+      document.querySelectorAll('[data-generate]').forEach((btn) => btn.classList.add('hidden'));
+    }
+
+    await refreshHistory();
+  </script>
+</body>
+</html>
